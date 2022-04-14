@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: 'Monserat';
+    src: url(Font/montserrat/Montserrat-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+#headerBar{
+    background-image:linear-gradient(rgba(22, 53, 32, 0.5),#20845d);
+    height: 18vh ;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
+
+#navBar{
+    max-width: 1200px;
+    margin: auto;
+}
+
+#LogoImg{
+    width: 200px;
+    margin-top: 30px;
+    height: auto;
+    alt: "LogoImage";
+    float: left;
+}
+
+#navBtn ul{
+    margin-top: 50px;
+    float: right;
+    list-style-type: none;
+}
+#navBtn ul li{
+    display: inline-block; 
+}
+#navBtn ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s ease;
+    padding: 5px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#navBtn ul li a:hover{
+    background-color: #ffffff;
+    color: black;
+}
+#navBtn ul li:hover .dropDownMenu{
+    display: block;
+}
+#navBtn ul li:hover a{
+    color: black;
+}
+
+.dropDownMenu{
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+.dropDownMenu a{
+    display: block;
+    padding: 10px;
+}
+
+/* LandingPage */
+.landingpage{
+    height: 90vh;
+}
+.boxed{
+    margin-bottom: 10px;
+    background: #dbffa2;
+    border-radius: 40px;
+    width: 500px;
+    height: 90px;
+}
+.boxed1{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Monserat;
+}
+.boxed2{
+    margin-top: 50px;
+    text-align: justify;
+    width: 500px;
+    font-size: 18px;
+    font-family: Monserat;
+}
+.h1{
+    padding-top: 100px;
+}
+.h2{
+    margin-left: 80px;
+    float: left;
+}
+.h3{
+    margin-right: 80px;
+    float: right;
+    display: flex;
+}
+
+/* AboutUs */
+.a1{
+    margin-top: 10px;
+    background-image: url("./assets/LH/bgLH.png");
+    background-size: 100%;
+    height: 140vh;
+}
+.a2{
+    padding-top: 50px;
+}
+.a3{
+    border-radius: 40px;
+    width: 400px;
+    height: 60px;
+    background: #cfff83;
+}
+.a4{
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 37px;
+    font-family: Monserat;
+}
+.a5{
+    padding-top: 50px;
+    color: white;
+    width: 150vh;
+    text-align: justify;
+    font-family: Monserat;
+}
+#slider{
+    height: 100vh;
+    position: relative;
+}
+
+#imageSlide{
+    position: absolute;
+    border-radius: 15px;
+    top: 50px;
+    left: 220px;
+    width: 70%;
+    height: 80%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border: 5px solid #cfff83;
+}
+
+
+/* Footer */
+#footerBar{
+    margin-top: 10px;
+    background-color:black;
+    background-image: linear-gradient(#20845d,rgba(22, 53, 32, 0.5));
+    display: flex;
+    justify-content: space-between;
+}
+
+#txtCopy{
+    margin-left: 50px;
+    display: flex;
+    color: white;
+    float: left;
+    padding: 30px;
+    font-family: 'Monserat';
+}
+
+#sosmedImg{
+    font-family: 'Monserat';
+    display: flex;
+    width: 30%;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+.a10{
+    color: white;
+    margin-left: 200px;
+}

@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: 'Monserat';
+    src: url(Font/montserrat/Montserrat-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+#headerBar{
+    background-image:linear-gradient(rgba(0,0,0,0.5),#211063);
+    height: 18vh ;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
+
+#navbar{
+    max-width: 1200px;
+    margin: auto;
+}
+
+#logoImg{
+    width: 200px;
+    margin-top: 30px;
+    height: auto;
+    alt: "LogoImage";
+    float: left;
+}
+
+#navBtn ul{
+    margin-top: 50px;
+    float: right;
+    list-style-type: none;
+}
+#navBtn ul li{
+    display: inline-block; 
+}
+#navBtn ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s ease;
+    padding: 5px 20px;
+    font-family: Monserat;
+}
+#navBtn ul li a:hover{
+    background-color: #ffffff;
+    color: black;
+}
+#navBtn ul li:hover .dropDownMenu{
+    display: block;
+}
+#navBtn ul li:hover a{
+    color: black;
+}
+
+.dropDownMenu{
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+.dropDownMenu a{
+    display: block;
+    padding: 10px;
+}
+
+/* LandingPage */
+.landingpage{
+    margin-top: 10px;
+    background-color: white;
+    height: 80vh;
+}
+.boxed{
+    margin-bottom: 10px;
+    background: #b7daeb;
+    border-radius: 40px;
+    width: 500px;
+    height: 90px;
+}
+.boxed1{
+    padding-top: 15px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Monserat;
+}
+.boxed2{
+    margin-top: 50px;
+    text-align: justify;
+    width: 500px;
+    font-size: 18px;
+    font-family: Monserat;
+}
+.h1{
+    padding-top: 100px;
+}
+.h2{
+
+    margin-left: 80px;
+    float: left;
+}
+.h3{
+    margin-right: 80px;
+    float: right;
+    display: flex;
+}
+
+/* Pengumuman */
+.p1{
+    margin-top: 10px;
+    background-color: #ffe1ed;
+    height: 120vh;
+}
+.p2{
+    padding-top: 50px;
+}
+.p3{
+    border-radius: 40px;
+    width: 400px;
+    height: 60px;
+    background: white;
+}
+.p4{
+    font-family: Monserat;
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 37px;
+}
+.p5{
+    padding-top: 50px;
+}
+.p6{
+    border-radius: 50px;
+    width: 55vh;
+    height: 55vh;
+    display: flex;
+    float: left;
+    padding-left: 100px;
+}
+.p7{
+    border-radius: 50px;
+    width: 55vh;
+    height: 55vh;
+    padding-left: 70px;
+}
+.p8{
+    border-radius: 50px;
+    width: 55vh;
+    height: 55vh;
+    float: right;
+    display: flex;
+    padding-right: 100px;
+}
+.p9{
+    padding-top: 50px;
+}
+.p10{
+    float: left;
+    margin-left: 100px;
+    border-radius: 30px;
+    height: 19vh;
+    width: 53vh;
+    background: white;
+    font-family: Monserat;
+}
+.p11{
+    float: left;
+    margin-left: 100px;
+    border-radius: 30px;
+    height: 19vh;
+    width: 53vh;
+    background: white;
+    font-family: Monserat;
+
+}
+.p12{
+    float: right;
+    margin-right: 100px;
+    border-radius: 30px;
+    height: 19vh;
+    width: 53vh;
+    background: white;
+    font-family: Monserat;
+}
+
+/* AboutUs */
+.a1{
+    margin-top: 10px;
+    background-image: url("./assets/Event/event5.png");
+    background-size: 100%;
+    height: 120vh;
+}
+.a2{
+    padding-top: 50px;
+}
+.a3{
+    border-radius: 40px;
+    width: 400px;
+    height: 60px;
+    background: #fbd043;
+}
+.a4{
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 37px;
+    font-family: Monserat;
+}
+.a5{
+    padding-top: 50px;
+    color: white;
+    width: 150vh;
+    text-align: justify;
+    font-family: Monserat;
+}
+.a6{
+    padding-top: 120px;
+}
+.a9{
+    display: flex;
+    width: 35vh;
+    margin-left: -80px;
+}
+.a7{
+    padding-top: 30px;
+    padding-right: 30px;
+}
+.a8{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.a10{
+    display: flex;
+    font-family: Monserat;
+}
+.a11{
+    display: flex;
+    width: 35vh;
+    margin-left: 260px;
+}
+.a12{
+    display: flex;
+    margin-left: 250px;
+    width: 35vh;
+}
+.a13{
+    display: flex;
+}
+.a14{
+    width: 45vh;
+    height: 30vh;
+    margin-left: 80px;
+    border-radius: 20px;
+    border: 5px solid #fbd043;
+}
+.a15{
+    width: 45vh;
+    height: 30vh;
+    margin-left: 180px;
+    border-radius: 20px;
+    border: 5px solid #fbd043;
+}
+.a16{
+    width: 45vh;
+    height: 30vh;
+    margin-left: 170px;
+    border-radius: 20px;
+    border: 5px solid #fbd043;
+}
+
+/* Footer */
+#footerBar{
+    margin-top: 10px;
+    background-color:black;
+    background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
+    display: flex;
+    justify-content: space-between;
+}
+
+#txtCopy{
+    margin-left: 50px;
+    display: flex;
+    color: white;
+    float: left;
+    padding: 30px;
+    font-family: Monserat;
+}
+
+#sosmedImg{
+    display: flex;
+    width: 30%;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+.a10{
+    color: white;
+    margin-left: 200px;
+    font-family: Monserat;
+}

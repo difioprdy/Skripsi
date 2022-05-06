@@ -37,7 +37,7 @@
                    <div class="form-group">
                        <button type="submit" name="login-btn" class="btn btn-primary btn-block btn-lg">Login</button>
                    </div>
-                   <p class="text-center">Belum terdaftar sebagai admin ? <a href="signup.php">Sign Up</a></p>
+                   <p class="text-center">Belum terdaftar sebagai admin ? <a href="PinRegisterRPTRA.php">Sign Up</a></p>
                     
                </form> 
             </div>

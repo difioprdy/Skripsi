@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-4 offset-md-4 form-div">
                <form action="signup.php" method="post">
-                   <h3 class="text-center">Registrasi Admin RPTaaaRA</h3>
+                   <h3 class="text-center">Registrasi Admin RPTRA</h3>
 
                    <?php if(count($errors) > 0): ?>
                    <div class ="alert alert-danger">

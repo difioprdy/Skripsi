@@ -34,7 +34,7 @@
 
             if (empty($row['code'])) {
                 $_SESSION['SESSION_EMAIL'] = $email;
-                header("Location: welcome.php");
+                header("Location: PinRegisterlh.php");
             } else {
                 $msg = "<div class='alert alert-info'>First verify your account and try again.</div>";
             }
@@ -93,7 +93,7 @@
                             <button name="submit" name="submit" class="btn" type="submit">Login</button>
                         </form>
                         <div class="social-icons">
-                            <p>Create Account! <a href="register.php">Register</a>.</p>
+                            <p>Create Account! <a href="PinRegisterRPTRA.php">Register</a>.</p>
                         </div>
                     </div>
                 </div>

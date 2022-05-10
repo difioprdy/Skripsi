@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include "config/db.php";
+include "config.php";
 
 ?>
 
@@ -25,7 +25,7 @@ include "config/db.php";
         $cek = mysqli_num_rows($qry);
         if($cek==1){
             $_SESSION['userweb']=$pin;
-            header("location:signup.php");
+            header("location:register.php");
             exit;
         }
         else{

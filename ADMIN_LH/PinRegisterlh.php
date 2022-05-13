@@ -1,6 +1,11 @@
 <?php
 
-session_start();
+// session_start();
+
+    // if (isset($_SESSION['pin'])) {
+    //     header("Location: register.php");
+    //     exit;
+    // }
 include "config.php";
 
 ?>
@@ -24,7 +29,7 @@ include "config.php";
         $qry = mysqli_query($conn,"SELECT * FROM pinadminlh WHERE PIN = '$pin'");
         $cek = mysqli_num_rows($qry);
         if($cek==1){
-            $_SESSION['userweb']=$pin;
+            $_SESSION['pin']=$pin;
             header("location:register.php");
             exit;
         }

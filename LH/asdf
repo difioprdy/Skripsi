@@ -1,0 +1,101 @@
+#slider{
+    height: 100vh;
+    position: relative;
+}
+
+#imageSlide{
+    position: absolute;
+    border-radius: 15px;
+    top: 50px;
+    left: 150px;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.017884450412!2d106.8809031!3d-6.26314!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa61abb482bcce73d!2sRPTRA%20KEBON%20PALA!5e0!3m2!1sen!2sid!4v1648374795832!5m2!1sen!2sid" width="400" height="300" style="border-radius:15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p style="font-family: Monserat;">
+        Lokasi RPTRA: <br> Jl. Kamboja, RT.10/RW.1, Kb. Pala, Kec. 
+        Makasar, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13650 <br>
+        Jam Operasional : 7AM - 5PM (Setiap Hari)
+    </p>
+
+
+
+
+
+<div class="a3">
+                <div id="slider">
+                    <img id="imageSlide" src="assets/Event/event1.jpg">
+                    <img id="imageSlide" src="assets/Event/event2.jpg">
+                    <img id="imageSlide" src="assets/Event/event3.jpg">
+                    <img id="imageSlide" src="assets/Event/event4.jpg">
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <center class="color:#272727" style="font-size:40px; padding-top: 30px;" ><strong>ABOUT US</strong></center>
+            <center style="color:#727272">RPTRA Kebon Pala</center>
+            <hr>
+            <center style="text-align: justify; margin-left: 80px; margin-right: 80px; margin-top: 30px;">
+                RPTRA Kebon Pala juga sering melakukan kegiatan-kegiatan tertentu yang bertujuan
+                untuk mendukung tumbuh kembang anak-anak yang terdapat di sekitar RPTRA Kebon Pala.
+                Selain untuk itu juga, RPTRA Kebon Pala juga menyelenggarakan beberapa kegiatan lain
+                seperti tempat untuk vaksinisasi Covid-19, pembelajaran kepada ibu-ibu PKK mengenai
+                tumbuhan dan juga merawat anak dan juga sebagai tempat pelaksanaan kegiatan pengajian.
+                Dapat dilihat di bawah contoh-contoh dari kegiatan-kegiatan yang di lakukan oleh RPTRA
+                Kebon Pala.
+            </center>
+
+            
+
+            <p class="a3">Beberapa Kegiatan yang Sering Di adakan oleh RPTRA:</p>
+           <div class="a2">
+                <p class="a4" style="font-size:25px"><strong>Bermain Bola</strong></p> 
+                <p>
+                    Kegiatan yang sering dilakukan di RPTRA Kebon Pala adalah
+                    bermain bola. Tujuan dari kegiatan ini adalah untuk memberikan 
+                    tempat bermain bagi anak-anak di sekitar RPTRA Kebon Pala agar
+                    tidak bermain di sembarang tempat seperti di jalan raya yang
+                    dapat membahayakan anak-anak dari hal-hal yang tidak diiinginkan.
+                </p>
+
+                <p class="a4" style="font-size:25px"><strong>Pengajian</strong></p> 
+                <p>
+                    Kegiatan penjian ini juga sering dilakukan di RPTRA Kebon Pala. 
+                    Tujuan dari kegiatan ini adalah untuk mengasah dan mengembangkan
+                    kemampuan mengaji dari anak-anak di sekitar RPTRA Kebon Pala
+                </p>
+
+                <p class="a4" style="font-size:25px"><strong>Bercocok Tanam</strong></p> 
+                <p>
+                    Kegiatan bercocok tanam yang dilakukan di RPTRA Kebon Pala. 
+                    Tujuan dari kegiatan ini adalah untuk memberikan wawasan kepada 
+                    anak-anak maupun warga sekitar bagaimana cara bercocok tanam yang
+                    benar, memberikan wawasan atas nama-nama tumbuhan dan kegunaannya</p>
+                    dan juga bagaimana cara merawat tumbuhan tersebut.
+                </p>
+
+                <p class="a4" style="font-size:25px"><strong>Vaksinisasi</strong></p> 
+                <p>
+                    Dalam rangka mendukung pencegahan dari Covid-19, RPTRA Kebon 
+                    Pala juga ikut serta dalam memberikan vaksinisasi gratis kepada
+                    masyarakat di sekitar RPTRA Kebon Pala.
+                </p>
+            </div>
+
+        </div>

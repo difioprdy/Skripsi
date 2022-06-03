@@ -13,7 +13,7 @@
     <header id="headerBar">
         <div id="navBar">
             <div>
-                <img id="LogoImg" src="assets/Logo2.png" alt="LogoImage"> 
+                <img id="LogoImg" src="assets/LH/logo2.jpeg" alt="LogoImage">
             </div>
             <div id="navBtn">
                 <ul>
@@ -23,8 +23,8 @@
                             <a  style="font-family: Monserat;" href="ContactUslh.html">Contact Us</a>
                         </div>
                     </li>
-                    <li><a  style="font-family: Monserat;" href="Home.html">RPTRA</a></li>
-                    <li><a style="color:red; font-family: Monserat;" href="Login.php">Login</a></li>
+                    <li><a  style="font-family: Monserat;" href="Edukasi.html">Edukasi</a></li>
+                    <li><a style="color:red; font-family: Monserat;" href="Login.html">Login</a></li>
                 </ul>
             </div> 
     </header>
@@ -36,20 +36,21 @@
 </div></center>
 
 <div class="container">
-  <form action="/action_page.php">
+  <form id="myForm">
     <label for="fname">Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your Name..">
+    <input type="text" id="name" placeholder="Your Name..">
 
     <label for="lname">Email</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your Email..">
+    <input type="text" id="email" placeholder="Your Email..">
 
     <label for="country">Subject</label>
-    <input type="text" id="lname" name="lastname" placeholder="Subject..">
+    <input type="text" id="subject" placeholder="Subject..">
 
     <label for="subject">Message</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="body" placeholder="Write something.." style="height:200px"></textarea>
 
-    <input type="submit" value="Submit">
+    <button type="button" onclick="contactUsMAIL()" value="Send An Email">Submit</button>
+    <h4 class="sent-notification"></h4>
   </form>
 </div>
 
@@ -78,6 +79,45 @@
         <p class="a10"><strong>Contact Person</strong> <br> Anwar <br> 0821-1157-0918</p>
     </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+<script type="text/javascript">
+    function contactUsMAIL(){
+        var name = $("#name");
+        var email = $("#email");
+        var subject = $("#subject");
+        var body = $("#body");
+
+        if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) &&  isNotEmpty(body)){
+            $.ajax({
+                url: 'contactUsMAIL.php',
+                method: 'POST',
+                dataType: 'json',
+                data:{
+                    name: name.val(),
+                    email: email.val(),
+                    subject: subject.val(),
+                    body: body.val(),
+                 }, success: function(response){
+                     $('#myForm')[0].reset();
+                     $('.sent-notification').text("Email berhasil terkirim, terima kasih!");
+                 }
+            });
+        }
+    }
+function isNotEmpty(caller){
+    if(caller.val() == ""){
+        caller.css('border', '1px solid red');
+        return false;
+    }
+    else
+    {
+        caller.css('border', '');
+        return true;
+    }
+}
+</script> 
 
 </body>
 </html>

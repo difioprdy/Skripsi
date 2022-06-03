@@ -115,6 +115,7 @@
     width: 40%;
     border: black;
     align-items: center;
+    margin-top: 80px;
 }
 
 #shirt :hover{
@@ -127,7 +128,6 @@
 }
 
 
-/* Footer */
 #footerBar{
     margin-top: 10px;
     background-color:black;
@@ -197,3 +197,4 @@
 .z4{
     margin-top: -70px;
 }
+

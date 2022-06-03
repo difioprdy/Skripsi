@@ -30,34 +30,52 @@
                 </ul>
             </div> 
     </header>
-
+    <?php
+        require 'config.php';
+        $query = mysqli_query($conn, "SELECT * FROM `headline_image_homepage_rptra`") or die(mysqli_error());
+        while($fetch = mysqli_fetch_array($query)){
+    ?>
 <!-- LandingPage -->
     <div class="landingpage">
         <div class="h1">
             <div class="h2">
                 <div class="boxed">
+
+                
                     <p class="boxed1">
-                        Ruang Publik 
-                        Terpadu <br> Ramah Anak
+                        <!-- Ruang Publik 
+                        Terpadu <br> Ramah Anak -->
+                        <?php echo $fetch['judul']?>
                     </p>
                 </div>
     
                 <div class="boxed2">
                     <p>
-                        Ruang Publik Terpadu Ramah Anak (RPTRA) merupakan ruang publik
+                        <!-- Ruang Publik Terpadu Ramah Anak (RPTRA) merupakan ruang publik
                         berupa ruang terbuka hijau ramah anak yang dilengkapi dengan berbagai 
                         fasilitas yang mendukung perkembangan anak, kenyamanan orangtua,
                         serta tempat berinteraksi seluruh warga dari berbagai kalangan. <br> <br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consectetur commodi quis ad facilis dolorum nihil voluptatum, nulla, in, ex cumque iste fuga odit enim iure! Distinctio nulla quo qui!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consectetur commodi quis ad facilis dolorum nihil voluptatum, nulla, in, ex cumque iste fuga odit enim iure! Distinctio nulla quo qui! -->
+
+                        <?php echo $fetch['deskripsi']?>
                     </p>
+
+
+                    
+
                 </div>
             </div>
             <div class="h3">
-                <img style="border-radius: 15px;" src="assets/gambar1.jpg" alt="">
+
+            
+            <img style="border-radius: 15px;" src="<?php echo $fetch['photo']?>" alt="">
+                <!-- <img style="border-radius: 15px;" src="assets/gambar1.jpg" alt=""> -->
             </div>
         </div>
     </div>
-
+    <?php
+					}
+				?>
 <!-- Pengumuman     -->
     <div class="p1">
         <div class="p2">

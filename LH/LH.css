@@ -23,7 +23,7 @@
 }
 
 #LogoImg{
-    width: 200px;
+    width: 180px;
     margin-top: 30px;
     height: auto;
     alt: "LogoImage";
@@ -149,6 +149,87 @@
     opacity: 0;
     transition: opacity 1s ease-in-out;
     border: 5px solid #cfff83;
+}
+
+/* Admin */
+.admin1{
+    height: 80vh;
+}
+.admin2{
+    display: flex;
+}
+#btnBuy1{
+    margin-top: 100px;
+    margin-left: 250px;
+}
+#btnBuyB{
+    font-weight: bold;
+    font-family: Monserat;
+    color: black;
+    border: none;
+    padding: 50px 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #cfff83;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+
+#btnBuy1 :hover{
+    background-color: whitesmoke;
+    color: #c95042;
+    box-shadow: 5px 5px 5px 5px whitesmoke;
+}
+.admin2{
+    display: flex;
+}
+#btnBuy2{
+    margin-top: 100px;
+    margin-left: 440px;
+}
+#btnBuyB1{
+    font-weight: bold;
+    font-family: Monserat;
+    color: black;
+    border: none;
+    padding: 50px 40px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #cfff83;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+
+#btnBuy3 :hover{
+    background-color: whitesmoke;
+    color: #c95042;
+    box-shadow: 5px 5px 5px 5px whitesmoke;
+}
+#btnBuy3{
+    margin-top: 100px;
+    margin-left: 280px;
+}
+#btnBuyB3{
+    font-weight: bold;
+    font-family: Monserat;
+    color: black;
+    border: none;
+    padding: 50px 40px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #cfff83;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+
+#btnBuy3 :hover{
+    background-color: whitesmoke;
+    color: #c95042;
+    box-shadow: 5px 5px 5px 5px whitesmoke;
 }
 
 

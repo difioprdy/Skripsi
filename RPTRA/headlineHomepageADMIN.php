@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
-        <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+        <script src="ckeditor/ckeditor.js"></script>
 	</head>
 <body>
 	<nav class="navbar navbar-default">
@@ -15,13 +15,14 @@
 	<div class="col-md-6 well">
 		<h3 class="text-primary">Edit Headline Homepage RPTRA Kebon Pala</h3>
 		<hr style="border-top:1px dotted #ccc;"/>
-		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Tambah Post</button>
+		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button>
 		<br /><br />
+		<h3 class="text-primary">Edit Foto dan Judul Headline</h3>
 		<table class="table table-bordered">
 			<thead class="alert-info">
 				<tr>
 					<th>Photo</th>
-					<th>Judul</th>
+					<th>Judul Headline Homepage</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -50,10 +51,11 @@
 							<img src="<?php echo $fetch['photo']?>" height="120" width="150" />
 							<input type="hidden" name="previous" value="<?php echo $fetch['photo']?>"/>
 							<h3>Post Baru</h3>
+							<label>(Foto harus landscape/memanjang kesamping)</label>
 							<input type="file" class="form-control" name="photo" value="<?php echo $fetch['photo']?>" required="required"/>
 						</div>
 						<div class="form-group">
-							<label>Judul</label>
+							<label>Judul Headline Homepage</label>
 							<input type="hidden" value="<?php echo $fetch['id']?>" name="id"/>
                             
                             <input type="text" class="form-control" value="<?php echo $fetch['judul']?>" name="judul" required="required"/>
@@ -78,8 +80,42 @@
 				?>
 			</tbody>
 		</table>
+
+		<br /><br />
+		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
+		<button><a href="headlineEditor.php">Add</a></button>
+		
+		<h3 class="text-primary">Edit Deskripsi Headline</h3>
+		<table class="table table-bordered">
+			<thead class="alert-info">
+				<tr>
+					<th>Deskripsi</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					require 'config.php';
+					$query = mysqli_query($conn, "SELECT * FROM `headline_deskripsi_homepage_rptra`") or die(mysqli_error());
+					while($row = mysqli_fetch_array($query)){
+				?>
+				<tr>
+					<td><?php echo $row['content']?></td>			
+					<td><a href="<?= 'updateDeskripsi.php?id=' .$row['id'] ?>">Update</a></td>
+				</tr>
+				<?php
+					}
+				?>
+			</tbody>
+		</table>
+
+
 	</div>
  
+
+	
+</div>
+
 <div class="modal fade" id="form_modal" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -123,3 +159,20 @@
                 </script>
 
 </html>
+
+<?php
+
+if(isset ($_POST['editor'])){
+	$text = $_POST['editor'];
+
+	require 'config.php';
+
+	$query = mysqli_query($conn, "INSERT INTO headline_deskripsi_homepage_rptra (content) VALUES ('$text')") or die(mysqli_error());
+	if($query){
+	}else{
+		echo "ERROR";
+	}
+
+}
+
+?>

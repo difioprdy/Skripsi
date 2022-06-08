@@ -48,7 +48,15 @@
                         <?php echo $fetch['judul']?>
                     </p>
                 </div>
-    
+                <?php
+					}
+				?>
+
+<?php
+        require 'config.php';
+        $query = mysqli_query($conn, "SELECT * FROM `headline_deskripsi_homepage_lh`") or die(mysqli_error());
+        while($fetch = mysqli_fetch_array($query)){
+    ?>
                 <div class="boxed2">
                     <p>
                         <!-- Ruang Publik Terpadu Ramah Anak (RPTRA) merupakan ruang publik
@@ -57,7 +65,7 @@
                         serta tempat berinteraksi seluruh warga dari berbagai kalangan. <br> <br>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consectetur commodi quis ad facilis dolorum nihil voluptatum, nulla, in, ex cumque iste fuga odit enim iure! Distinctio nulla quo qui! -->
 
-                        <?php echo $fetch['deskripsi']?>
+                        <?php echo $fetch['content']?>
                     </p>
 
 
@@ -67,15 +75,26 @@
             </div>
             <div class="h3">
 
-            
-            <img style="border-radius: 15px;" src="<?php echo $fetch['photo']?>" alt="">
+            <?php
+					}
+				?>
+
+            <?php
+        require 'config.php';
+        $query = mysqli_query($conn, "SELECT * FROM `headline_image_homepage_rptra`") or die(mysqli_error());
+        while($fetch = mysqli_fetch_array($query)){
+    ?>
+            <img height="500" width="700" style="border-radius: 15px;" src="<?php echo $fetch['photo']?>" alt="">
                 <!-- <img style="border-radius: 15px;" src="assets/gambar1.jpg" alt=""> -->
             </div>
         </div>
     </div>
+    
+
     <?php
 					}
 				?>
+
 <!-- Pengumuman     -->
     <div class="p1">
         <div class="p2">
@@ -130,9 +149,16 @@
                 <p class="a4">Tentang Kami</p>
             </div></center>
 
+            <?php
+        require 'config.php';
+        $query = mysqli_query($conn, "SELECT * FROM `tentangkami_deskripsi_homepage_rptra`") or die(mysqli_error());
+        while($fetch = mysqli_fetch_array($query)){
+    ?>
+
             <center>
-                <p class="a5">
-                    RPTRA Kebon Pala juga sering melakukan kegiatan-kegiatan tertentu yang bertujuan
+            <div class="a5">
+                <p>
+                    <!-- RPTRA Kebon Pala juga sering melakukan kegiatan-kegiatan tertentu yang bertujuan
                     untuk mendukung tumbuh kembang anak-anak yang terdapat di sekitar RPTRA Kebon Pala.
                     Selain untuk itu juga, RPTRA Kebon Pala juga menyelenggarakan beberapa kegiatan lain
                     seperti tempat untuk vaksinisasi Covid-19, pembelajaran kepada ibu-ibu PKK mengenai
@@ -140,8 +166,16 @@
                     Dapat dilihat di bawah contoh-contoh dari kegiatan-kegiatan yang di lakukan oleh RPTRA
                     Kebon Pala. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus autem 
                     sapiente, unde reprehenderit illo cumque fugiat ut! Inventore praesentium culpa doloribus                        voluptatum maiores ratione, fugit voluptatibus nisi laudantium porro tempora.
+                 -->
+
+                 <?php echo $fetch['content']?>
                 </p>
+                </div>
             </center>
+
+            <?php
+					}
+				?>
 
             <div class="a6">
                 <div class="a10">

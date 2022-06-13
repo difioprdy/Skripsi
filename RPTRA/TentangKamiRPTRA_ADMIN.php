@@ -17,19 +17,19 @@
 		<hr style="border-top:1px dotted #ccc;"/>
 		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button>
 		<br /><br />
-		<h3 class="text-primary">Ganti Foto dan Judul Headline</h3>
+		<h3 class="text-primary">Ganti Foto dan Nama Foto</h3>
 		<table class="table table-bordered">
 			<thead class="alert-info">
 				<tr>
 					<th>Photo</th>
-					<th>Judul Headline Homepage</th>
+					<th>Nama Kegiatan Pada Foto</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 					require 'config.php';
-					$query = mysqli_query($conn, "SELECT * FROM `headline_image_homepage_rptra`") or die(mysqli_error());
+					$query = mysqli_query($conn, "SELECT * FROM `tentangkami_image_homepage_rptra`") or die(mysqli_error());
 					while($fetch = mysqli_fetch_array($query)){
 				?>
 				<tr>
@@ -39,7 +39,7 @@
 <div class="modal fade" id="edit<?php echo $fetch['id']?>" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form method="POST" enctype="multipart/form-data" action="edit_hhomepage.php">
+			<form method="POST" enctype="multipart/form-data" action="tentangkami_edit.php">
 				<div class="modal-header">
 					<h3 class="modal-title">Edit Post</h3>
 				</div>
@@ -55,7 +55,7 @@
 							<input type="file" class="form-control" name="photo" value="<?php echo $fetch['photo']?>" required="required"/>
 						</div>
 						<div class="form-group">
-							<label>Judul Headline Homepage</label>
+							<label>Nama Kegiatan Pada Foto</label>
 							<input type="hidden" value="<?php echo $fetch['id']?>" name="id"/>
                             
                             <input type="text" class="form-control" value="<?php echo $fetch['judul']?>" name="judul" required="required"/>
@@ -121,7 +121,7 @@
 <div class="modal fade" id="form_modal" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form method="POST" enctype="multipart/form-data">
+			<form method="POST" action="tentangkami_save.php" enctype="multipart/form-data">
 				<div class="modal-header">
 					<h3 class="modal-title">Tambah Post</h3>
 				</div>
@@ -133,7 +133,7 @@
 							<input type="file" class="form-control" name="photo" required="required"/>
 						</div>
 						<div class="form-group">
-							<label>Judul</label>
+							<label>Nama Kegiatan Pada Foto</label>
                             <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
 							<input type="text" class="form-control" name="judul" required="required"/>
 						</div>

@@ -136,7 +136,7 @@
 
 <?php
         require 'config.php';
-        $query = mysqli_query($conn, "SELECT * FROM `headline_image_homepage_lh`") or die(mysqli_error());
+        $query = mysqli_query($conn, "SELECT * FROM `tentangkami_image_homepage_lh`") or die(mysqli_error());
         while($fetch = mysqli_fetch_array($query)){
     ?>
 
@@ -146,8 +146,7 @@
                 <img id="imageSlide" src="assets/LH/LH3.jpg">
                 <img id="imageSlide" src="assets/LH/LH4.jpg"> -->
 
-                <img id="imageSlide" style="border-radius: 15px;" src="<?php echo $fetch['photo']?>" alt="">
-
+                <img id="imageSlide" src="<?php echo $fetch['photo']?>">
             </div>
             <?php
 					}

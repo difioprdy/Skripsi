@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
             $stmt = $mysqli->prepare("INSERT INTO bookings (name, timeslot, email, date) VALUES (?,?,?,?)");
             $stmt->bind_param('ssss', $name, $timeslot, $email, $date);
             $stmt->execute();
-            $msg = "<div class='alert alert-success'>Booking Successfull</div>";
+            $msg = "<div class='alert alert-success'>Booking sukses, silakan datang ke RPTRA sesuai dengan tanggal dan waktu anda. Terima kasih..</div>";
             $bookings[] = $timeslot;
             $stmt->close();
             $mysqli->close();

@@ -17,7 +17,7 @@
 		<hr style="border-top:1px dotted #ccc;"/>
 		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button>
 		<br /><br />
-		<h3 class="text-primary">Edit Foto dan Judul Headline</h3>
+		<h3 class="text-primary">Ganti Foto dan Judul Headline</h3>
 		<table class="table table-bordered">
 			<thead class="alert-info">
 				<tr>

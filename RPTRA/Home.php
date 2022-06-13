@@ -25,7 +25,7 @@
                             <a style="font-family: Monserat;" href="ContactUs.html">Contact Us</a>
                         </div>
                     </li>
-                    <li><a href="Partner.html">Program Kegiatan</a></li>
+                    <li><a href="Partner.php">Program Kegiatan</a></li>
                     <li><a style="color:red; font-family: Monserat;" href="login.php">Login</a></li>
                 </ul>
             </div> 
@@ -167,7 +167,6 @@
                     Kebon Pala. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus autem 
                     sapiente, unde reprehenderit illo cumque fugiat ut! Inventore praesentium culpa doloribus                        voluptatum maiores ratione, fugit voluptatibus nisi laudantium porro tempora.
                  -->
-
                  <?php echo $fetch['content']?>
                 </p>
                 </div>

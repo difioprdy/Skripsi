@@ -17,7 +17,7 @@
 		<hr style="border-top:1px dotted #ccc;"/>
 		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button>
 		<br /><br />
-		<h3 class="text-primary">Edit Foto dan Judul Headline</h3>
+		<h3 class="text-primary">Ganti Foto dan Judul Headline</h3>
 		<table class="table table-bordered">
 			<thead class="alert-info">
 				<tr>
@@ -116,10 +116,12 @@
 	
 </div>
 
+
+<!-- buat tambah foto dan judul di atas -->
 <div class="modal fade" id="form_modal" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form method="POST" action="save_hhomepage.php" enctype="multipart/form-data">
+			<form method="POST" enctype="multipart/form-data">
 				<div class="modal-header">
 					<h3 class="modal-title">Tambah Post</h3>
 				</div>

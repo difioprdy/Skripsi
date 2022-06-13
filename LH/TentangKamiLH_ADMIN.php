@@ -15,31 +15,29 @@
 	<div class="col-md-6 well">
 		<h3 class="text-primary">Edit Tentang Kami Homepage Lingkungan Hidup Kebon Pala</h3>
 		<hr style="border-top:1px dotted #ccc;"/>
-		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button>
+		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Tambah Foto Tentang Kami</button>
 		<br /><br />
-		<h3 class="text-primary">Edit Foto dan Judul Headline</h3>
+		<h3 class="text-primary">Ganti Foto Tentang Kami</h3>
 		<table class="table table-bordered">
 			<thead class="alert-info">
 				<tr>
-					<th>Photo</th>
-					<th>Judul Headline Homepage</th>
+					<th>Photo Tentang Kami</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 					require 'config.php';
-					$query = mysqli_query($conn, "SELECT * FROM `headline_image_homepage_lh`") or die(mysqli_error());
+					$query = mysqli_query($conn, "SELECT * FROM `tentangkami_image_homepage_lh`") or die(mysqli_error());
 					while($fetch = mysqli_fetch_array($query)){
 				?>
 				<tr>
-					<td><img src="<?php echo $fetch['photo']?>" height="80" width="100"/></td>
-					<td><?php echo $fetch['judul']?></td>			
+					<td><img src="<?php echo $fetch['photo']?>" height="80" width="100"/></td>		
 					<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?php echo $fetch['id']?>"><span class="glyphicon glyphicon-edit"></span> Update</button></td>
 <div class="modal fade" id="edit<?php echo $fetch['id']?>" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form method="POST" enctype="multipart/form-data" action="edit_hhomepage.php">
+			<form method="POST" enctype="multipart/form-data" action="tentangkami_edit.php">
 				<div class="modal-header">
 					<h3 class="modal-title">Edit Post</h3>
 				</div>
@@ -54,15 +52,16 @@
 							<label>(Foto harus landscape/memanjang kesamping)</label>
 							<input type="file" class="form-control" name="photo" value="<?php echo $fetch['photo']?>" required="required"/>
 						</div>
+
 						<div class="form-group">
-							<label>Judul Headline Homepage</label>
 							<input type="hidden" value="<?php echo $fetch['id']?>" name="id"/>
                             
-                            <input type="text" class="form-control" value="<?php echo $fetch['judul']?>" name="judul" required="required"/>
+                            <input type="hidden" class="form-control" value="<?php echo $fetch['judul']?>" name="judul"/>
 
                             
 
 						</div>
+
 					</div>
 				</div>
 				<br style="clear:both;"/>
@@ -116,10 +115,11 @@
 	
 </div>
 
+
 <div class="modal fade" id="form_modal" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form method="POST" action="save_hhomepage.php" enctype="multipart/form-data">
+			<form method="POST" action="tentangkami_save.php" enctype="multipart/form-data">
 				<div class="modal-header">
 					<h3 class="modal-title">Tambah Post</h3>
 				</div>
@@ -131,9 +131,8 @@
 							<input type="file" class="form-control" name="photo" required="required"/>
 						</div>
 						<div class="form-group">
-							<label>Judul</label>
                             <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
-							<input type="text" class="form-control" name="judul" required="required"/>
+							<input type="hidden" class="form-control" name="judul" required="required"/>
 						</div>
 					</div>
 				</div>

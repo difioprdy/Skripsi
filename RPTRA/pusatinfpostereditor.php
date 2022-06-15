@@ -48,10 +48,10 @@ if(isset ($_POST['editor'])){
 
 	require 'config.php';
 
-	$query = mysqli_query($conn, "INSERT INTO halaman_utama_program_kegiatan (deskripsi) VALUES ('$text')");
+	$query = mysqli_query($conn, "INSERT INTO tentangkami_deskripsi_homepage_rptra (content) VALUES ('$text')");
 	if($query){
 		echo "ADDED";
-        header("location: program_kegiatanADMIN.php");
+        header("location: TentangKamiRPTRA_ADMIN.php");
 	}else{
 		echo "ERROR";
 	}

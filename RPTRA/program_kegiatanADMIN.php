@@ -83,7 +83,7 @@
 
 		<br /><br />
 		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
-		<button><a href="program_kegiatanEditor.php">Add</a></button>
+		
 		
 		<h3 class="text-primary">Edit Deskripsi BKB Paud</h3>
 		<table class="table table-bordered">
@@ -223,7 +223,7 @@
 
 		<br /><br />
 		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
-		<button><a href="program_kegiatanEditor.php">Add</a></button>
+		
 		
 		<h3 class="text-primary">Edit Deskripsi PIK</h3>
 		<table class="table table-bordered">
@@ -361,7 +361,7 @@
 
 		<br /><br />
 		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
-		<button><a href="program_kegiatanEditor.php">Add</a></button>
+		
 		
 		<h3 class="text-primary">Edit Deskripsi UP2K</h3>
 		<table class="table table-bordered">
@@ -499,7 +499,7 @@
 
 		<br /><br />
 		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
-		<button><a href="program_kegiatanEditor.php">Add</a></button>
+		
 		
 		<h3 class="text-primary">Edit Deskripsi Hati PKK</h3>
 		<table class="table table-bordered">
@@ -637,7 +637,7 @@
 
 		<br /><br />
 		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
-		<button><a href="program_kegiatanEditor.php">Add</a></button>
+		
 		
 		<h3 class="text-primary">Edit Deskripsi Posyandu</h3>
 		<table class="table table-bordered">
@@ -774,7 +774,7 @@
 
 		<br /><br />
 		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
-		<button><a href="program_kegiatanEditor.php">Add</a></button>
+		
 		
 		<h3 class="text-primary">Edit Deskripsi SIM PKK</h3>
 		<table class="table table-bordered">

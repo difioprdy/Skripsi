@@ -2,7 +2,7 @@
 $mysqli = new mysqli('localhost', 'root', '', 'rptra_lh');
 if(isset($_GET['date'])){
     $date = $_GET['date'];
-    $stmt = $mysqli->prepare("select * from bookings where date = ?");
+    $stmt = $mysqli->prepare("select * from bookings_futsal where date = ?");
     $stmt->bind_param('s', $date);
     $bookings = array();
     if($stmt->execute()){
@@ -21,14 +21,14 @@ if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $telfon = $_POST['telfon'];
     $timeslot = $_POST['timeslot'];
-    $stmt = $mysqli->prepare("select * from bookings where date = ? AND timeslot=?");
+    $stmt = $mysqli->prepare("select * from bookings_futsal where date = ? AND timeslot=?");
     $stmt->bind_param('ss', $date, $timeslot);
     if($stmt->execute()){
         $result = $stmt->get_result();
         if($result->num_rows>0){
             $msg = "<div class='alert alert-danger'>Already Booked</div>";
         }else{
-            $stmt = $mysqli->prepare("INSERT INTO bookings (name, timeslot, telfon, date) VALUES (?,?,?,?)");
+            $stmt = $mysqli->prepare("INSERT INTO bookings_futsal (name, timeslot, telfon, date) VALUES (?,?,?,?)");
             $stmt->bind_param('ssss', $name, $timeslot, $telfon, $date);
             $stmt->execute();
             // tombol invoice setelah user booking tempat, akan muncul setelah selesai booking tempat

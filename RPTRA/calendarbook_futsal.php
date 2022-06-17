@@ -90,7 +90,7 @@ function build_calendar($month, $year) {
          if($date<date('Y-m-d')){
              $calendar.="<td><h4>$currentDay</h4> <button class='btn btn-danger btn-xs'>N/A</button>";
          }else{
-             $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='book.php?date=".$date."' class='btn btn-success btn-xs'>Book</a>";
+             $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='book_ruangserbaguna.php?date=".$date."' class='btn btn-success btn-xs'>Book</a>";
          }
             
             
@@ -174,25 +174,25 @@ function build_calendar($month, $year) {
 		Label the data
 		*/
             td:nth-of-type(1):before {
-                content: "Sunday";
+                content: "Minggu";
             }
             td:nth-of-type(2):before {
-                content: "Monday";
+                content: "Senin";
             }
             td:nth-of-type(3):before {
-                content: "Tuesday";
+                content: "Selasa";
             }
             td:nth-of-type(4):before {
-                content: "Wednesday";
+                content: "Rabu";
             }
             td:nth-of-type(5):before {
-                content: "Thursday";
+                content: "Kamis";
             }
             td:nth-of-type(6):before {
-                content: "Friday";
+                content: "Jumat";
             }
             td:nth-of-type(7):before {
-                content: "Saturday";
+                content: "Sabtu";
             }
 
 

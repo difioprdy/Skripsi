@@ -1,3 +1,19 @@
+<?php
+include('config.php');
+
+$sql="SELECT * FROM aktivasibookingruang";
+$perintah=mysqli_query($conn, $sql);
+$fetch=mysqli_fetch_array($perintah);
+?>
+
+<?php
+include('config.php');
+
+$sql="SELECT * FROM aktivasibookingfutsal";
+$perintah=mysqli_query($conn, $sql);
+$row=mysqli_fetch_array($perintah);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,25 +46,56 @@
                 </div>
                 <div id="btnBuy1">
                     <form action="calendarbook_futsalADMIN.php" method="post">
-                        <button type="submit" id="btnBuyB">BOOK</button>
+                        <button type="submit" id="btnBuyB">Atur Sesuai Tanggal dan Waktu</button>
                     </form>
                 </div>
-            </div>
+                <!-- . -->
+                <form role="form" method="post" action="proses_aktivasi_bookingfutsal.php">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="<?php echo "$row[id]"?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Pengaturan aktivasi booking Lapangan Futsal</label>
+                        <select class="form-control" name="status_form" id="status_form" required="">
+                            <option>Nonaktifkan</option>
+                            <option>Aktifkan kembali</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="simpan" id="simpan">save</button>
+                </form>
 
-            <div id="box">
-                <div id="shirt">
-                    <img src="assets/fasilitas.jpg" id="shirt1">
-                </div>
-                <div id="text">
-                    <span id="textBox">Ruang Serba Guna</span><br>
-                </div>
-                <div id="btnBuy1">
-                    <form action="calendarbook_ruangserbagunaADMIN.php" method="post">
-                        <button type="submit" id="btnBuyB">BOOK</button>
-                    </form>
-                </div>
-            </div>
+                <!-- . -->
+                <div id="box">
+                    <div id="shirt">
+                        <img src="assets/fasilitas.jpg" id="shirt1">
+                    </div>
+                    <div id="text">
+                        <span id="textBox">Ruang Serba Guna</span><br>
+                    </div>
+                    <div id="btnBuy1">
+                        <form action="calendarbook_ruangserbagunaADMIN.php" method="post">
+                            <button type="submit" id="btnBuyB">Atur Sesuai Tanggal dan Waktu</button>
+                        </form>
 
+                        <form role="form" method="post" action="proses_aktivasi_bookingruang.php">
+                            <div class="form-group">
+                                <input type="hidden" name="id" value="<?php echo "$fetch[id]"?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Pengaturan aktivasi booking Ruang Serbaguna</label>
+                                <select class="form-control" name="status_form" id="status_form" required="">
+                                    <option>Nonaktifkan</option>
+                                    <option>Aktifkan kembali</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="simpan" id="simpan">save</button>
+                        </form>
+
+
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -101,7 +148,8 @@
                                 <form action="deleteDataBooking.php" method="post">
                                     <button class="btn btn-default" data-dismiss="modal">Belum menghubungi.</button>
                                     <input type="hidden" name="id" value="<?php echo $fetch['id']?>">
-                                    <button value="DELETE" name="deleteFutsal" class="btn btn-danger" type="submit">Sudah
+                                    <button value="DELETE" name="deleteFutsal" class="btn btn-danger"
+                                        type="submit">Sudah
                                         menghubungi, hapus
                                         sekarang.</button>
                                 </form>
@@ -177,7 +225,7 @@
 				?>
             </tbody>
         </table>
-    </div>
+        </div>
     </div>
 
     <script src="js1/jquery-3.2.1.min.js"></script>

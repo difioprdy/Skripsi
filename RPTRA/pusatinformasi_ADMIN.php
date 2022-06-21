@@ -67,7 +67,7 @@
 				<tr>
 					<td><?php echo $row['judul']?></td>	
 					<td><?php echo $row['content']?></td>			
-					<td><a href="<?= 'updateDeskripsi_tentangkami.php?id=' .$row['id'] ?>">Update</a></td>
+					<td><a href="<?= 'updateberita_pusatinf.php?id=' .$row['id'] ?>">Update</a></td>
 				</tr>
 				<?php
 					}

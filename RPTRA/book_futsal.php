@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
                   <br> 
                   Nomor telfon: <b>$telfon</b>
                   <br>
-                  Tempat yang dibooking : <b></b>
+                  Tempat yang dibooking : <b>Lapangan Futsal</b>
                   </div>
                   <div class='modal-footer'>
                     <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>

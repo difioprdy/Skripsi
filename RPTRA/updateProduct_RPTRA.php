@@ -4,7 +4,7 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
 }
 else{
-    header('Location : pusatinformasi_ADMIN.php?success=0');
+    header('Location : ProductRPTRA_ADMIN.php?success=0');
 }
 
 
@@ -21,14 +21,26 @@ else{
 <body>
 
 
-    <form action="update_post_isiberitaposter_pusatinf.php" method="post">
-        <?php $query = mysqli_query($conn, "SELECT * FROM pusatinformasi WHERE id= '$id'");
+    <form action="update_post_product_RPTRA.php" method="post">
+        <?php $query = mysqli_query($conn, "SELECT * FROM tbl_product WHERE id= '$id'");
             $row = mysqli_fetch_array($query);
             ?>
-        <div class="form-group" name="judul">
-            <label>Judul Berita</label>
+        <div class="form-group" name="nama_product">
+            <label>Nama Product</label>
             <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
-            <input type="text" class="form-control" value=" <?= $row['judul']; ?>" name="judul" required="required" />
+            <input type="text" class="form-control" value=" <?= $row['nama_product']; ?>" name="nama_product" required="required" />
+        </div>
+
+        <div class="form-group" name="price">
+            <label>Harga Product</label>
+            <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
+            <input type="text" class="form-control" value=" <?= $row['price']; ?>" name="price" required="required" />
+        </div>
+
+        <div class="form-group" name="kategori">
+            <label>Kategori Product</label>
+            <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
+            <input type="text" class="form-control" value=" <?= $row['kategori']; ?>" name="kategori" required="required" />
         </div>
         <input type="hidden" name="id" value="<?= $id ?>">
         <button type="submit">Update</button>
@@ -37,8 +49,8 @@ else{
     
 
 <!-- baru -->
-			<form method="POST" enctype="multipart/form-data" action="update_post_isiberitaposter_pusatinf.php">
-            <?php $query = mysqli_query($conn, "SELECT * FROM pusatinformasi WHERE id= '$id'");
+			<form method="POST" enctype="multipart/form-data" action="update_post_product_RPTRA.php">
+            <?php $query = mysqli_query($conn, "SELECT * FROM tbl_product WHERE id= '$id'");
             $row = mysqli_fetch_array($query);
             ?>
 						<div class="form-group">
@@ -60,17 +72,6 @@ else{
 				</div>
 			</form>
 				
-
-    <form action="update_post_isiberitaposter_pusatinf.php" method="post">
-        <textarea class="ckeditor" name="editor">
-            <?php $query = mysqli_query($conn, "SELECT * FROM pusatinformasi WHERE id= '$id'");
-            $row = mysqli_fetch_array($query);
-            ?>
-            <?= $row['content']; ?>
-        </textarea>
-        <input type="hidden" name="id" value="<?= $id ?>">
-        <button type="submit">Update</button>
-    </form>
 
 </body>
 

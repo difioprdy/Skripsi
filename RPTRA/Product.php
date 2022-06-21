@@ -1,3 +1,58 @@
+<?php 
+session_start();
+$connect = mysqli_connect("localhost", "root", "", "rptra_lh");
+
+if(isset($_POST["add_to_cart"]))
+{
+	if(isset($_SESSION["shopping_cart"]))
+	{
+		$item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
+		if(!in_array($_GET["id"], $item_array_id))
+		{
+			$count = count($_SESSION["shopping_cart"]);
+			$item_array = array(
+				'item_id'			=>	$_GET["id"],
+				'item_name'			=>	$_POST["hidden_name"],
+				'item_price'		=>	$_POST["hidden_price"],
+				'item_quantity'		=>	$_POST["quantity"]
+			);
+			$_SESSION["shopping_cart"][$count] = $item_array;
+		}
+		else
+		{
+			echo '<script>alert("Item Already Added")</script>';
+		}
+	}
+	else
+	{
+		$item_array = array(
+			'item_id'			=>	$_GET["id"],
+			'item_name'			=>	$_POST["hidden_name"],
+			'item_price'		=>	$_POST["hidden_price"],
+			'item_quantity'		=>	$_POST["quantity"]
+		);
+		$_SESSION["shopping_cart"][0] = $item_array;
+	}
+}
+
+if(isset($_GET["action"]))
+{
+	if($_GET["action"] == "delete")
+	{
+		foreach($_SESSION["shopping_cart"] as $keys => $values)
+		{
+			if($values["item_id"] == $_GET["id"])
+			{
+				unset($_SESSION["shopping_cart"][$keys]);
+				echo '<script>alert("Item Removed")</script>';
+				echo '<script>window.location="index.php"</script>';
+			}
+		}
+	}
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,24 +111,42 @@
             </div>
             
 
+            <?php
+            $query = "SELECT * FROM tbl_product ORDER BY id ASC";
+            $result = mysqli_query($connect, $query);
+            if(mysqli_num_rows($result) > 0)
+            {
+                while($row = mysqli_fetch_array($result))
+                {
+            ?>
 
             <div id="box">
                 <div id="shirt">
-                    <img src="assets/produk.png" id="shirt1">
+                    <!-- <img src="assets/produk.png" id="shirt1"> -->
+                    <img src="<?php echo $row["photo"]; ?>" height="300" width="320" /><br />
                 </div>
                 <div id="text">
-                    <span id="textBox">Kopi Susu</span><br>
+                    <!-- <span id="textBox">Kopi Susu</span><br> -->
+                    <h4 id="textBox"><?php echo $row["nama_product"]; ?></h4>
                     <span style="font-family: Monserat;">
                         Kopi susu merupakan minuman yang terdiri dari campuran kopi <br> dan susu.
                         Biasanya susu yang digunakan untuk kopi susu <br> kekinian adalah susu segar.
                     </span><br>
-                    <span id="textBox2">RP 10.000,-</span>
+                    <!-- <span id="textBox2">RP 10.000,-</span> -->
+                    <h4 id="textBox2">Rp. <?php echo $row["price"]; ?></h4>
                 </div>
                 <div id="btnBuy1">
                     <button type="button" id="btnBuyB">BUY</button>
                 </div>
             </div>
-            <div id="box">
+
+
+            <?php
+					}
+				}
+			?>
+
+            <!-- <div id="box">
                 <div id="shirt">
                     <img src="assets/produk.png" id="shirt1">
                 </div>
@@ -120,7 +193,7 @@
                 <div id="btnBuy1">
                     <button type="button" id="btnBuyB">BUY</button>
                 </div>
-            </div>
+            </div> -->
         </div>
 </div>
     

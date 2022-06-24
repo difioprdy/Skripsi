@@ -7,6 +7,7 @@
 		$price = $_POST['price'];
 		$nama_foto_hidden = $_POST['nama_foto_hidden'];
 		$kategori = $_POST['kategori'];
+		$deskripsi_product = $_POST['deskripsi_product'];
 		$exp = explode(".", $image_name);
 		$end = end($exp);
 		$name = time().".".$end;
@@ -16,7 +17,7 @@
 		$allowed_ext = array("gif", "jpg", "jpeg", "png");
 		if(in_array($end, $allowed_ext)){
 			if(move_uploaded_file($image_temp, $path)){
-				mysqli_query($conn, "INSERT INTO `tbl_product` VALUES('', '$nama_product', '$path', '$price', '$kategori', '$nama_foto_hidden')") or die(mysqli_error());
+				mysqli_query($conn, "INSERT INTO `tbl_product` VALUES('', '$nama_product','$deskripsi_product' ,'$path', '$price', '$kategori', '$nama_foto_hidden')") or die(mysqli_error());
 				echo "<script>alert('User account saved!')</script>";
 				header("location: ProductRPTRA_ADMIN.php");
 			}

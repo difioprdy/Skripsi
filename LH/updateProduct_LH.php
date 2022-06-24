@@ -21,15 +21,26 @@ else{
 <body>
 
 
-    <form action="update_post_product_RPTRA.php" method="post">
+    <form action="update_post_product_LH.php" method="post">
         <?php $query = mysqli_query($conn, "SELECT * FROM tbl_productlh WHERE id= '$id'");
             $row = mysqli_fetch_array($query);
             ?>
-        <div class="form-group" name="nama_product">
+        <div class="form-group">
             <label>Nama Product</label>
             <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
             <input type="text" class="form-control" value=" <?= $row['nama_product']; ?>" name="nama_product"
                 required="required" />
+        </div>
+
+        <div class="form-group" name="deskripsi_product">
+            <label>Deskripsi Product</label>
+            <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
+
+
+            <textarea class="ckeditor" name="deskripsi_product">
+            <?= $row['deskripsi_product']; ?>
+            </textarea>
+
         </div>
 
         <div class="form-group" name="price">
@@ -51,7 +62,7 @@ else{
 
 
     <!-- baru -->
-    <form method="POST" enctype="multipart/form-data" action="update_post_product_RPTRA.php">
+    <form method="POST" enctype="multipart/form-data" action="update_post_product_LH.php">
         <?php $query = mysqli_query($conn, "SELECT * FROM tbl_productlh WHERE id= '$id'");
             $row = mysqli_fetch_array($query);
             ?>

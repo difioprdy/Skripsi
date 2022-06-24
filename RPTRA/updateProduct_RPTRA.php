@@ -25,10 +25,22 @@ else{
         <?php $query = mysqli_query($conn, "SELECT * FROM tbl_product WHERE id= '$id'");
             $row = mysqli_fetch_array($query);
             ?>
-        <div class="form-group" name="nama_product">
+        <div class="form-group">
             <label>Nama Product</label>
             <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
-            <input type="text" class="form-control" value=" <?= $row['nama_product']; ?>" name="nama_product" required="required" />
+            <input type="text" class="form-control" value=" <?= $row['nama_product']; ?>" name="nama_product"
+                required="required" />
+        </div>
+
+        <div class="form-group" name="deskripsi_product">
+            <label>Deskripsi Product</label>
+            <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
+
+
+            <textarea class="ckeditor" name="deskripsi_product">
+            <?= $row['deskripsi_product']; ?>
+            </textarea>
+
         </div>
 
         <div class="form-group" name="price">
@@ -40,38 +52,40 @@ else{
         <div class="form-group" name="kategori">
             <label>Kategori Product</label>
             <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
-            <input type="text" class="form-control" value=" <?= $row['kategori']; ?>" name="kategori" required="required" />
+            <input type="text" class="form-control" value=" <?= $row['kategori']; ?>" name="kategori"
+                required="required" />
         </div>
         <input type="hidden" name="id" value="<?= $id ?>">
         <button type="submit">Update</button>
     </form>
 
-    
 
-<!-- baru -->
-			<form method="POST" enctype="multipart/form-data" action="update_post_product_RPTRA.php">
-            <?php $query = mysqli_query($conn, "SELECT * FROM tbl_product WHERE id= '$id'");
+
+    <!-- baru -->
+    <form method="POST" enctype="multipart/form-data" action="update_post_product_RPTRA.php">
+        <?php $query = mysqli_query($conn, "SELECT * FROM tbl_product WHERE id= '$id'");
             $row = mysqli_fetch_array($query);
             ?>
-						<div class="form-group">
-							<h3>Post Sekarang</h3>
-							<img src="<?= $row['photo']; ?>" height="120" width="150" />
-							<input type="hidden" name="previous" value="<?= $row['photo']; ?>" />
-							<h3>Post Baru</h3>
-							<label>(Foto harus landscape/memanjang kesamping)</label>
-							<input type="file" class="form-control" name="photo" value="<?= $row['photo']; ?>" required="required" />
-						</div>
-							<label>Nama Kegiatan Pada Foto</label>
-							<input type="hidden" value="<?= $row['id']; ?>" name="id" />
-                            <input type="hidden" type="text" class="form-control" value="hidden" name="nama_foto_hidden" required="required" />
+        <div class="form-group">
+            <h3>Post Sekarang</h3>
+            <img src="<?= $row['photo']; ?>" height="120" width="150" />
+            <input type="hidden" name="previous" value="<?= $row['photo']; ?>" />
+            <h3>Post Baru</h3>
+            <label>(Foto harus landscape/memanjang kesamping)</label>
+            <input type="file" class="form-control" name="photo" value="<?= $row['photo']; ?>" required="required" />
+        </div>
+        <label>Nama Kegiatan Pada Foto</label>
+        <input type="hidden" value="<?= $row['id']; ?>" name="id" />
+        <input type="hidden" type="text" class="form-control" value="hidden" name="nama_foto_hidden"
+            required="required" />
 
-                            
-				<br style="clear:both;"/>
-				<div class="modal-footer">
-					<button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
-				</div>
-			</form>
-				
+
+        <br style="clear:both;" />
+        <div class="modal-footer">
+            <button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+        </div>
+    </form>
+
 
 </body>
 

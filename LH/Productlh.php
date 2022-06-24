@@ -60,8 +60,8 @@ if(isset($_GET["action"]))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Home.js" defer></script>
+    <link rel="stylesheet" href="Productlh.css">
     <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
-    <link rel="stylesheet" href="Product.css">
     <title>Product</title>
 </head>
 
@@ -70,21 +70,18 @@ if(isset($_GET["action"]))
     <header id="headerBar">
         <div id="navBar">
             <div>
-                <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
-                <img id="LogoImg" src="assets/Logo2.png" alt="LogoImage">
-                <img style="width: 5%;" id="LogoImg" src="assets/logo3.jpeg" alt="">
+                <img id="LogoImg" src="assets/LH/logo2.jpeg" alt="LogoImage">
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="Home.html">Home</a>
+                    <li><a style="font-family: Monserat;" href="LH.html">Home</a>
                         <div class="dropDownMenu">
-                            <a href="Product.html">Product</a>
-                            <a href="BookFacillites.html">Booking Fasilitas</a>
-                            <a href="ContactUs.html">Contact Us</a>
+                            <a style="font-family: Monserat;" href="Productlh.html">Product</a>
+                            <a style="font-family: Monserat;" href="ContactUs.html">Contact Us</a>
                         </div>
                     </li>
-                    <li><a href="Partner.html">Partner</a></li>
-                    <li><a style="color:red" href="Login.html">Login</a></li>
+                    <li><a style="font-family: Monserat;" href="Edukasi.html">Edukasi</a></li>
+                    <li><a style="color:red; font-family: Monserat;" href="Login.html">Login</a></li>
                 </ul>
             </div>
     </header>
@@ -92,8 +89,7 @@ if(isset($_GET["action"]))
 
     <!-- Product -->
     <div id="part1">
-        <center class="color:#272727" style="font-size:40px"><strong style=" font-family: Monserat;">PRODUCT</strong>
-        </center>
+        <center class="color:#272727" style="font-size:40px; font-family: Monserat;"><strong>PRODUCT</strong></center>
         <center style="color:#727272; margin-bottom: 80px; font-family: Monserat;">UMKM RPTRA Kebon Pala</center>
         <div id="boxBestSeller">
 
@@ -102,11 +98,10 @@ if(isset($_GET["action"]))
                     <div id="z2">
                         <div id="z3">
                             <ul>
-                                <li><a href="Prouct.html">Kategori</a>
+                                <li><a href="Prouctlh.html">Kategori</a>
                                     <div class="dropDownMenu">
-                                        <a href="Productmakanan.html">Makanan</a>
-                                        <a href="Productminuman.html">Minuman</a>
                                         <a href="Productkerajinan.html">Kerajinan</a>
+                                        <a href="Productpupuk.html">Pupuk</a>
                                     </div>
                                 </li>
                             </ul>
@@ -114,15 +109,15 @@ if(isset($_GET["action"]))
                 </header>
             </div>
 
-
             <?php
-            $query = "SELECT * FROM tbl_product ORDER BY id ASC";
+            $query = "SELECT * FROM tbl_productlh ORDER BY id ASC";
             $result = mysqli_query($connect, $query);
             if(mysqli_num_rows($result) > 0)
             {
                 while($row = mysqli_fetch_array($result))
                 {
             ?>
+
 
             <div id="box">
                 <div id="shirt">
@@ -175,7 +170,6 @@ if(isset($_GET["action"]))
                     </div>
                 </div>
             </div>
-
             <?php
 					}
 				}
@@ -183,16 +177,17 @@ if(isset($_GET["action"]))
         </div>
     </div>
 
+    
+
     <!-- Footer -->
     <footer id="footerBar">
         <div id="txtCopy">
             &#169 2016 - RPTRA Kebon Pala
         </div>
         <div id="sosmedImg">
-            <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+            <p class="a10"><strong>Contact Person</strong> <br> Anwar <br> 0821-1157-0918</p>
         </div>
     </footer>
-
     <script src="js1/jquery-3.2.1.min.js"></script>
     <script src="js1/bootstrap.js"></script>
 </body>

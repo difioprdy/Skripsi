@@ -34,7 +34,7 @@ $row=mysqli_fetch_array($perintah);
     <div class="col-md-3"></div>
     <div class="col-md-6 well">
         <h3 class="text-primary"
-            style=" text-align: center; color:#727272; margin-bottom: 80px; font-family: Monserat;">Atur Tempat Booking
+            style=" text-align: center; color:#727272; margin-bottom: 80px; font-family: Monserat;">Atur Booking Tempat
             RPTRA Kebon Pala</h3>
         <div id="boxBestSeller">
             <div id="box">
@@ -54,11 +54,17 @@ $row=mysqli_fetch_array($perintah);
                     <div class="form-group">
                         <input type="hidden" name="id" value="<?php echo "$row[id]"?>">
                     </div>
+
+                    <div class="form-group">
+                        <label>Status halaman booking lapangan futsal saat ini : </label>
+                        <input type="text" value="<?php echo "$row[aktivasi]"?>" readonly>
+                    </div>
+
                     <div class="form-group">
                         <label>Pengaturan aktivasi booking Lapangan Futsal</label>
                         <select class="form-control" name="status_form" id="status_form" required="">
-                            <option>Nonaktifkan</option>
-                            <option>Aktifkan kembali</option>
+                            <option>Nonaktif</option>
+                            <option>Aktif</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary" name="simpan" id="simpan">save</button>
@@ -81,11 +87,17 @@ $row=mysqli_fetch_array($perintah);
                             <div class="form-group">
                                 <input type="hidden" name="id" value="<?php echo "$fetch[id]"?>">
                             </div>
+
+                            <div class="form-group">
+                                <label>Status halaman booking ruang serba guna saat ini : </label>
+                                <input type="text" value="<?php echo "$fetch[aktivasi]"?>" readonly>
+                            </div>
+
                             <div class="form-group">
                                 <label>Pengaturan aktivasi booking Ruang Serbaguna</label>
                                 <select class="form-control" name="status_form" id="status_form" required="">
-                                    <option>Nonaktifkan</option>
-                                    <option>Aktifkan kembali</option>
+                                    <option>Nonaktif</option>
+                                    <option>Aktif</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary" name="simpan" id="simpan">save</button>
@@ -225,7 +237,7 @@ $row=mysqli_fetch_array($perintah);
 				?>
             </tbody>
         </table>
-        </div>
+    </div>
     </div>
 
     <script src="js1/jquery-3.2.1.min.js"></script>

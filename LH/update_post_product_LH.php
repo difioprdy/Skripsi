@@ -7,12 +7,12 @@ if(isset($_POST['nama_product'])){
     $id =  $_POST['id'];
     include('config.php');
 
-    $query = mysqli_query($conn, "UPDATE tbl_product SET deskripsi_product = '$deskripsi_product', nama_product = '$nama_product', price = '$price', kategori = '$kategori' WHERE id = $id") or die(mysqli_error()) ;
+    $query = mysqli_query($conn, "UPDATE tbl_productlh SET deskripsi_product = '$deskripsi_product', nama_product = '$nama_product', price = '$price', kategori = '$kategori' WHERE id = $id") or die(mysqli_error()) ;
 if($query){
-    header("Location: ProductRPTRA_ADMIN.php?success=1");
+    header("Location: ProductLH_ADMIN.php?success=1");
 }
 else{
-    header("Location: updateProduct_RPTRA.php?success=0");
+    header("Location: updateProduct_LH.php?success=0");
 }
 
 }
@@ -40,13 +40,13 @@ else{
 		if(in_array($end, $allowed_ext)){
 			if(unlink($previous)){
 				if(move_uploaded_file($image_temp, $path)){
-					mysqli_query($conn, "UPDATE `tbl_product` set `nama_foto_hidden` = '$nama_foto_hidden', `photo` = '$path' WHERE `id` = '$id'") or die(mysqli_error());
+					mysqli_query($conn, "UPDATE `tbl_productlh` set `nama_foto_hidden` = '$nama_foto_hidden', `photo` = '$path' WHERE `id` = '$id'") or die(mysqli_error());
 					echo "<script>alert('User account updated!')</script>";
-					header("Location: ProductRPTRA_ADMIN.php?success=1");
+					header("Location: ProductLH_ADMIN.php?success=1");
 				}
 			}		
 		}else{
-			header("Location: updateProduct_RPTRA.php?success=0");
+			header("Location: updateProduct_LH.php?success=0");
 		}
 	}
 ?>

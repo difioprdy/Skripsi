@@ -8,21 +8,22 @@
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<a class="navbar-brand">RPTRA</a>
+			<a class="navbar-brand">LH</a>
 		</div>
 	</nav>
 	<div class="col-md-3"></div>
 	<div class="col-md-6 well">
-		<h3 class="text-primary">Edit Product PKK Mart RPTRA Kebon Pala Berseri</h3>
+		<h3 class="text-primary">Edit Product Lingkungan Hidup Kebon Pala</h3>
 		<hr style="border-top:1px dotted #ccc;"/>
 		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button>
 		<br /><br />
-		<h3 class="text-primary">Ganti Foto dan Nama Foto</h3>
+		<h3 class="text-primary">Ganti/edit Produk</h3>
 		<table class="table table-bordered">
 			<thead class="alert-info">
 				<tr>
 					<th>Foto Product</th>
 					<th>Nama Product</th>
+					<th>Deskripsi Product</th>
 					<th>Kategori Product</th>
 					<th>Harga Product</th>
 					<th>Action</th>
@@ -36,7 +37,8 @@
 				?>
 				<tr>
 					<td><img src="<?php echo $fetch['photo']?>" height="80" width="100"/></td>
-					<td><?php echo $fetch['nama_product']?></td>			
+					<td><?php echo $fetch['nama_product']?></td>
+					<td><?php echo $fetch['deskripsi_product']?></td>			
 					<td><?php echo $fetch['kategori']?></td>
 					<td><?php echo $fetch['price']?></td>		
 					
@@ -63,7 +65,7 @@
 		<div class="modal-content">
 			<form method="POST" action="ProductLH_save.php" enctype="multipart/form-data">
 				<div class="modal-header">
-					<h3 class="modal-title">Tambah Post</h3>
+					<h3 class="modal-title">Tambah Produk</h3>
 				</div>
 				<div class="modal-body">
 					<div class="col-md-2"></div>

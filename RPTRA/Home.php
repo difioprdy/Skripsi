@@ -33,7 +33,7 @@
                     <!-- <button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button> -->
                     <li><a style="font-family: Monserat;" href="Home.php">Menu</a>
                         <div class="dropDownMenu">
-                            <a style="font-family: Monserat;" href="Product.php">Product</a>
+                            <a style="font-family: Monserat;" href="Product.php">PKK Mart</a>
                             <a style="font-family: Monserat;" href="BookFacillites.php">Booking Fasilitas</a>
                             <a style="font-family: Monserat;" href="#form_modal5" data-toggle="modal"
                                 data-target="#form_modal5">Buku Tamu</a>

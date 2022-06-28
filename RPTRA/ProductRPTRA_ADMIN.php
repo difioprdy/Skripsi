@@ -24,38 +24,39 @@ $row=mysqli_fetch_array($perintah);
 	</nav>
 
 	<div class="col-md-3"></div>
-    <div class="col-md-6 well">
-        <h3 class="text-primary"
-            style=" text-align: center; color:#727272; margin-bottom: 80px; font-family: Monserat;">Atur Product PKK Mart
-            RPTRA Kebon Pala</h3>
-        <div id="boxBestSeller">
-            <div id="box">
-                <!-- . -->
-                <form role="form" method="post" action="proses_aktivasi_product.php">
-                    <div class="form-group">
-                        <input type="hidden" name="id" value="<?php echo "$row[id]"?>">
-                    </div>
+	<div class="col-md-6 well">
+		<h3 class="text-primary"
+			style=" text-align: center; color:#727272; margin-bottom: 80px; font-family: Monserat;">Atur Product PKK
+			Mart
+			RPTRA Kebon Pala</h3>
+		<div id="boxBestSeller">
+			<div id="box">
+				<!-- . -->
+				<form role="form" method="post" action="proses_aktivasi_product.php">
+					<div class="form-group">
+						<input type="hidden" name="id" value="<?php echo "$row[id]"?>">
+					</div>
 
-                    <div class="form-group">
-                        <label>Status halaman PKK Mart saat ini : </label>
-                        <input type="text" value="<?php echo "$row[aktivasi]"?>" readonly>
-                    </div>
+					<div class="form-group">
+						<label>Status halaman PKK Mart saat ini : </label>
+						<input type="text" value="<?php echo "$row[aktivasi]"?>" readonly>
+					</div>
 
-                    <div class="form-group">
-                        <label>Pengaturan halaman PKK Mart</label>
-                        <select class="form-control" name="status_form" id="status_form" required="">
-                            <option>Nonaktif</option>
-                            <option>Aktif</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary" name="simpan" id="simpan">save</button>
-                </form>
+					<div class="form-group">
+						<label>Pengaturan halaman PKK Mart</label>
+						<select class="form-control" name="status_form" id="status_form" required="">
+							<option>Nonaktif</option>
+							<option>Aktif</option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-primary" name="simpan" id="simpan">save</button>
+				</form>
 
-                <!-- . -->
+				<!-- . -->
 
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 
 
 
@@ -125,12 +126,6 @@ $row=mysqli_fetch_array($perintah);
 
 							<div class="form-group">
 								<label>Foto Product</label>
-								<input type="hidden" type="text" value="BKB PAUD" class="form-control"
-									name="nama_program" />
-							</div>
-
-							<div class="form-group">
-								<label>Foto Product</label>
 								<input type="file" class="form-control" name="photo" required="required" />
 							</div>
 							<div class="form-group">
@@ -140,12 +135,17 @@ $row=mysqli_fetch_array($perintah);
 
 							<div class="form-group">
 								<label>Deskripsi Product</label>
-								<textarea class="form-control" name="deskripsi_product" required="required"></textarea>
+
+
+								<textarea class="ckeditor" name="deskripsi_product" required="required">
+            					</textarea>
 							</div>
 
 							<div class="form-group">
 								<label>Kategori Product</label>
 								<input type="text" class="form-control" name="kategori" required="required" />
+
+								
 							</div>
 							<div class="form-group">
 								<label>Harga Product (Rp.)</label>

@@ -74,7 +74,6 @@ else{
             <label>(Foto harus landscape/memanjang kesamping)</label>
             <input type="file" class="form-control" name="photo" value="<?= $row['photo']; ?>" required="required" />
         </div>
-        <label>Nama Kegiatan Pada Foto</label>
         <input type="hidden" value="<?= $row['id']; ?>" name="id" />
         <input type="hidden" type="text" class="form-control" value="hidden" name="nama_foto_hidden"
             required="required" />

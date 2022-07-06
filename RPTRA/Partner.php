@@ -1,5 +1,11 @@
 <html>
     <head>
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="Home.js" defer></script>
@@ -38,14 +44,58 @@
             <p class="b4">BKB PAUD</p>
         </div></center>
     </div>
-    <center><img  class="b5" src="assets/dummy.png" alt=""></center>
+    <center><div class="container" style="margin-top:10vh">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <center><img src="assets/Event/event3.jpg" alt="Los Angeles" style="width: 50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <center><img src="assets/Event/event2.jpg" alt="Chicago" style="width:50%; "></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
+        </div>
+      </div>
+    
+      <div class="item">
+        <center><img src="assets/Event/event3.jpg" alt="New York" style="width:50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Mengaji</h3>
+        </div>
+      </div>
+  
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div></center>
     <center>
         <div class="b6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
-            </p>
+            <p><strong>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
+            </strong></p>
         </div>
     </center>
 </div>
@@ -59,14 +109,57 @@
             </div></center>
         </div>
 
-        <center><img  class="a2" src="assets/dummy.png" alt=""></center>
+        <center><div class="container" style="margin-top:10vh">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <center><img src="assets/Event/event3.jpg" alt="Los Angeles" style="width: 50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <center><img src="assets/Event/event2.jpg" alt="Chicago" style="width:50%; "></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
+        </div>
+      </div>
+    
+      <div class="item">
+        <center><img src="assets/Event/event3.jpg" alt="New York" style="width:50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Mengaji</h3>
+        </div>
+      </div>
+  
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
         <center>
             <div class="a3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
-                </p>
+            <p><strong>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
+            </strong></p>
             </div>
         </center>
 
@@ -79,14 +172,57 @@
             <p class="b4">UP2K</p>
         </div></center>
     </div>
-    <center><img  class="b5" src="assets/dummy.png" alt=""></center>
+    <center><div class="container" style="margin-top:10vh">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <center><img src="assets/Event/event3.jpg" alt="Los Angeles" style="width: 50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <center><img src="assets/Event/event2.jpg" alt="Chicago" style="width:50%; "></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
+        </div>
+      </div>
+    
+      <div class="item">
+        <center><img src="assets/Event/event3.jpg" alt="New York" style="width:50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Mengaji</h3>
+        </div>
+      </div>
+  
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
     <center>
         <div class="b6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
-            </p>
+        <p><strong>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
+            </strong></p>
         </div>
     </center>
 </div>
@@ -99,14 +235,57 @@
             </div></center>
         </div>
 
-        <center><img  class="a2" src="assets/dummy.png" alt=""></center>
+        <center><div class="container" style="margin-top:10vh">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <center><img src="assets/Event/event3.jpg" alt="Los Angeles" style="width: 50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <center><img src="assets/Event/event2.jpg" alt="Chicago" style="width:50%; "></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
+        </div>
+      </div>
+    
+      <div class="item">
+        <center><img src="assets/Event/event3.jpg" alt="New York" style="width:50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Mengaji</h3>
+        </div>
+      </div>
+  
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
         <center>
             <div class="a3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
-                </p>
+            <p><strong>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
+            </strong></p>
             </div>
         </center>
 
@@ -119,15 +298,57 @@
             <p class="b4">POSYANDU</p>
         </div></center>
     </div>
-    <center><img  class="b5" src="assets/dummy.png" alt=""></center>
+    <center><div class="container" style="margin-top:10vh">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <center><img src="assets/Event/event3.jpg" alt="Los Angeles" style="width: 50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <center><img src="assets/Event/event2.jpg" alt="Chicago" style="width:50%; "></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
+        </div>
+      </div>
+    
+      <div class="item">
+        <center><img src="assets/Event/event3.jpg" alt="New York" style="width:50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Mengaji</h3>
+        </div>
+      </div>
+  
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
     <center>
         <div class="b6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
-            </p>
-        </div>
+        <p><strong>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
+            </strong></p>
     </center>
 </div>
 
@@ -139,14 +360,57 @@
             </div></center>
         </div>
 
-        <center><img  class="a2" src="assets/dummy.png" alt=""></center>
+        <center><div class="container" style="margin-top:10vh">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <center><img src="assets/Event/event3.jpg" alt="Los Angeles" style="width: 50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <center><img src="assets/Event/event2.jpg" alt="Chicago" style="width:50%; "></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
+        </div>
+      </div>
+    
+      <div class="item">
+        <center><img src="assets/Event/event3.jpg" alt="New York" style="width:50%;"></center>
+        <div class="carousel-caption">
+          <h3 style="color:yellow">Kegiatan Mengaji</h3>
+        </div>
+      </div>
+  
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
         <center>
             <div class="a3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
-                </p>
+            <p><strong>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem, maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos recusandae exercitationem!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio, cumque aliquid enim.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
+            </strong></p>
             </div>
         </center>
 
@@ -154,7 +418,7 @@
 </div>
 
 <!-- Footer -->
-<footer id="footerBar">
+<footer id="footerBar" style="margin-top: 50vh" >
     <div id="txtCopy">
         &#169 2016 - RPTRA Kebon Pala
     </div>

@@ -1,6 +1,19 @@
 <html>
 
 <head>
+    <style>
+        #btnlihatlebih {
+            border: none;
+            padding: 20px 40px;
+            text-align: center;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: orange;
+            border-radius: 5px;
+            transition-duration: 0.5s;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
@@ -11,7 +24,9 @@
     <script src="Home.js" defer></script>
     <link rel="stylesheet" href="Home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>WebsiteRPTRA</title>
 </head>
 <?php session_start(); ?>
@@ -101,7 +116,7 @@
         $query = mysqli_query($conn, "SELECT * FROM `headline_image_homepage_rptra`") or die(mysqli_error());
         while($fetch = mysqli_fetch_array($query)){
     ?>
-                <img height="500" width="700" style="border-radius: 15px;" src="<?php echo $fetch['photo']?>" alt="">
+                <img height="400" width="700" style="border-radius: 15px;" src="<?php echo $fetch['photo']?>" alt="">
                 <!-- <img style="border-radius: 15px;" src="assets/gambar1.jpg" alt=""> -->
             </div>
         </div>
@@ -197,151 +212,222 @@
 					}
 				?>
 
-                <div class="a6">
-                    <div class="a10">
-                        <div class="a9">
-                            <p class="a7">01</p>
-                            <svg width="5" height="110">
-                                <rect width="300" height="80" style="fill:#fbd043" />
-                                test
-                            </svg>
-                            <p class="a8">Penanaman Pohon</p>
+                <div class="container">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+
+                            <div class="item active">
+                                <center><img src="assets/Event/event1.jpg" alt="Los Angeles" style="width: 65%;">
+                                </center>
+                                <div class="carousel-caption">
+                                    <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <center><img src="assets/Event/event2.jpg" alt="Chicago" style="width:65%; height:63%;">
+                                </center>
+                                <div class="carousel-caption">
+                                    <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <center><img src="assets/Event/event3.jpg" alt="New York" style="width:65%; height:63%">
+                                </center>
+                                <div class="carousel-caption">
+                                    <h3 style="color:yellow">Kegiatan Mengaji</h3>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="a11">
-                            <p class="a7">02</p>
-                            <svg width="5" height="110">
-                                <rect width="300" height="80" style="fill:#fbd043" />
-                                test
-                            </svg>
-                            <p class="a8">Kegiatan Olahraga</p>
-                        </div>
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
 
-                        <div class="a12">
-                            <p class="a7">03</p>
-                            <svg width="5" height="110">
-                                <rect width="300" height="80" style="fill:#fbd043" />
-                                test
-                            </svg>
-                            <p class="a8">Kegiatan Pengajian</p>
+
+                <!-- Product -->
+                <div style="margin-top:10vh; background-color:#ffe1ed">
+                    <div class="p2" style="margin-bottom:5vh">
+                        <center>
+                            <div class="p3">
+                                <p class="p4">PRODUK RPTRA</p>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="container">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+
+                            <div class="carousel-inner">
+
+                                <div class="item active">
+                                    <center><img src="assets/produk.png" alt="Los Angeles" style="width: 50%;"></center>
+                                    <div class="carousel-caption">
+                                        <h3 style="color:yellow">Makanan</h3>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <center><img src="assets/produk.png" alt="Chicago" style="width:50%;"></center>
+                                    <div class="carousel-caption">
+                                        <h3 style="color:yellow">Minuman</h3>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <center><img src="assets/produk.png" alt="New York" style="width:50%;"></center>
+                                    <div class="carousel-caption">
+                                        <h3 style="color:yellow">Kerajinan</h3>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="a13">
-                        <img class="a14" src="assets/Event/event2.jpg" alt="">
-                        <img class="a15" src="assets/Event/event1.jpg" alt="">
-                        <img class="a16" src="assets/Event/event3.jpg" alt="">
+                    <div style="margin-top:5vh;">
+                        <center><button type="button" id="btnlihatlebih">LIHAT LEBIH</button></center>
                     </div>
 
                 </div>
 
-            </div>
 
-        </div>
-
-
-    <!-- Footer -->
-    <footer id="footerBar">
-        <div id="txtCopy">
-            &#169 2016 - RPTRA Kebon Pala
-        </div>
-        <div id="sosmedImg">
-            <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
-        </div>
-    </footer>
-
-
-    <div class="modal fade" id="form_modal5" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST" action="bukutamu_save.php" enctype="multipart/form-data">
-                    <div class="modal-header">
-                        <h3 class="modal-title">Buku Tamu</h3>
+                <!-- Footer -->
+                <footer id="footerBar">
+                    <div id="txtCopy">
+                        &#169 2016 - RPTRA Kebon Pala
                     </div>
-                    <div class="modal-body">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label>Hari dan Tanggal</label> <br>
-                                <input id="currentDate" type="date" name="tanggal" required="required" />
-                                <input id="currentDate" type="time" name="waktu" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <label>Nama</label>
-                                <input type="text" class="form-control" name="nama" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <label>Nomor HP</label>
-                                <input type="text" class="form-control" name="no_hp" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control" name="email" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <label>Instansi</label>
-                                <input type="text" class="form-control" name="instansi" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <label>Peserta</label>
-                                <input type="text" class="form-control" name="peserta" />
-                            </div>
-                            <div class="form-group">
-                                <label>Tujuan</label>
-                                <input type="text" class="form-control" name="tujuan" />
-                            </div>
-                            <div class="form-group">
-                                <label>Kesan dan Pesan</label>
-                                <input type="text" class="form-control" name="kesandanpesan" />
-                            </div>
+                    <div id="sosmedImg">
+                        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+                    </div>
+                </footer>
+
+
+                <div class="modal fade" id="form_modal5" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form method="POST" action="bukutamu_save.php" enctype="multipart/form-data">
+                                <div class="modal-header">
+                                    <h3 class="modal-title">Buku Tamu</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Hari dan Tanggal</label> <br>
+                                            <input id="currentDate" type="date" name="tanggal" required="required" />
+                                            <input id="currentDate" type="time" name="waktu" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nama</label>
+                                            <input type="text" class="form-control" name="nama" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nomor HP</label>
+                                            <input type="text" class="form-control" name="no_hp" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="text" class="form-control" name="email" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Instansi</label>
+                                            <input type="text" class="form-control" name="instansi"
+                                                required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Peserta</label>
+                                            <input type="text" class="form-control" name="peserta" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tujuan</label>
+                                            <input type="text" class="form-control" name="tujuan" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Kesan dan Pesan</label>
+                                            <input type="text" class="form-control" name="kesandanpesan" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br style="clear:both;" />
+                                <div class="modal-footer">
+                                    <button class="btn btn-danger" type="button" data-dismiss="modal"><span
+                                            class="glyphicon glyphicon-remove"></span> Close</button>
+                                    <button class="btn btn-primary" type="submit"><span
+                                            class="glyphicon glyphicon-save"></span>
+                                        Save</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <br style="clear:both;" />
-                    <div class="modal-footer">
-                        <button class="btn btn-danger" type="button" data-dismiss="modal"><span
-                                class="glyphicon glyphicon-remove"></span> Close</button>
-                        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-save"></span>
-                            Save</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+                </div>
 
 
-    <!-- jika ada session sukses maka tampilkan sweet alert dengan pesan yang telah di set
+                <!-- jika ada session sukses maka tampilkan sweet alert dengan pesan yang telah di set
     di dalam session sukses  -->
 
 
-    <script src="js1/jquery-3.2.1.min.js"></script>
-    <script src="js1/bootstrap.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
-    <!-- jangan lupa menambahkan script js sweet alert di bawah ini  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+                <script src="js1/jquery-3.2.1.min.js"></script>
+                <script src="js1/bootstrap.js"></script>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous">
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+                    crossorigin="anonymous">
+                </script>
+                <!-- jangan lupa menambahkan script js sweet alert di bawah ini  -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js">
+                </script>
 
-    <script>
-        var date = new Date();
-        var currentDate = date.toISOString().slice(0, 10);
-        var currentTime = date.getHours() + ':' + date.getMinutes();
+                <script>
+                    var date = new Date();
+                    var currentDate = date.toISOString().slice(0, 10);
+                    var currentTime = date.getHours() + ':' + date.getMinutes();
 
-        document.getElementById('currentDate').value = currentDate;
-        document.getElementById('currentTime').value = currentTime;
-    </script>
+                    document.getElementById('currentDate').value = currentDate;
+                    document.getElementById('currentTime').value = currentTime;
+                </script>
 
 
 
-    <?php if(@$_SESSION['sukses']){ ?>
-    <script>
-        swal("Terima kasih!", "<?php echo $_SESSION['sukses']; ?>", "success");
-    </script>
-    <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
-    <?php unset($_SESSION['sukses']); } ?>
+                <?php if(@$_SESSION['sukses']){ ?>
+                <script>
+                    swal("Terima kasih!", "<?php echo $_SESSION['sukses']; ?>", "success");
+                </script>
+                <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
+                <?php unset($_SESSION['sukses']); } ?>
 
 
 </body>

@@ -2,17 +2,155 @@
 <html lang="en">
 
 <head>
+<style>
+	#btnadd{
+		border: none;
+		padding: 5px 10px;
+		text-align: center;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+		background-color: #5cb85c;
+		border-radius: 5px;
+		transition-duration: 0.5s;
+	}
+	#btnupdate{
+		border: none;
+		padding: 10px 10px;
+		text-align: center;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+		background-color: #f0ad4e;
+		border-radius: 5px;
+		transition-duration: 0.5s;}
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: 'Monserat';
+    src: url(Font/montserrat/Montserrat-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+#headerBar{
+    background-image:linear-gradient(rgba(0,0,0,0.5),#211063);
+    height: 18vh ;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+	margin-bottom:5vh;
+}
+
+#navBar{
+    max-width: 1200px;
+    margin: auto;
+}
+
+#LogoImg{
+    width: 200px;
+    margin-top: 30px;
+    height: auto;
+    alt: "LogoImage";
+    float: left;
+}
+
+#navBtn ul{
+    margin-top: 50px;
+    float: right;
+    list-style-type: none;
+}
+#navBtn ul li{
+    display: inline-block; 
+}
+#navBtn ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s ease;
+    padding: 5px 20px;
+    font-family: Monserat;
+}
+#navBtn ul li a:hover{
+    background-color: #ffffff;
+    color: black;
+}
+#navBtn ul li:hover .dropDownMenu{
+    display: block;
+}
+#navBtn ul li:hover a{
+    color: black;
+}
+
+.dropDownMenu{
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+.dropDownMenu a{
+    display: block;
+    padding: 10px;
+}	
+/* Footer */
+#footerBar{
+    margin-top: 140vh;
+    background-color:black;
+    background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
+    display: flex;
+    justify-content: space-between;
+}
+
+#txtCopy{
+    margin-left: 50px;
+    display: flex;
+    color: white;
+    float: left;
+    padding: 30px;
+    font-family: Monserat;
+}
+
+#sosmedImg{
+    display: flex;
+    width: 30%;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+.a10{
+    color: white;
+    margin-left: 200px;
+    font-family: Monserat;
+}
+</style>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
 	<script src="ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<a class="navbar-brand">RPTRA</a>
-		</div>
-	</nav>
+	<!-- NavBar     -->
+    <header id="headerBar">
+        <div id="navBar">
+            <div>
+                <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
+                <img id="LogoImg" src="assets/Logo2.png" alt="LogoImage"> 
+                <img style="width: 5%;" id="LogoImg" src="assets/logo3.jpeg" alt=""> 
+            </div>
+            <div id="navBtn">
+                <ul>
+                    <li><a href="Home.html">Home</a>
+                        <div class="dropDownMenu">
+                            <a href="Product.html">Product</a>
+                            <a href="BookFacillites.html">Booking Fasilitas</a>
+                            <a href="ContactUs.html">Contact Us</a>
+                        </div>
+                    </li>
+                    <li><a style="color:red" href="Login.html">Logout</a></li>
+                </ul>
+            </div> 
+    </header>
 	<div class="col-md-3"></div>
 	<div class="col-md-6 well">
 		<h3 class="text-primary">Edit Headline Homepage RPTRA Kebon Pala</h3>
@@ -39,7 +177,7 @@
 					<td><img src="<?php echo $fetch['photo']?>" height="80" width="100" /></td>
 					<td><?php echo $fetch['judul']?></td>
 					<td><button type="button" class="btn btn-warning" data-toggle="modal"
-							data-target="#edit<?php echo $fetch['id']?>"><span class="glyphicon glyphicon-edit"></span>
+							data-target="#edit<?php echo $fetch['id']?>"><span></span>
 							Update</button></td>
 					<div class="modal fade" id="edit<?php echo $fetch['id']?>" aria-hidden="true">
 						<div class="modal-dialog">
@@ -77,9 +215,9 @@
 									<br style="clear:both;" />
 									<div class="modal-footer">
 										<button class="btn btn-danger" data-dismiss="modal"><span
-												class="glyphicon glyphicon-remove"></span> Close</button>
+												></span> Close</button>
 										<button class="btn btn-warning" name="edit"><span
-												class="glyphicon glyphicon-save"></span> Update</button>
+												></span> Update</button>
 									</div>
 								</form>
 							</div>
@@ -94,7 +232,8 @@
 
 		<br /><br />
 		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
-		<button><a href="headlineEditor.php">Add</a></button>
+		<button type="button" id="btnadd"><a href="headlineEditor.php"><span
+				class="glyphicon glyphicon-plus"></span> Add</a></button>
 
 		<h3 class="text-primary">Edit Deskripsi Headline</h3>
 		<table class="table table-bordered">
@@ -112,7 +251,7 @@
 				?>
 				<tr>
 					<td><?php echo $row['content']?></td>
-					<td><a href="<?= 'updateDeskripsi.php?id=' .$row['id'] ?>">Update</a></td>
+					<td><button type="button" id="btnupdate"><a href="<?= 'updateDeskripsi.php?id=' .$row['id'] ?>">Update</a></button></td>
 				</tr>
 				<?php
 					}
@@ -150,9 +289,8 @@
 					</div>
 					<br style="clear:both;" />
 					<div class="modal-footer">
-						<button class="btn btn-danger" type="button" data-dismiss="modal"><span
-								class="glyphicon glyphicon-remove"></span> Close</button>
-						<button class="btn btn-primary" name="save"><span class="glyphicon glyphicon-save"></span>
+						<button class="btn btn-danger" type="button" data-dismiss="modal">Close</button>
+						<button class="btn btn-primary" name="save">
 							Save</button>
 					</div>
 				</form>
@@ -162,6 +300,8 @@
 
 	<script src="js1/jquery-3.2.1.min.js"></script>
 	<script src="js1/bootstrap.js"></script>
+	
+
 </body>
 
 <script>
@@ -189,3 +329,12 @@ if(isset ($_POST['editor'])){
 }
 
 ?>
+<!-- Footer -->
+<footer id="footerBar">
+    <div id="txtCopy">
+        &#169 2016 - RPTRA Kebon Pala
+    </div>
+    <div id="sosmedImg">
+        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+    </div>
+</footer>

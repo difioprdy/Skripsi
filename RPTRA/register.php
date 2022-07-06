@@ -79,6 +79,75 @@
 <html lang="zxx">
 
 <head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: 'Monserat';
+    src: url(Font/montserrat/Montserrat-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+#headerBar{
+    background-image:linear-gradient(rgba(0,0,0,0.5),#211063);
+    height: 18vh ;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
+
+#navBar{
+    max-width: 1200px;
+    margin: auto;
+}
+
+#LogoImg{
+    width: 200px;
+    margin-top: 30px;
+    height: auto;
+    alt: "LogoImage";
+    float: left;
+}
+
+#navBtn ul{
+    margin-top: 50px;
+    float: right;
+    list-style-type: none;
+}
+#navBtn ul li{
+    display: inline-block; 
+}
+#navBtn ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s ease;
+    padding: 5px 20px;
+    font-family: Monserat;
+}
+#navBtn ul li a:hover{
+    background-color: #ffffff;
+    color: black;
+}
+#navBtn ul li:hover .dropDownMenu{
+    display: block;
+}
+#navBtn ul li:hover a{
+    color: black;
+}
+
+.dropDownMenu{
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+.dropDownMenu a{
+    display: block;
+    padding: 10px;
+}	
+</style>
     <title>Login Form - Brave Coder</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,34 +167,46 @@
 </head>
 
 <body>
-
+<!-- NavBar     -->
+<header id="headerBar">
+        <div id="navBar">
+            <div>
+                <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
+                <img id="LogoImg" src="assets/Logo2.png" alt="LogoImage"> 
+                <img style="width: 5%;" id="LogoImg" src="assets/logo3.jpeg" alt=""> 
+            </div>
+            <div id="navBtn">
+                <ul>
+                    <li><a href="Home.html">Home</a>
+                        <div class="dropDownMenu">
+                            <a href="Product.html">Product</a>
+                            <a href="BookFacillites.html">Booking Fasilitas</a>
+                            <a href="ContactUs.html">Contact Us</a>
+                        </div>
+                    </li>
+                    <li><a style="color:red" href="Login.html">Login</a></li>
+                </ul>
+            </div> 
+    </header>
     <!-- form section start -->
     <section class="w3l-mockup-form">
         <div class="container">
             <!-- /form -->
             <div class="workinghny-form-grid">
-                <div class="main-mockup">
-                    <div class="alert-close">
-                        <span class="fa fa-close"></span>
-                    </div>
-                    <div class="w3l_form align-self">
-                        <div class="left_grid_info">
-                            <img src="images/image2.svg" alt="">
-                        </div>
-                    </div>
                     <div class="content-wthree">
                         <h2>Register Admin RPTRA</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                         <?php echo $msg; ?>
                         <form action="" method="post">
-                            <input type="text" class="name" name="name" placeholder="Enter Your Name" value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
-                            <input type="email" class="email" name="email" placeholder="Enter Your Email" value="<?php if (isset($_POST['submit'])) { echo $email; } ?>" required>
-                            <input type="password" class="password" name="password" placeholder="Enter Your Password" required>
-                            <input type="password" class="confirm-password" name="confirm-password" placeholder="Enter Your Confirm Password" required>
-                            <button name="submit" class="btn" type="submit">Register</button>
+                            <input type="text" class="name" name="name" placeholder="Masukkan Name" value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
+                            <input type="email" class="email" name="email" placeholder="Masukkan Email" value="<?php if (isset($_POST['submit'])) { echo $email; } ?>" required>
+                            <input type="password" class="password" name="password" placeholder="Masukkan Password" required>
+                            <input type="password" class="confirm-password" name="confirm-password" placeholder="Masukkan Kembali Password" required>
+                            <input type="password" class="confirm-password" name="confirm-password" placeholder="Masukkan PIN" required>
+                            <button name="submit" class="btn" type="submit">Daftar</button>
                         </form>
                         <div class="social-icons">
-                            <p>Have an account! <a href="login.php">Login</a>.</p>
+                            <p>Sudah Punya Akun! <a href="login.php">Masuk</a>.</p>
                         </div>
                     </div>
                 </div>

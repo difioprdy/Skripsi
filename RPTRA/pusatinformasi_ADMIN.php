@@ -1,16 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	<style>
+    	#btnupdate{
+		border: none;
+		padding: 10px 10px;
+		text-align: center;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+		background-color: orange;
+		border-radius: 5px;
+		transition-duration: 0.5s;
+	}
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: 'Monserat';
+    src: url(Font/montserrat/Montserrat-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+#headerBar{
+    background-image:linear-gradient(rgba(0,0,0,0.5),#211063);
+    height: 18vh ;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+	margin-bottom:5vh;
+}
+
+#navBar{
+    max-width: 1200px;
+    margin: auto;
+}
+
+#LogoImg{
+    width: 200px;
+    margin-top: 30px;
+    height: auto;
+    alt: "LogoImage";
+    float: left;
+}
+
+#navBtn ul{
+    margin-top: 50px;
+    float: right;
+    list-style-type: none;
+}
+#navBtn ul li{
+    display: inline-block; 
+}
+#navBtn ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s ease;
+    padding: 5px 20px;
+    font-family: Monserat;
+}
+#navBtn ul li a:hover{
+    background-color: #ffffff;
+    color: black;
+}
+#navBtn ul li:hover .dropDownMenu{
+    display: block;
+}
+#navBtn ul li:hover a{
+    color: black;
+}
+
+.dropDownMenu{
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+.dropDownMenu a{
+    display: block;
+    padding: 10px;
+}	
+</style>
+
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
         <script src="ckeditor/ckeditor.js"></script>
 	</head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<a class="navbar-brand">RPTRA</a>
-		</div>
-	</nav>
+	<!-- NavBar     -->
+	<header id="headerBar">
+        <div id="navBar">
+            <div>
+                <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
+                <img id="LogoImg" src="assets/Logo2.png" alt="LogoImage"> 
+                <img style="width: 5%;" id="LogoImg" src="assets/logo3.jpeg" alt=""> 
+            </div>
+            <div id="navBtn">
+                <ul>
+                    <li><a href="Home.html">Home</a>
+                        <div class="dropDownMenu">
+                            <a href="Product.html">Product</a>
+                            <a href="BookFacillites.html">Booking Fasilitas</a>
+                            <a href="ContactUs.html">Contact Us</a>
+                        </div>
+                    </li>
+                    <li><a style="color:red" href="Login.html">Logout</a></li>
+                </ul>
+            </div> 
+    </header>
+	
 	<div class="col-md-3"></div>
 	<div class="col-md-6 well">
 		<h3 class="text-primary">Edit Pusat Informasi Keluarga Homepage RPTRA Kebon Pala Berseri</h3>
@@ -37,7 +136,7 @@
 					<td><img src="<?php echo $row['photo']?>" height="80" width="100"/></td>
 					<td><?php echo $row['judul']?></td>	
 					<td><?php echo $row['content']?></td>			
-					<td><a href="<?= 'updateberitaposter_pusatinf.php?id=' .$row['id'] ?>">Update</a></td>
+					<td><button type="button" id="btnupdate"><a href="<?= 'updateberitaposter_pusatinf.php?id=' .$row['id'] ?>">Update</a></button></td>
 				</tr>
 				<?php
 					}
@@ -67,7 +166,7 @@
 				<tr>
 					<td><?php echo $row['judul']?></td>	
 					<td><?php echo $row['content']?></td>			
-					<td><a href="<?= 'updateberita_pusatinf.php?id=' .$row['id'] ?>">Update</a></td>
+					<td><button type="button" id="btnupdate"><a href="<?= 'updateberita_pusatinf.php?id=' .$row['id'] ?>">Update</a></button></td>
 				</tr>
 				<?php
 					}
@@ -118,8 +217,8 @@
 				</div>
 				<br style="clear:both;"/>
 				<div class="modal-footer">
-					<button class="btn btn-danger" type="button" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
-					<button class="btn btn-primary" name="save"><span class="glyphicon glyphicon-save"></span> Save</button>
+					<button class="btn btn-danger" type="button" data-dismiss="modal">Close</button>
+					<button class="btn btn-primary" name="save">Save</button>
 				</div>
 			</form>
 		</div>
@@ -156,8 +255,8 @@
 				</div>
 				<br style="clear:both;"/>
 				<div class="modal-footer">
-					<button class="btn btn-danger" type="button" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
-					<button class="btn btn-primary" name="editor"><span class="glyphicon glyphicon-save"></span> Save</button>
+					<button class="btn btn-danger" type="button" data-dismiss="modal">Close</button>
+					<button class="btn btn-primary" name="editor">Save</button>
 				</div>
 			</form>
 		</div>

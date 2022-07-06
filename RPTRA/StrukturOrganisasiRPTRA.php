@@ -19,7 +19,7 @@
 <body>
 
     <!-- NavBar     -->
-    <header id="headerBar">
+    <header style="margin-bottom:10px;" id="headerBar">
         <div id="navBar">
             <div>
                 <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
@@ -74,7 +74,7 @@
     </div>
 
     <!-- Footer -->
-    <footer id="footerBar">
+    <footer style="margin-top:10px;" id="footerBar">
         <div id="txtCopy">
             &#169 2016 - RPTRA Kebon Pala
         </div>

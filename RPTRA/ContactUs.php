@@ -1,5 +1,17 @@
 <html>
     <head>
+        <style>
+            #btnupdate{
+		border: none;
+		padding: 5px 10px;
+		text-align: center;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+		background-color: #32CD32;
+		border-radius: 5px;
+		transition-duration: 0.5s;}
+        </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="Home.js" defer></script>
@@ -25,7 +37,7 @@
                             <a style="font-family: Monserat;" href="ContactUs.html">Contact Us</a>
                         </div>
                     </li>
-                    <li><a style="font-family: Monserat;" href="LH.html">Lingkungan Hidup</a></li>
+                    <li><a href="Partner.html">Partner</a></li>
                     <li><a style="color:red; font-family: Monserat;" href="Login.php">Login</a></li>
                 </ul>
             </div> 
@@ -52,7 +64,7 @@
     <label for="subject">Message</label>
     <textarea id="body" placeholder="Write something.." style="height:200px"></textarea>
 
-    <button type="button" onclick="contactUsMAIL()" value="Send An Email">Submit</button>
+    <button type="button" id="btnupdate" onclick="contactUsMAIL()" value="Send An Email">Submit</button>
     <h4 class="sent-notification"></h4>
   </form>
 </div>

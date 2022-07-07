@@ -37,18 +37,25 @@
             <p class="b4">EDUKASI</p>
         </div></center>
     </div>
-    <center><img  class="b5" src="assets/dummy.png" alt=""></center>
+    <?php
+        require 'config.php';
+        $query = mysqli_query($conn, "SELECT * FROM `edukasi`") or die(mysqli_error());
+        while($fetch = mysqli_fetch_array($query)){
+    ?>
+
+    <center><img  class="b5" src=<?php echo $fetch['photo']?> alt="" height="450" width="470"></center>
+    <center> <p class="b4"><?php echo $fetch['judul']?></p></center>
     <center>
-        <div class="b6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
-                <BR></BR><a href="SMEdukasi.html"><button type="button" id="btnlihatlebih">LIHAT LEBIH</button></a>
-            </p>
-        </div>
+        <br>
+            <a href="<?= 'SMEdukasi.php?id=' .$fetch['id'] ?>"><button type="button" id="btnlihatlebih">LIHAT LEBIH</button></a>
+        
     </center>
 </div>
 
 
-
+<?php
+					}
+				?>
 
 <!-- Footer -->
 <footer id="footerBar">

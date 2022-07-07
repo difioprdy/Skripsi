@@ -1,9 +1,43 @@
+
+<?php include('config.php'); ?>
+<?php 
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+}
+else{
+    header('Location : Edukasi.php?success=0');
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
+
+    <style>
+	.boxed{
+    margin-bottom: 10px;
+    background: #dbffa2;
+    border-radius: 40px;
+    width: 500px;
+    height: 90px;
+}
+.boxed1{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Monserat;
+}
+   
+</style>
+
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="Home.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
         <link rel="stylesheet" href="Edukasi.css">
         <title>WebsiteLH</title>
     </head>
@@ -30,31 +64,57 @@
     </header>
 
 
-<!-- Isi -->
+<!-- Isi --><?php
+        require 'config.php';
+        $query = mysqli_query($conn, "SELECT * FROM `edukasi` WHERE id= '$id'") or die(mysqli_error());
+        while($fetch = mysqli_fetch_array($query)){
+    ?>
 <div class="b1">
-    <div class="b2">
-        <center><div class="b3">
-            <p class="b4">EDUKASI</p>
-        </div></center>
-    </div>
-    <center><img  class="b5" src="assets/dummy.png" alt=""></center>
+
+
+
+<!-- JUDUL ARTIKEL -->
+<p class="boxed1">
+                    <?php echo $fetch['judul']?>
+                </p>
+    <center><img  class="b5" src=<?php echo $fetch['photo']?> alt="" height="450" width="470"></center>
     <center>
         <div class="b6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id quia.
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ut ipsa reiciendis id, sunt voluptatibus tenetur non nobis officia laudantium recusandae. Exercitationem laborum esse quae magnam accusantium hic fugit amet!
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quia deleniti sequi commodi facilis, corrupti nobis nemo fuga accusantium hic repudiandae eos distinctio voluptas amet expedita. Facere modi totam laborum.
+            <!-- ISI ARTIKEL -->
+            <p><?php echo $fetch['isi']?>
             </p>
         </div>
     </center>
 </div>
 
+<!-- VIDEO YOUTUBE -->
 <center>
     <strong style="font-size: 50px;">Video Youtube</strong>
+
+    <?php 
+
+$data = $fetch['url'];
+$final = str_replace('watch?v=', 'embed/', $data);
+echo "
+    <iframe
+        src='$final'
+        frameborder='0'
+        allow='autoplay; encrypted-media'
+        allowfullscreen height='600' width='1000'>
+        
+    </iframe>
+";
+// }
+?>
+
 </center>
 
 
 
 
+<?php
+					}
+				?>
 <!-- Footer -->
 <footer id="footerBar">
     <div id="txtCopy">

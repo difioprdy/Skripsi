@@ -17,14 +17,14 @@
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a  style="font-family: Monserat;" href="LH.html">Home</a>
+                    <li><a  style="font-family: Monserat;" href="LH.php">Home</a>
                         <div class="dropDownMenu">
-                            <a  style="font-family: Monserat;" href="Productlh.html">Product</a>
-                            <a  style="font-family: Monserat;" href="ContactUslh.html">Contact Us</a>
+                            <a  style="font-family: Monserat;" href="Productlh.php">Product</a>
+                            <a  style="font-family: Monserat;" href="ContactUslh.php">Contact Us</a>
                         </div>
                     </li>
-                    <li><a  style="font-family: Monserat;" href="Edukasi.html">Edukasi</a></li>
-                    <li><a style="color:red; font-family: Monserat;" href="Login.html">Login</a></li>
+                    <li><a  style="font-family: Monserat;" href="Edukasi.php">Edukasi</a></li>
+                    <li><a style="color:red; font-family: Monserat;" href="Login.php">Login</a></li>
                 </ul>
             </div> 
     </header>

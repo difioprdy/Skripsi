@@ -1,19 +1,19 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['SESSION_EMAIL'])) {
-        header("Location: login.php");
-        die();
-    }
+    // session_start();
+    // if (!isset($_SESSION['SESSION_EMAIL'])) {
+    //     header("Location: login.php");
+    //     die();
+    // }
 
-    include 'config.php';
+    // include 'config.php';
 
-    $query = mysqli_query($conn, "SELECT * FROM userslh WHERE email='{$_SESSION['SESSION_EMAIL']}'");
+    // $query = mysqli_query($conn, "SELECT * FROM userslh WHERE email='{$_SESSION['SESSION_EMAIL']}'");
 
-    if (mysqli_num_rows($query) > 0) {
-        $row = mysqli_fetch_assoc($query);
+    // if (mysqli_num_rows($query) > 0) {
+    //     $row = mysqli_fetch_assoc($query);
 
-        echo "Welcome " . $row['name'] . " <a href='logout.php'>Logout</a>";
-    }
+    //     echo "Welcome " . $row['name'] . " <a href='logout.php'>Logout</a>";
+    // }
 ?>
 
 
@@ -91,6 +91,8 @@
 }
 	</style>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
     <title>Admin LH Kebon Pala</title>
 </head>
 <body>
@@ -127,29 +129,29 @@
 <div class="center" style="margin-top:5vh">
             <div align="center">
                 <div flex-parent jc-center>
-                    <button class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
+                    <button onclick="location.href = 'Edukasi_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
                         <span class="fa fa-users fa-2x"></span><br />
-                        Edit Halaman <br> Edukasi
+                        Edukasi LH
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
+                    <button onclick="location.href = 'ProductLH_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
                         <span class="fa fa-truck-pickup fa-2x"></span><br />
-                        Edit Halaman <br> Product
+                        Product LH
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
+                    <button onclick="location.href = 'TentangKamiLH_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
                         <span class="fa fa-book fa-2x"></span><br />
-                        Edit <br> "Tentang Kami"
+                        "Tentang Kami" <br> Homepage
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
+                    <button onclick="location.href = 'headlineHomepageADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
                         <span class="fa fa-user-circle fa-2x"></span><br />
-                        Edit <br> Headline Menu Utama
+                        "Headline" <br> Homepage
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
+                    <button onclick="location.href = 'EditPinADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
                         <span class="fa fa-user-circle fa-2x"></span><br />
-                        Edit <br> PIN registrasi
+                        PIN Registrasi
                     </button>
 
                 </div>

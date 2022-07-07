@@ -1,26 +1,31 @@
-<?php
 
-// session_start();
-
-    // if (isset($_SESSION['pin'])) {
-    //     header("Location: register.php");
-    //     exit;
-    // }
-include "config.php";
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
     <title>PIN</title>
 </head>
 <body>
-    <form method="post">
+<form method="post">
         <label>PIN</label>
-        <input type="password" name="fpin"><br>
-        <button type="submit" name="fmasuk">Enter</button>
+
+        <?php
+					require 'config.php';
+					$query = mysqli_query($conn, "SELECT * FROM pinadminlh where PIN") or die(mysqli_error());
+					while($fetch = mysqli_fetch_array($query)){
+				?>
+
+        <input type="number" name="PIN" value="<?php echo $fetch['PIN'] ?>">
+        <br><br>
+
+        <input type="submit" id="tst" name="update" value="Update">
+
+        <?php
+					}
+				?>
+
     </form>
 
     <?php

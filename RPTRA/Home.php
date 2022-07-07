@@ -64,9 +64,9 @@
                 <ul>
                     </li>
                     <!-- <button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button> -->
-                    <li><a style="font-family: Monserat;" href="Home.php">Menu</a>
+                    <li><a style="font-family: Monserat;">Menu</a>
                         <div class="dropDownMenu">
-                            <a style="font-family: Monserat;" href="BookFacillites.php">Booking Fasilitas</a>
+                            <a style="font-family: Monserat;" href="BookFacillites.html">Booking Fasilitas</a>
                             <a style="font-family: Monserat;" href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a>
                             <a style="font-family: Monserat;" href="ContactUs.php">Contact Us</a>
                             <a style="font-family: Monserat;" href="Partner.php">Program Kegiatan</a>

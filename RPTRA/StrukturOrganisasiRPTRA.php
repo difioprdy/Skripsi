@@ -19,34 +19,34 @@
 <body>
 
     <!-- NavBar     -->
-    <header style="margin-bottom:10px;" id="headerBar">
-        <div id="navBar">
-            <div>
-                <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
-                <img id="LogoImg" src="assets/Logo2.png" alt="LogoImage">
-                <img style="width: 5%;" id="LogoImg" src="assets/logo3.jpeg" alt="">
-            </div>
-            <div id="navBtn">
-                <ul>
-                    <li><a style="font-family: Monserat;" href="Home.php">Home</a>
-                    </li>
-                    <!-- <button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button> -->
-                    <li><a style="font-family: Monserat;" href="Home.php">Menu</a>
-                        <div class="dropDownMenu">
-                            <a style="font-family: Monserat;" href="Product.php">Product</a>
-                            <a style="font-family: Monserat;" href="BookFacillites.php">Booking Fasilitas</a>
-                            <a style="font-family: Monserat;" href="#form_modal5" data-toggle="modal"
-                                data-target="#form_modal5">Buku Tamu</a>
-                            <a style="font-family: Monserat;" href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a>
-                            <a style="font-family: Monserat;" href="ContactUs.php">Contact Us</a>
-                        </div>
-                    </li>
+    <header id="headerBar">
+    <div id="navBar">
+        <div>
+            <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
+            <img id="LogoImg" src="assets/Logo2.png" alt="LogoImage">
+            <img style="width: 5%;" id="LogoImg" src="assets/logo3.jpeg" alt="">
+        </div>
+        <div id="navBtn">
+            <ul>
+                </li>
+                <!-- <button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button> -->
+                <li><a style="font-family: Monserat;" href="Home.php">Home</a> </li>
+                <li><a style="font-family: Monserat;">Menu</a>
+                    <div class="dropDownMenu">
+                        <a style="font-family: Monserat;" href="BookFacillites.html">Booking Fasilitas</a>
+                        <a style="font-family: Monserat;" href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a>
+                        <a style="font-family: Monserat;" href="ContactUs.php">Contact Us</a>
+                        <a style="font-family: Monserat;" href="Partner.php">Program Kegiatan</a>
+                    </div>
+                </li>
 
-                    <li><a href="Partner.php">Program Kegiatan</a></li>
-                    <li><a style="color:red; font-family: Monserat;" href="login.php">Login</a></li>
-                </ul>
-            </div>
-    </header>
+                <li><a style="font-family: Monserat;" href="Product.php">PKK Mart</a> </li>
+
+
+                <li><a style="color:green; font-family: Monserat;" href="login.php">Login</a></li>
+            </ul>
+        </div>
+</header>
     
 
         <!-- StrukturOrganisasi -->

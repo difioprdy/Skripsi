@@ -139,14 +139,9 @@ $row=mysqli_fetch_array($perintah);
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="Home.html">Home</a>
-                        <div class="dropDownMenu">
-                            <a href="Product.html">Product</a>
-                            <a href="BookFacillites.html">Booking Fasilitas</a>
-                            <a href="ContactUs.html">Contact Us</a>
-                        </div>
+				<li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
                     </li>
-                    <li><a style="color:red" href="Login.html">Logout</a></li>
+                    <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div> 
     </header>
@@ -250,12 +245,6 @@ $row=mysqli_fetch_array($perintah);
 					<div class="modal-body">
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
-
-							<div class="form-group">
-								<label>Foto Product</label>
-								<input type="hidden" type="text" value="BKB PAUD" class="form-control"
-									name="nama_program" />
-							</div>
 
 							<div class="form-group">
 								<label>Foto Product</label>

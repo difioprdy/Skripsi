@@ -2,6 +2,25 @@
 
 <head>
     <style>
+        * #slider {
+            height: 100vh;
+            position: relative;
+        }
+
+        #imageSlide {
+            position: absolute;
+            border-radius: 15px;
+            top: 50px;
+            left: 220px;
+            width: 50%;
+            height: 60%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            border: 5px solid #cfff83;
+        }
+
+
         #btnlihatlebih {
             border: none;
             padding: 20px 40px;
@@ -43,22 +62,25 @@
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a style="font-family: Monserat;" href="Home.php">Home</a>
                     </li>
                     <!-- <button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button> -->
                     <li><a style="font-family: Monserat;" href="Home.php">Menu</a>
                         <div class="dropDownMenu">
-                            <a style="font-family: Monserat;" href="Product.php">PKK Mart</a>
                             <a style="font-family: Monserat;" href="BookFacillites.php">Booking Fasilitas</a>
-                            <a style="font-family: Monserat;" href="#form_modal5" data-toggle="modal"
-                                data-target="#form_modal5">Buku Tamu</a>
                             <a style="font-family: Monserat;" href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a>
                             <a style="font-family: Monserat;" href="ContactUs.php">Contact Us</a>
+                            <a style="font-family: Monserat;" href="Partner.php">Program Kegiatan</a>
                         </div>
                     </li>
 
-                    <li><a href="Partner.php">Program Kegiatan</a></li>
-                    <li><a style="color:red; font-family: Monserat;" href="login.php">Login</a></li>
+                    <li><a style="font-family: Monserat;" href="Product.php">PKK Mart</a> </li>
+
+                    <li><a style="font-family: Monserat;" href="#form_modal5" data-toggle="modal"
+                            data-target="#form_modal5">Buku Tamu</a> </li>
+
+
+
+                    <li><a style="color:green; font-family: Monserat;" href="login.php">Login</a></li>
                 </ul>
             </div>
     </header>
@@ -224,7 +246,7 @@
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                <center><img src="assets/Event/event1.jpg" alt="Los Angeles" style="width: 65%;">
+                                <center><img src="assets/Event/event1.jpg" alt="Los Angeles" height="550" width="900">
                                 </center>
                                 <div class="carousel-caption">
                                     <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
@@ -232,7 +254,7 @@
                             </div>
 
                             <div class="item">
-                                <center><img src="assets/Event/event2.jpg" alt="Chicago" style="width:65%; height:63%;">
+                                <center><img src="assets/Event/event2.jpg" alt="Chicago" height="550" width="900">
                                 </center>
                                 <div class="carousel-caption">
                                     <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
@@ -240,7 +262,7 @@
                             </div>
 
                             <div class="item">
-                                <center><img src="assets/Event/event3.jpg" alt="New York" style="width:65%; height:63%">
+                                <center><img src="assets/Event/event3.jpg" alt="New York" height="550" width="900">
                                 </center>
                                 <div class="carousel-caption">
                                     <h3 style="color:yellow">Kegiatan Mengaji</h3>
@@ -266,56 +288,30 @@
                     <div class="p2" style="margin-bottom:5vh">
                         <center>
                             <div class="p3">
-                                <p class="p4">PRODUK RPTRA</p>
+                                <p class="p4">PRODUK PKK MART</p>
                             </div>
                         </center>
                     </div>
                     <div class="container">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
 
-                            <div class="carousel-inner">
-
-                                <div class="item active">
-                                    <center><img src="assets/produk.png" alt="Los Angeles" style="width: 50%;"></center>
-                                    <div class="carousel-caption">
-                                        <h3 style="color:yellow">Makanan</h3>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <center><img src="assets/produk.png" alt="Chicago" style="width:50%;"></center>
-                                    <div class="carousel-caption">
-                                        <h3 style="color:yellow">Minuman</h3>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <center><img src="assets/produk.png" alt="New York" style="width:50%;"></center>
-                                    <div class="carousel-caption">
-                                        <h3 style="color:yellow">Kerajinan</h3>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                        <?php
+                             require 'config.php';
+                             $query = mysqli_query($conn, "SELECT * FROM `galeri_foto_program_kegiatan`") or die(mysqli_error());
+                                 while($fetch = mysqli_fetch_array($query)){
+                                    ?>
+                        <div id="slider">
+                            <img id="imageSlide" src="<?php echo $fetch['photo']?>">
                         </div>
+
+
+                        <?php
+					}
+				        ?>
+
                     </div>
 
                     <div style="margin-top:5vh;">
-                        <center><button type="button" id="btnlihatlebih">LIHAT LEBIH</button></center>
+                        <center><button  onclick="location.href = 'Product.php';" type="button" id="btnlihatlebih">LIHAT LEBIH</button></center>
                     </div>
 
                 </div>

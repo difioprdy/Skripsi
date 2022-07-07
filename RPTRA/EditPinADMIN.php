@@ -1,20 +1,4 @@
-<?php
-$db = mysqli_connect("localhost", "root", "", "rptra_lh");
-if(!$db){
-    die;
-}else{
-    $id = $_GET['id'];
-    $qry = "select * from pinadminrptra where ID_PIN = $id";
-    $run = $db -> query($qry);
-    if($run -> num_rows > 0){
-        while($row = $run -> fetch_assoc()){
-            $pin = $row['PIN'];
-        }
 
-    }
-}
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -132,6 +116,9 @@ if(!$db){
             transition-duration: 0.5s;
         }
 </style>
+
+<link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
+
 <title> Edit PIN Registrasi </title>
 </head>
 <body>
@@ -145,22 +132,30 @@ if(!$db){
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="Home.html">Home</a>
-                        <div class="dropDownMenu">
-                            <a href="Product.html">Product</a>
-                            <a href="BookFacillites.html">Booking Fasilitas</a>
-                            <a href="ContactUs.html">Contact Us</a>
-                        </div>
+                <li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
                     </li>
-                    <li><a style="color:red" href="Login.html">Logout</a></li>
+                    <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div> 
     </header>
 <form method="post">
 <label>PIN</label>
-<input type="number" name="PIN" value="<?php echo $pin; ?>">
+
+<?php
+					require 'config.php';
+					$query = mysqli_query($conn, "SELECT * FROM pinadminrptra where PIN") or die(mysqli_error());
+					while($fetch = mysqli_fetch_array($query)){
+				?>
+
+<input type="number" name="PIN" value="<?php echo $fetch['PIN'] ?>">
 <br><br>
+
 <input type="submit" id="tst" name="update" value="Update">
+
+<?php
+					}
+				?>
+
 </form>
 <!-- Footer -->
 <footer id="footerBar">

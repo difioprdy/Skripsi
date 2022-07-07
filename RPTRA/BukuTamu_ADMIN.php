@@ -138,21 +138,15 @@ require 'config.php';
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="Home.html">Home</a>
-                        <div class="dropDownMenu">
-                            <a href="Product.html">Product</a>
-                            <a href="BookFacillites.html">Booking Fasilitas</a>
-                            <a href="ContactUs.html">Contact Us</a>
-                        </div>
+                <li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
                     </li>
-                    <li><a style="color:red" href="Login.html">Logout</a></li>
+                    <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div> 
     </header>
     <nav class="navbar navbar-default">
     </nav>
-    <div class="col-md-3"></div>
-    <div class="col-md-6 well">
+    <div class="container">
         <div style="font-family:'Monserat'">
         <h3 class="text-primary">Data Buku Tamu dan Isi Buku Tamu</h3>
         <hr style="border-top:1px dotted #ccc;" />
@@ -200,8 +194,9 @@ require 'config.php';
             </div>
 
             <br style="clear:both;" />
+            <center>
             <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-save"></span>
-                Save</button>
+                Save</button></center>
         </form>
 
     </div>

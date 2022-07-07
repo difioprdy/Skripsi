@@ -98,14 +98,9 @@
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="Home.html">Home</a>
-                        <div class="dropDownMenu">
-                            <a href="Product.html">Product</a>
-                            <a href="BookFacillites.html">Booking Fasilitas</a>
-                            <a href="ContactUs.html">Contact Us</a>
-                        </div>
+                    <li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
                     </li>
-                    <li><a style="color:red" href="Login.html">Logout</a></li>
+                    <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div> 
     </header>
@@ -144,38 +139,9 @@
 			</tbody>
 		</table>
 
-		<br /><br />
-		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
-		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal2"><span class="glyphicon glyphicon-plus"></span> Tambah berita hanya tulisan</button>
 		
-		<h3 class="text-primary">Edit Berita</h3>
-		<table class="table table-bordered">
-			<thead class="alert-info">
-				<tr>
-					<th>Judul Berita</th>
-					<th>Deskripsi</th>
-					<th>Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-					require 'config.php';
-					$query = mysqli_query($conn, "SELECT * FROM `pusatinformasi` WHERE tipe_informasi = 'no text'") or die(mysqli_error());
-					while($row = mysqli_fetch_array($query)){
-				?>
-				<tr>
-					<td><?php echo $row['judul']?></td>	
-					<td><?php echo $row['content']?></td>			
-					<td><button type="button" id="btnupdate"><a href="<?= 'updateberita_pusatinf.php?id=' .$row['id'] ?>">Update</a></button></td>
-				</tr>
-				<?php
-					}
-				?>
-			</tbody>
-		</table>
-
-
-	</div>
+		<!-- <button class="btn btn-success" type="button" action="testheadline.php" ><span class="glyphicon glyphicon-plus"></span> Post</button> -->
+		
  
 
 	

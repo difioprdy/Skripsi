@@ -106,6 +106,9 @@
 }
 
 </style>
+
+<link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
+
     <meta charset="UTF-8">
     <title>Admin RPTRA Kebon Pala</title>
 </head>
@@ -120,14 +123,7 @@
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="Home.html">Home</a>
-                        <div class="dropDownMenu">
-                            <a href="Product.html">Product</a>
-                            <a href="BookFacillites.html">Booking Fasilitas</a>
-                            <a href="ContactUs.html">Contact Us</a>
-                        </div>
-                    </li>
-                    <li><a style="color:red" href="Login.html">Logout</a></li>
+                    <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div> 
     </header>
@@ -144,34 +140,49 @@
 <div class="center" style="margin-top:5vh;">
             <div align="center">
                 <div flex-parent jc-center>
-                    <button class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                    <button onclick="location.href = 'pusatinformasi_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
                         <span class="fa fa-users fa-2x"></span><br />
-                        Edit <br> Pengumuman
+                        "Pusat Informasi Keluarga" <br>  Homepage
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                    <button onclick="location.href = 'ProductRPTRA_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
                         <span class="fa fa-truck-pickup fa-2x"></span><br />
-                        Edit Halaman <br> Product
+                        PKK Mart
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                    <button onclick="location.href = 'TentangKamiRPTRA_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
                         <span class="fa fa-book fa-2x"></span><br />
-                        Edit <br> "Tentang Kami"
+                        "Tentang Kami" <br> Homepage
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                    <button onclick="location.href = 'headlineHomepageADMIN.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
                         <span class="fa fa-user-circle fa-2x"></span><br />
-                        Edit <br> Headline Menu Utama
+                        "Headline" <br> Homepage
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                    <button onclick="location.href = 'EditPinADMIN.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7"> 
                         <span class="fa fa-user-circle fa-2x"></span><br />
                         Edit <br> PIN registrasi
                     </button>
 
-                    <button class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                    <button onclick="location.href = 'booking_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
                         <span class="fa fa-user-circle fa-2x"></span><br />
-                        Edit dan Melihat <br> Reservasi
+                        Booking <br> Tempat
+                    </button>
+
+                    <button onclick="location.href = 'program_kegiatanADMIN.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                        <span class="fa fa-user-circle fa-2x"></span><br />
+                        Program Kegiatan <br> RPTRA
+                    </button>
+
+                    <button onclick="location.href = 'strukorg.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                        <span class="fa fa-user-circle fa-2x"></span><br />
+                        Gambar Struktur <br> Organisasi RPTRA
+                    </button>
+
+                    <button onclick="location.href = 'BukuTamu_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="margin-right:20px; background-color:#87AFC7">
+                        <span class="fa fa-user-circle fa-2x"></span><br />
+                        Buku Tamu
                     </button>
 
                 </div>

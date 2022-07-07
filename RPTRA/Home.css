@@ -175,6 +175,15 @@
     font-family: Monserat;
 
 }
+
+#slider{
+    height: 100vh;
+    position: relative;
+}
+
+
+
+
 .p12{
     float: right;
     margin-right: 100px;

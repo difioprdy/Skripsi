@@ -131,7 +131,7 @@ function build_calendar($month, $year) {
 <html>
 
 <head>
-<!-- <style>
+<style>
 *{
     margin: 0;
     padding: 0;
@@ -149,6 +149,7 @@ function build_calendar($month, $year) {
     background-size: cover;
     background-position: center;
     background-color: black;
+    margin-bottom:5vh;
 }
 
 #navBar{
@@ -199,7 +200,38 @@ function build_calendar($month, $year) {
     display: block;
     padding: 10px;
 }	
-</style> -->
+/* Footer */
+#footerBar{
+    margin-top: 5vh;
+    background-color:black;
+    background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
+    display: flex;
+    justify-content: space-between;
+}
+
+#txtCopy{
+    margin-left: 50px;
+    display: flex;
+    color: white;
+    float: left;
+    padding: 30px;
+    font-family: Monserat;
+}
+
+#sosmedImg{
+    display: flex;
+    width: 30%;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+.a10{
+    color: white;
+    margin-left: 200px;
+    font-family: Monserat;
+}
+</style> 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -347,6 +379,17 @@ function build_calendar($month, $year) {
             </div>
         </div>
     </div>
+
+
+
+    <footer id="footerBar">
+    <div id="txtCopy">
+        &#169 2016 - RPTRA Kebon Pala
+    </div>
+    <div id="sosmedImg">
+        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+    </div>
+</footer>
 </body>
 
 </html>

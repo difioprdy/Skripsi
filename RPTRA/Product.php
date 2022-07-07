@@ -101,7 +101,7 @@ if(isset($_GET["action"]))
                     </div>
                 </li>
 
-                <li><a style="font-family: Monserat;" href="Product.php">PKK Mart</a> </li>
+                <li><a style="font-family: Monserat;" href="PKKmart_control.php">PKK Mart</a> </li>
 
 
                 <li><a style="color:green; font-family: Monserat;" href="login.php">Login</a></li>

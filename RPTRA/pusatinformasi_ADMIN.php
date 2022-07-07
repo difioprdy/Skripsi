@@ -231,7 +231,8 @@
 
  
 <script src="js1/jquery-3.2.1.min.js"></script>	
-<script src="js1/bootstrap.js"></script>	
+<script src="js1/bootstrap.js"></script>
+	
 </body>	
 
 <script>

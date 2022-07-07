@@ -73,7 +73,7 @@
                         </div>
                     </li>
 
-                    <li><a style="font-family: Monserat;" href="Product.php">PKK Mart</a> </li>
+                    <li><a style="font-family: Monserat;" href="PKKmart_control.php">PKK Mart</a> </li>
 
                     <li><a style="font-family: Monserat;" href="#form_modal5" data-toggle="modal"
                             data-target="#form_modal5">Buku Tamu</a> </li>

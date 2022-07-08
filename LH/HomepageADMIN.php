@@ -154,6 +154,11 @@
                         PIN Registrasi
                     </button>
 
+                    <button onclick="location.href = 'strukorg.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
+                        <span class="fa fa-user-circle fa-2x"></span><br />
+                        Struktur Organisasi <br> LH
+                    </button>
+
                 </div>
             </div>
         </div>

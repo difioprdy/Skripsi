@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="HomePageAdmin.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        
+        <!-- Navbar -->
+<div>
+    <div class="hidden-md-and-down">
+        <v-app-bar style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black; padding-bottom: 15vh;" fixed flat>
+          <img style="margin-left: 10vh; margin-top: 5vh;" src="assets/logo1.jpeg" width="4%" alt="Lambang">
+          <img style="margin-top: 5vh;" src="assets/Logo2.png" width="10%" alt="Lambang">
+          <img style="margin-top: 5vh;" src="assets/logo3.jpeg" width="4%" alt="Lambang">
+         
+          <v-row>
+            <v-col class="d-flex justify-end">
+                <div id="navBtn">
+                    <ul>
+                      <li><a style="color:red" href="Login.php">Logout</a></li>
+                    </ul>
+                </div> 
+            </v-col>
+          </v-row>
+  
+        </v-app-bar>
+      </div>
+  
+  
+      <div class="hidden-md-and-up">
+      <v-toolbar flat dense>
+        <v-app-bar-nav-icon id="carousels" @click="drawer = !drawer"></v-app-bar-nav-icon>
+  
+        <center>
+            <img src="assets/logo1.jpeg" width="5%" alt="Lambang">
+            <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
+            <img src="assets/logo3.jpeg" width="5%vh" alt="Lambang">
+        </center>
+  
+      </v-toolbar>
+  
+    <v-navigation-drawer style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black; padding-bottom: 15vh;" v-model="drawer" app>
+        <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
+        <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
+        <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang"> <hr>
+            <v-btn text color="#00AFF2"><a href="Home.html"></a>Home</v-btn><br>
+            <v-btn text color="red"><a href="Login.html"></a>Logout</v-btn><br>
+          
+    </v-navigation-drawer>
+        
+      </div>
+</div>
+<p style="margin-top: 20vh; color: white;">p</p>
+
+<!-- Isi -->
+<center><h1>Admin Website RPTRA Kebon Pala</h1></center> <hr>
+<center><h1>Pilih Page yang ingin diedit</h1></center>
+
+<v-container class="mt-10">
+  <v-row>
+    <v-col>
+      <a href="pusatinformasi_ADMIN.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-08.png" alt=""></a>
+      <a href="ProductRPTRA_ADMIN.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-09.png" alt=""></a>
+      <a href="TentangKamiRPTRA_ADMIN.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-10.png" alt=""></a>
+      <a href="headlineHomepageADMIN.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-11.png" alt=""></a>
+      <a href="EditPinADMIN.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-12.png" alt=""></a>
+      <a href="booking_ADMIN.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-13.png" alt=""></a>
+      <a href="program_kegiatanADMIN.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-14.png" alt=""></a>
+      <a href="strukorg.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-15.png" alt=""></a>
+      <a href="BukuTamu_ADMIN.php"><img style="border-radius: 20px; width: 20%;" src="assets/Homepageadmin/Icon RPTRA-16.png" alt=""></a>
+    </v-col>
+  </v-row>
+</v-container>
+
+
+<!-- Footer -->
+<footer id="footerBar">
+  <div id="txtCopy">
+    &#169 2016 - RPTRA Kebon Pala
+  </div>
+  <div id="sosmedImg">
+    <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+  </div>
+</footer>
+
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data(){
+        return{
+          drawer:''
+        }
+      }
+    })
+  </script>
+</body>
+</html>

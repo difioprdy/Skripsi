@@ -1,0 +1,144 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Monserat';
+}
+@font-face{
+  font-family: 'Monserat';
+  src: url(Font/montserrat/Montserrat-Light.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* navbar */
+.navbar{
+  background-image: linear-gradient(rgba(0,0,0,0.5),#211063);
+  background-color: black;
+}
+#navBtn ul{
+  margin-top: 50px;
+  float: right;
+  list-style-type: none;
+}
+#navBtn ul li{
+  display: inline-block; 
+}
+#navBtn ul li a{
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.5s ease;
+  padding: 5px 20px;
+}
+#navBtn ul li a:hover{
+  background-color: #ffffff;
+  color: black;
+}
+#navBtn ul li:hover .dropDownMenu{
+  display: block;
+}
+#navBtn ul li:hover a{
+  color: black;
+}
+
+.dropDownMenu{
+  display: none;
+  position: absolute;
+  background-color: white;
+}
+.dropDownMenu a{
+  display: block;
+  padding: 10px;
+}
+
+/* Landing Page */
+.boxed{
+  background: #dbffa2;
+  border-radius: 40px;
+  width: 100%;
+  height: 90px;
+}
+.isibox{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.isibox2{
+  margin-top: 5vh;
+  text-align: justify;
+}
+.gmbrlp{
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* TentangKami */
+.tentangkami{
+  background-image: url("./assets/LH/bgLH.png");
+  background-size: 100%;
+  background-size: cover;
+}
+.tittlettgkm1{
+  border-radius: 40px;
+  text-align: center;
+  width: 30%;
+  background: #cfff83;
+  margin-top: 5vh;
+}
+.tittlettgkm2{
+  font-weight: bold;
+  font-size: 37px;
+}
+.tittlettgkm3{
+  color: white;
+  text-align: justify;
+}
+
+/* PKKMart */
+.pkkmart{
+  margin-top: 10px;
+  background-color: #eeffd2;
+}
+.pkkmart1{
+  border-radius: 40px;
+  text-align: center;
+  width: 30%;
+  background: white;
+  margin-top: 5vh;
+}
+.pkkmart2{
+  font-weight: bold;
+  font-size: 37px;
+}
+
+/* Footer */
+#footerBar{
+  margin-top: 10px;
+  background-color:black;
+  background-image: linear-gradient(#20845d,rgba(22, 53, 32, 0.5));
+  display: flex;
+  justify-content: space-between;
+}
+
+#txtCopy{
+  margin-left: 50px;
+  display: flex;
+  color: white;
+  float: left;
+  padding: 30px;
+  font-family: 'Monserat';
+}
+
+#sosmedImg{
+  font-family: 'Monserat';
+  display: flex;
+  width: 30%;
+  float: right;
+  padding: 20px;
+  margin-top: 10px;
+  
+}
+.a10{
+  color: white;
+  margin-left: 200px;
+}

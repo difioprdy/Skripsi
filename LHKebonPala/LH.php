@@ -195,7 +195,7 @@ function make_slides2($connect)
                 <v-col class="d-flex justify-end">
                   <div id="navBtn">
                     <ul>
-                      <li><a href="Home.html">Home</a></li>
+                      <li><a href="LH.php">Home</a></li>
                       <li><a href="#">Menu</a>
                         <div class="dropDownMenu">
                           <a href="ProductLH.php">Product</a>

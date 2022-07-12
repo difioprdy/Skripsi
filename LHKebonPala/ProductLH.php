@@ -258,13 +258,13 @@ function make_slides3($connect)
               <v-row>
                 <v-col class="d-flex justify-end">
                   <div id="navBtn">
-                    <ul>
+                  <ul>
                       <li><a href="LH.php">Home</a></li>
                       <li><a href="#">Menu</a>
-                        <div class="dropDownMenu.php">
+                        <div class="dropDownMenu">
                           <a href="ProductLH.php">Product</a>
-                          <a href="StrukturOrganisasiLH.php">Struktur Organisasi LH</a>
                           <a href="ContactUslh.php">Contact Us</a>
+                          <a href="StrukturOrganisasiLH.php">Struktur Organisasi LH</a>
                         </div>
                       </li>
                       <li><a href="Edukasi.php">Edukasi</a></li>
@@ -362,7 +362,7 @@ function make_slides3($connect)
 
         <center>
           <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-            <button onclick="location='DetailProduct.php'">Lihat Lebih >>></button>
+            <button onclick="location='DetailProductLH.php'">Lihat Lebih >>></button>
           </v-btn>
         </center>
 
@@ -412,7 +412,7 @@ function make_slides3($connect)
 
         <center>
           <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-            <button onclick="location='DetailProduct.php'">Lihat Lebih >>></button>
+            <button onclick="location='DetailProductLH.php'">Lihat Lebih >>></button>
           </v-btn>
         </center>
 
@@ -458,7 +458,7 @@ function make_slides3($connect)
         </div>
         <center>
           <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-            <button onclick="location='DetailProduct.php'">Lihat Lebih >>></button>
+            <button onclick="location='DetailProductLH.php'">Lihat Lebih >>></button>
           </v-btn>
         </center>
 

@@ -344,7 +344,7 @@ function make_slides2($connect)
               <?php while($fetch = $ambil->fetch_assoc()){ ?>
               <div class="col-md-3">
                 <div class="thumbnail">
-                  <img src="<?php echo $fetch['photo']?>" alt="" height="400px" width="400px">
+                  <img src="<?php echo $fetch['photo']?>" alt="" height="100%" width="100%">
                   <div class="caption">
                     <h3><?php echo $fetch['nama_product']?></h3>
                     <center> <a style="color: white;" data-toggle="modal" data-target="#modal<?php echo $fetch['id']?>"

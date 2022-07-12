@@ -7,6 +7,13 @@ $status="Aktif";
 if($data['aktivasi']==$status){
     include('Product.php');
 }else{
-    echo"<br/><br/>booking tidak diaktifkan sementara";
+    echo"<center>
+    <img width='30%' src='assets/warning.png' alt=''>
+    <h3 style='font-family:'Monserat''>
+    <h3 ><br/><br/>PKK MART TIDAK DIAKTIFKAN SEMENTARA</h3>
+    <div style='margin-top:-15vh'>
+    </div>
+    </h1>
+    </center>";
 }
 ?>

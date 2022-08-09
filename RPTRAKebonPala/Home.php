@@ -50,7 +50,7 @@ function make_slides($connect)
   }
   $output .= '<center>
    <img src="'.$row["photo"].'" alt="'.$row["nama_product"].'" height="550"
-   width="900"/>
+   width="100%"/>
    </center>
    <div class="carousel-caption">
 
@@ -124,7 +124,7 @@ function make_slides2($connect)
   }
   $output .= '<center>
    <img src="'.$row["photo"].'" alt="'.$row["judul"].'" height="550"
-   width="900"/>
+   width="100%"/>
    </center>
    <div class="carousel-caption">
 
@@ -134,8 +134,8 @@ function make_slides2($connect)
     
     </div>
     <center>
-    <div class="pkkmart1">
-        <p class="pkkmart2">'.$row["judul"].'</p>
+    <div class="pkkmartt1">
+        <p class="pkkmartt2">'.$row["judul"].'</p>
     </div>
 </center>
    
@@ -177,6 +177,47 @@ function make_slides2($connect)
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
     <style>
+        .pkkmartt1 {
+            border-radius: 40px;
+            text-align: center;
+            width: 65%;
+            background: white;
+            margin-top: 5vh;
+        }
+
+        .pkkmartt2 {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .pkkmart1 {
+            border-radius: 40px;
+            text-align: center;
+            width: 40%;
+            background: white;
+            margin-top: 5vh;
+        }
+
+        .pkkmart2 {
+            font-weight: bold;
+            font-size: 37px;
+        }
+
+        .pi1 {
+            border-radius: 40px;
+            text-align: center;
+            width: 60%;
+            background: white;
+            margin-top: 2vh;
+        }
+
+        .boxed {
+            background: #b7daeb;
+            border-radius: 40px;
+            width: 100%;
+            height: 120px;
+        }
+
         .test {
             background-color: whitesmoke;
             width: 100%;
@@ -219,7 +260,8 @@ function make_slides2($connect)
                                                     <a href="BookFacillites.html">Booking Fasilitas</a>
                                                     <a href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a>
                                                     <a href="Partner.php">Program Kegiatan</a>
-                                                    <a href="PusatInformasi.php">Pusat Pemberdayaan dan Kesejahteraan Keluarga</a>
+                                                    <a href="PusatInformasi.php">Pusat Pemberdayaan dan Kesejahteraan
+                                                        Keluarga</a>
                                                     <a href="ContactUs.php">Contact Us</a>
                                                 </div>
                                             </li>
@@ -248,18 +290,23 @@ function make_slides2($connect)
 
                         </v-toolbar>
 
-                        <v-navigation-drawer id="carousels" v-model="drawer" app>
+                        <v-navigation-drawer
+                            style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black; padding-bottom: 15vh;"
+                            v-model="drawer" app>
                             <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
                             <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
                             <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang">
                             <hr>
-                            <v-btn text color="#00AFF2"><a href="Home.html">Home</a></v-btn><br>
-                            <v-btn text color="#00AFF2"><a href="#">Booking Fasilitas</a></v-btn><br>
-                            <v-btn text color="#00AFF2"><a href="Partner.html">Program Kegiatan</a></v-btn><br>
-                            <v-btn text color="#00AFF2"><a href="Product.html">PKK Mart</a></v-btn><br>
-                            <v-btn text color="#00AFF2"><a href="#">Struktur Organisasi</a></v-btn><br>
-                            <v-btn text color="#00AFF2"><a href="ContactUs.html"></a>Contact Us</v-btn><br>
-                            <v-btn text color="#32CD32"><a href="Login.html">Login</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Home.php">Home</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="BookFacillites.html">Booking Fasilitas</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Partner.php">Program Kegiatan</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Product.php">PKK Mart</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="#form_modal5" data-toggle="modal"
+                                    data-target="#form_modal5">Buku Tamu</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="PusatInformasi.php">Pusat Informasi</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="ContactUs.php">Contact Us</a></v-btn><br>
+                            <v-btn text color="#32CD32"><a style="color: #32CD32" href="Login.php">Login</a></v-btn><br>
 
                         </v-navigation-drawer>
 
@@ -336,89 +383,100 @@ function make_slides2($connect)
                     </center>
 
                     <section class="konten">
-          <div class="container">
+                        <div class="container">
 
-            <div class="row">
+                            <div class="row">
 
-              <?php require 'config.php'; $ambil = $conn->query("SELECT * FROM tbl_product ORDER BY id ASC LIMIT 4"); ?>
-              <?php while($fetch = $ambil->fetch_assoc()){ ?>
-              <div class="col-md-3">
-                <div class="thumbnail">
-                  <img src="<?php echo $fetch['photo']?>" alt="" height="100%" width="100%">
-                  <div class="caption">
-                    <h3><?php echo $fetch['nama_product']?></h3>
-                    <center> <a style="color: white;" data-toggle="modal" data-target="#modal<?php echo $fetch['id']?>"
-                      id="btnBuyB" class="btn btn-primary">Baca</a></center>
+                                <?php require 'config.php'; $ambil = $conn->query("SELECT * FROM pusatinformasi ORDER BY id DESC LIMIT 4"); ?>
+                                <?php while($fetch = $ambil->fetch_assoc()){ ?>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <h5><strong>Post Tanggal : <?php echo $fetch['date']?></strong></h5>
+                                        <img style="height:40vh; width:40vh" src="<?php echo $fetch['photo']?>" alt="">
+
+                                        <div class="caption">
+                                            <center>
+                                                <h3><strong><?php echo $fetch['judul']?></strong></h3>
+                                            </center>
+                                            <center> <a style="color: white;" data-toggle="modal"
+                                                    data-target="#modal<?php echo $fetch['id']?>" id="btnBuyB"
+                                                    class="btn btn-primary">Baca</a></center>
 
 
 
-                  </div>
-                  <div class="modal fade" id="modal<?php echo $fetch['id']?>" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <form method="POST" enctype="multipart/form-data" action="">
-                          <div class="modal-header">
-                            <h3 class="modal-title"><?php echo $fetch["nama_product"]; ?></h3>
-                          </div>
-                          <div class="modal-body">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8">
-                              <div class="form-group">
-                              <center>  <img src="<?php echo $fetch['photo']?>" height="400" width="430" /> </center> 
-                              </div>
-                              <div class="form-group">
-                                <br>
-                                <p><?php echo $fetch["deskripsi_product"]; ?></p>
-                              </div>
-                            </div>
-                          </div>
-                          <br style="clear:both;" />
-                          <div class="modal-footer">
-                            <button class="btn btn-danger" data-dismiss="modal"><span
-                                class="glyphicon glyphicon-remove"></span> Close</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
+                                        </div>
+                                        <div class="modal fade" id="modal<?php echo $fetch['id']?>" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <form method="POST" enctype="multipart/form-data" action="">
+                                                        <div class="modal-header">
+                                                            <center>
+                                                                <h3 class="modal-title"><?php echo $fetch["judul"]; ?>
+                                                                </h3>
+                                                            </center>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-2"></div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group">
+                                                                    <center> <img src="<?php echo $fetch['photo']?>"
+                                                                            height="300" width="300" /> </center>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <br>
+                                                                    <p><strong><?php echo $fetch["content"]; ?></strong>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br style="clear:both;" />
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-danger" data-dismiss="modal"><span
+                                                                    class="glyphicon glyphicon-remove"></span>
+                                                                Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                </div>
+                                    </div>
 
-              </div>
-              <?php
+                                </div>
+                                <?php
 					}
 				?>
 
 
 
 
-        </section>
+                    </section>
 
-                        <center>
-                            <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-                                <button onclick="location='PusatInformasi.html'">Baca Lebih >>></button>
-                            </v-btn>
-                        </center>
+                    <center>
+                        <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
+                            <button onclick="location='PusatInformasi.php'">Baca Berita</button>
+                        </v-btn>
+                    </center>
 
-                        <!-- Tentang Kami -->
-                        <div class="tentangkami">
-                            <v-container>
-                                <center>
-                                    <div class="tittlettgkm1">
-                                        <p class="tittlettgkm2">Tentang Kami</p>
-                                    </div>
-                                </center>
+                    <!-- Tentang Kami -->
+                    <div class="tentangkami">
+                        <v-container>
+                            <center>
+                                <div class="tittlettgkm1">
+                                    <p class="tittlettgkm2">Tentang Kami</p>
+                                </div>
+                            </center>
 
-                                <?php
+                            <?php
         require 'config.php';
         $query = mysqli_query($conn, "SELECT * FROM `tentangkami_deskripsi_homepage_rptra`") or die(mysqli_error());
         while($fetch = mysqli_fetch_array($query)){
     ?>
 
-                                <center>
-                                    <div class="a5">
-                                        <p>
-                                            <!-- RPTRA Kebon Pala juga sering melakukan kegiatan-kegiatan tertentu yang bertujuan
+                            <center>
+                                <div class="a5">
+                                    <p>
+                                        <!-- RPTRA Kebon Pala juga sering melakukan kegiatan-kegiatan tertentu yang bertujuan
                     untuk mendukung tumbuh kembang anak-anak yang terdapat di sekitar RPTRA Kebon Pala.
                     Selain untuk itu juga, RPTRA Kebon Pala juga menyelenggarakan beberapa kegiatan lain
                     seperti tempat untuk vaksinisasi Covid-19, pembelajaran kepada ibu-ibu PKK mengenai
@@ -427,176 +485,175 @@ function make_slides2($connect)
                     Kebon Pala. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus autem 
                     sapiente, unde reprehenderit illo cumque fugiat ut! Inventore praesentium culpa doloribus                        
                     voluptatum maiores ratione, fugit voluptatibus nisi laudantium porro tempora. -->
-                                            <?php echo $fetch['content']?>
-                                        </p>
-                                    </div>
-                                </center>
+                                        <?php echo $fetch['content']?>
+                                    </p>
+                                </div>
+                            </center>
 
-                                <?php
+                            <?php
 					}
 				?>
 
-                                <div class="container" style="width:50%; height:25%">
-                                    <br />
-                                    <div id="dynamic_slide_show" class="carousel slide" data-ride="carousel">
+                            <div class="container" style="width:50%; height:25%">
+                                <br />
+                                <div id="dynamic_slide_show" class="carousel slide" data-ride="carousel">
 
 
 
 
 
-                                        <div class="carousel-inner">
-                                            <?php echo make_slides2($connect); ?>
-                                        </div>
-                                        <a class="left carousel-control" href="#dynamic_slide_show" data-slide="prev">
-                                            <span class="glyphicon glyphicon-chevron-left"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-
-                                        <a class="right carousel-control" href="#dynamic_slide_show" data-slide="next">
-                                            <span class="glyphicon glyphicon-chevron-right"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-
-
-
+                                    <div class="carousel-inner">
+                                        <?php echo make_slides2($connect); ?>
                                     </div>
+                                    <a class="left carousel-control" href="#dynamic_slide_show" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+
+                                    <a class="right carousel-control" href="#dynamic_slide_show" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+
 
 
                                 </div>
 
 
-                            </v-container>
-                        </div>
+                            </div>
 
-                        <!-- Produk PKK Mart -->
-                        <div class="pkkmart">
-                            <v-container>
-                                <center>
-                                    <div class="pkkmart1">
-                                        <p class="pkkmart2">PRODUK PKK MART</p>
+
+                        </v-container>
+                    </div>
+
+                    <!-- Produk PKK Mart -->
+                    <div class="pkkmart">
+                        <v-container>
+                            <center>
+                                <div class="pkkmart1">
+                                    <p class="pkkmart2">PRODUK PKK MART</p>
+                                </div>
+                            </center>
+
+
+
+                            <div class="container" style="width:40%; height:25%">
+                                <br />
+                                <div id="dynamic_slide_show1" class="carousel slide" data-ride="carousel">
+
+
+
+
+
+                                    <div style="width:100%;" class="carousel-inner">
+                                        <?php echo make_slides($connect); ?>
                                     </div>
-                                </center>
+                                    <a class="left carousel-control" href="#dynamic_slide_show1" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
 
+                                    <a class="right carousel-control" href="#dynamic_slide_show1" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
 
-
-                                <div class="container" style="width:50%; height:25%">
-                                    <br />
-                                    <div id="dynamic_slide_show1" class="carousel slide" data-ride="carousel">
-
-
-
-
-
-                                        <div class="carousel-inner">
-                                            <?php echo make_slides($connect); ?>
-                                        </div>
-                                        <a class="left carousel-control" href="#dynamic_slide_show1" data-slide="prev">
-                                            <span class="glyphicon glyphicon-chevron-left"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-
-                                        <a class="right carousel-control" href="#dynamic_slide_show1" data-slide="next">
-                                            <span class="glyphicon glyphicon-chevron-right"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-
-
-
-                                    </div>
 
 
                                 </div>
 
-                                <center class="mt-10">
-                                    <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-                                        <button onclick="location='Product.html'">Kunjungi PKK Mart Kebon Pala</button>
-                                    </v-btn>
-                                </center>
 
-                            </v-container>
-                        </div>
+                            </div>
+
+                            <center class="mt-10">
+                                <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
+                                    <button onclick="location='Product.php'">Kunjungi PKK Mart Kebon Pala</button>
+                                </v-btn>
+                            </center>
+
+                        </v-container>
+                    </div>
 
 
 
 
-                        <!-- <center>
+                    <!-- <center>
                 <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
                                 <button onclick="location='Product.html'">Lihat Lebih >>></button>
                             </v-btn>
                 </center> -->
-                        <!-- Footer -->
-                        <footer id="footerBar">
-                            <div id="txtCopy">
-                                &#169 2016 - RPTRA Kebon Pala
-                            </div>
-                            <div id="sosmedImg">
-                            </div>
-                        </footer>
+                    <!-- Footer -->
+                    <footer id="footerBar">
+                        <div id="txtCopy">
+                            &#169 2022 - RPTRA Kebon Pala
+                        </div>
+                        <div id="sosmedImg">
+                        </div>
+                    </footer>
 
 
-                        <div class="modal fade" id="form_modal5" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <form method="POST" action="bukutamu_save.php" enctype="multipart/form-data">
-                                        <div class="modal-header">
-                                            <h3 class="modal-title">Buku Tamu</h3>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <label>Hari dan Tanggal</label> <br>
-                                                    <input id="currentDate" type="date" name="tanggal"
-                                                        required="required" />
-                                                    <input id="currentDate" type="time" name="waktu"
-                                                        required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Nama</label>
-                                                    <input type="text" class="form-control" name="nama"
-                                                        required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Nomor HP</label>
-                                                    <input type="text" class="form-control" name="no_hp"
-                                                        required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Email</label>
-                                                    <input type="text" class="form-control" name="email"
-                                                        required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Instansi</label>
-                                                    <input type="text" class="form-control" name="instansi"
-                                                        required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Peserta</label>
-                                                    <input type="text" class="form-control" name="peserta" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Tujuan</label>
-                                                    <input type="text" class="form-control" name="tujuan" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Kesan dan Pesan</label>
-                                                    <input type="text" class="form-control" name="kesandanpesan" />
-                                                </div>
+                    <div class="modal fade" id="form_modal5" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form method="POST" action="bukutamu_save.php" enctype="multipart/form-data">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Buku Tamu</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Hari dan Tanggal</label> <br>
+                                                <input id="currentDate" type="date" name="tanggal"
+                                                    required="required" />
+                                                <input id="currentDate" type="time" name="waktu" required="required" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Nama</label>
+                                                <input type="text" class="form-control" name="nama"
+                                                    required="required" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Nomor HP</label>
+                                                <input type="text" class="form-control" name="no_hp"
+                                                    required="required" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="text" class="form-control" name="email"
+                                                    required="required" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Instansi</label>
+                                                <input type="text" class="form-control" name="instansi"
+                                                    required="required" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Peserta</label>
+                                                <input type="text" class="form-control" name="peserta" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tujuan</label>
+                                                <input type="text" class="form-control" name="tujuan" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Kesan dan Pesan</label>
+                                                <input type="text" class="form-control" name="kesandanpesan" />
                                             </div>
                                         </div>
-                                        <br style="clear:both;" />
-                                        <div class="modal-footer">
-                                            <button class="btn btn-danger" type="button" data-dismiss="modal"><span
-                                                    class="glyphicon glyphicon-remove"></span> Close</button>
-                                            <button class="btn btn-primary" type="submit"><span
-                                                    class="glyphicon glyphicon-save"></span>
-                                                Save</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                    <br style="clear:both;" />
+                                    <div class="modal-footer">
+                                        <button class="btn btn-danger" type="button" data-dismiss="modal"><span
+                                                class="glyphicon glyphicon-remove"></span> Close</button>
+                                        <button class="btn btn-primary" type="submit"><span
+                                                class="glyphicon glyphicon-save"></span>
+                                            Save</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
+                    </div>
 
             </v-main>
         </v-app>

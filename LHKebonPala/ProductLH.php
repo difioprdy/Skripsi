@@ -5,7 +5,7 @@
 $connect = mysqli_connect("localhost", "root", "", "rptra_lh");
 function make_query($connect)
 {
- $query = "SELECT * FROM tbl_productlh ORDER BY id ASC";
+ $query = "SELECT * FROM tbl_productlh WHERE kategori = 'Alat Alat'";
  $result = mysqli_query($connect, $query);
  return $result;
 }
@@ -79,7 +79,7 @@ function make_slides($connect)
 $connect = mysqli_connect("localhost", "root", "", "rptra_lh");
 function make_query2($connect)
 {
- $query = "SELECT * FROM tbl_productlh ORDER BY id ASC";
+ $query = "SELECT * FROM tbl_productlh WHERE kategori = 'Tanaman'";
  $result = mysqli_query($connect, $query);
  return $result;
 }
@@ -155,7 +155,7 @@ function make_slides2($connect)
 $connect = mysqli_connect("localhost", "root", "", "rptra_lh");
 function make_query3($connect)
 {
- $query = "SELECT * FROM tbl_productlh ORDER BY id ASC";
+ $query = "SELECT * FROM tbl_productlh WHERE kategori = 'Kerajinan'";
  $result = mysqli_query($connect, $query);
  return $result;
 }
@@ -240,6 +240,23 @@ function make_slides3($connect)
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <style>
+    .pik1{
+    border-radius: 40px;
+    text-align: center;
+    width: 30%;
+    background: #dbffa2;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+.pik2{
+    font-weight: bold;
+    font-size: 37px;
+}
+
+  </style>
+
 </head>
 
 <body>
@@ -293,36 +310,37 @@ function make_slides3($connect)
               v-model="drawer" app>
               <img src="assets/LH/logo2.jpeg" width="40%vh" alt="Lambang">
               <hr>
-              <v-btn text color="white"><a href="LH.php"></a>Home</v-btn><br>
-              <v-btn text color="white"><a href="ProductLH.php"></a>Product</v-btn><br>
-              <v-btn text color="white"><a href="Edukasi.php"></a>Edukasi</v-btn><br>
-              <v-btn text color="white"><a href="ContactUs.php"></a>Contact Us</v-btn><br>
-              <v-btn text color="#32CD32"><a href="Login.php"></a>Login</v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="LH.php">Home</a></v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="ProductLH.php">Product</a></v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="Edukasi.php">Edukasi</a></v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="ContactUslh.php">Contact Us</a></v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="StrukturOrganisasiLH.php">Struktur Organisasi LH</a></v-btn><br>
+              <v-btn text color="#32CD32"><a style="color: #32CD32;" href="Login.php">Login</a></v-btn><br>
 
             </v-navigation-drawer>
 
           </div>
         </div>
-        <p style="margin-top: 20vh; color: white;">p</p>
+        <p style="margin-top: 12vh; color: white;">p</p>
 
         <!-- Isi -->
         <!-- Isi -->
-        <center style="font-size:40px; color:#272727"><strong>PRODUCT</strong></center>
-        <center style="color:#727272; margin-bottom: 80px; ">UMKM RPTRA Kebon Pala</center>
-        <div class="z4">
-          <header id="z1">
-            <div id="z2">
-              <div id="z3">
-              </div>
-          </header>
-        </div>
-
-
         <div class="pkkmart">
+        <center><div class="pik1">
+        <p class="pik2">
+          <!-- Edukasi -->
+          Produk
+
+        </p>
+    </div></center>
+
+    <br>
+
+        
           <v-container>
             <center>
               <div class="pkkmart1">
-                <p class="pkkmart2">Makanan</p>
+                <p class="pkkmart2">Alat Alat</p>
               </div>
             </center>
 
@@ -357,20 +375,20 @@ function make_slides3($connect)
             </div>
 
           </v-container>
-        </div>
+        
 
 
-        <center>
-          <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-            <button onclick="location='DetailProductLH.php'">Lihat Lebih >>></button>
-          </v-btn>
-        </center>
+        <center class="mt-10">
+              <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
+                <button onclick="location='DetailProductLH.php'">Kunjungi Produk Alat Alat</button>
+              </v-btn>
+            </center>
 
-        <div class="pkkmart">
+        
           <v-container>
             <center>
               <div class="pkkmart1">
-                <p class="pkkmart2">Minuman</p>
+                <p class="pkkmart2">Tanaman</p>
               </div>
             </center>
 
@@ -406,15 +424,15 @@ function make_slides3($connect)
 
 
           </v-container>
-        </div>
+        
 
 
 
-        <center>
-          <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-            <button onclick="location='DetailProductLH.php'">Lihat Lebih >>></button>
-          </v-btn>
-        </center>
+        <center class="mt-10">
+              <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
+                <button onclick="location='DetailProductLH.php'">Kunjungi Produk Tanaman</button>
+              </v-btn>
+            </center>
 
         <div class="pkkmart">
           <v-container>
@@ -456,20 +474,26 @@ function make_slides3($connect)
 
           </v-container>
         </div>
-        <center>
+        <!-- <center>
           <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
             <button onclick="location='DetailProductLH.php'">Lihat Lebih >>></button>
           </v-btn>
-        </center>
+        </center> -->
 
+        <center class="mt-10">
+              <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
+                <button onclick="location='DetailProductLH.php'">Kunjungi Produk Kerajinan</button>
+              </v-btn>
+            </center>
+            </div>
 
         <!-- Footer -->
         <footer id="footerBar">
           <div id="txtCopy">
-            &#169 2016 - RPTRA Kebon Pala
+            &#169 2022 - Lingkungan Hidup Kebon Pala
           </div>
           <div id="sosmedImg">
-            <p class="a10"><strong>Contact Person</strong> <br> Anwar <br> 0821-1157-0918</p>
+            <p class="a10"></p>
           </div>
         </footer>
 

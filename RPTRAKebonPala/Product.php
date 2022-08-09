@@ -1,9 +1,11 @@
+<!-- MAKANAN -->
+
 <?php
 //index.php
 $connect = mysqli_connect("localhost", "root", "", "rptra_lh");
 function make_query($connect)
 {
- $query = "SELECT * FROM tbl_product ORDER BY id ASC";
+ $query = "SELECT * FROM tbl_product WHERE kategori = 'Makanan'";
  $result = mysqli_query($connect, $query);
  return $result;
 }
@@ -77,7 +79,7 @@ function make_slides($connect)
 $connect = mysqli_connect("localhost", "root", "", "rptra_lh");
 function make_query2($connect)
 {
- $query = "SELECT * FROM tbl_product ORDER BY id ASC";
+ $query = "SELECT * FROM tbl_product WHERE kategori = 'Minuman'";
  $result = mysqli_query($connect, $query);
  return $result;
 }
@@ -153,7 +155,7 @@ function make_slides2($connect)
 $connect = mysqli_connect("localhost", "root", "", "rptra_lh");
 function make_query3($connect)
 {
- $query = "SELECT * FROM tbl_product ORDER BY id ASC";
+ $query = "SELECT * FROM tbl_product WHERE kategori = 'Kerajinan'";
  $result = mysqli_query($connect, $query);
  return $result;
 }
@@ -223,9 +225,9 @@ function make_slides3($connect)
 
 ?>
 
+
 <!DOCTYPE html>
 <html>
-
 
 <head>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" rel="stylesheet">
@@ -233,94 +235,121 @@ function make_slides3($connect)
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="Product.css">
+  <link rel="stylesheet" href="Product.css">
+  <link rel="stylesheet" href="Home.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <style>
+    .pik1 {
+      border-radius: 40px;
+      text-align: center;
+      width: 30%;
+      background: #dbffa2;
+      margin-top: 2vh;
+      margin-bottom: 5vh;
+    }
+
+    .pik2 {
+      font-weight: bold;
+      font-size: 37px;
+    }
+  </style>
+
 </head>
 
 <body>
   <div id="app">
     <v-app>
       <v-main>
-        
+
         <!-- Navbar -->
-<div>
-    <div class="hidden-md-and-down">
-        <v-app-bar style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black; padding-bottom: 15vh;" fixed flat>
-          <img style="margin-left: 10vh; margin-top: 5vh;" src="assets/logo1.jpeg" width="4%" alt="Lambang">
-          <img style="margin-top: 5vh;" src="assets/Logo2.png" width="10%" alt="Lambang">
-          <img style="margin-top: 5vh;" src="assets/logo3.jpeg" width="4%" alt="Lambang">
-         
-          <v-row>
-            <v-col class="d-flex justify-end">
-                <div id="navBtn">
-                <ul>
-                                            <li><a href="Home.php">Home</a></li>
-                                            <li><a href="#">Menu</a>
-                                                <div class="dropDownMenu">
-                                                    <a href="BookFacillites.html">Booking Fasilitas</a>
-                                                    <a href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a>
-                                                    <a href="Partner.php">Program Kegiatan</a>
-                                                    <a href="PusatInformasi.php">Pusat Pemberdayaan dan Kesejahteraan Keluarga</a>
-                                                    <a href="ContactUs.php">Contact Us</a>
-                                                </div>
-                                            </li>
-                                            <li><a href="PKKmart_control.php">PKK Mart</a></li>
-                                            <li><a style="color:#32CD32" href="Login.php">Login</a></li>
-                                        </ul>
-                </div> 
-            </v-col>
-          </v-row>
-  
-        </v-app-bar>
-      </div>
-  
-  
-      <div class="hidden-md-and-up">
-      <v-toolbar flat dense>
-        <v-app-bar-nav-icon id="carousels" @click="drawer = !drawer"></v-app-bar-nav-icon>
-  
-        <center>
-            <img src="assets/logo1.jpeg" width="5%" alt="Lambang">
-            <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
-            <img src="assets/logo3.jpeg" width="5%vh" alt="Lambang">
-        </center>
-  
-      </v-toolbar>
-  
-      <v-navigation-drawer style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black;" v-model="drawer" app>
-        <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
-        <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
-        <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang"> <hr>
-            <v-btn text color="white"><a href="Home.html"></a>Home</v-btn><br>
-            <v-btn text color="white"><a href="#"></a>Booking Fasilitas</v-btn><br>
-            <v-btn text color="white"><a href="Partner.html"></a>Program Kegiatan</v-btn><br>
-            <v-btn text color="white"><a href="Product.html"></a>PKK Mart</v-btn><br>    
-            <v-btn text color="white"><a href="#"></a>Struktur Organisasi</v-btn><br>
-            <v-btn text color="white"><a href="PusatInformasi.html"></a>Pusat Informasi</v-btn><br>
-            <v-btn text color="white"><a href="ContactUs.html"></a>Contact Us</v-btn><br>
-            <v-btn text color="#32CD32"><a href="Login.html"></a>Login</v-btn><br>
-          
-    </v-navigation-drawer>
-        
-      </div>
-</div>
-<p style="margin-top: 20vh; color: white;">p</p>
-<center style="font-size:40px; color:#272727"><strong>PRODUCT</strong></center>
-        <center style="color:#727272; margin-bottom: 80px; ">UMKM RPTRA Kebon Pala</center>
-        <div class="z4">
-          <header id="z1">
-            <div id="z2">
-              <div id="z3">
-              </div>
-          </header>
+        <div>
+          <div class="hidden-md-and-down">
+            <v-app-bar
+              style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black; padding-bottom: 15vh;"
+              fixed flat>
+              <img style="margin-left: 10vh; margin-top: 5vh;" src="assets/logo1.jpeg" width="4%" alt="Lambang">
+              <img style="margin-top: 5vh;" src="assets/Logo2.png" width="10%" alt="Lambang">
+              <img style="margin-top: 5vh;" src="assets/logo3.jpeg" width="4%" alt="Lambang">
+
+              <v-row>
+                <v-col class="d-flex justify-end">
+                  <div id="navBtn">
+                    <ul>
+                      <li><a href="Home.php">Home</a></li>
+                      <li><a href="#">Menu</a>
+                        <div class="dropDownMenu">
+                          <a href="BookFacillites.html">Booking Fasilitas</a>
+                          <a href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a>
+                          <a href="Partner.php">Program Kegiatan</a>
+                          <a href="PusatInformasi.php">Pusat Pemberdayaan dan Kesejahteraan Keluarga</a>
+                          <a href="ContactUs.php">Contact Us</a>
+                        </div>
+                      </li>
+                      <li><a href="PKKmart_control.php">PKK Mart</a></li>
+                      <li><a style="color:#32CD32" href="Login.php">Login</a></li>
+                    </ul>
+                  </div>
+                </v-col>
+              </v-row>
+
+            </v-app-bar>
+          </div>
+
+
+          <div class="hidden-md-and-up">
+            <v-toolbar flat dense>
+              <v-app-bar-nav-icon id="carousels" @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+              <center>
+                <img src="assets/logo1.jpeg" width="5%" alt="Lambang">
+                <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
+                <img src="assets/logo3.jpeg" width="5%vh" alt="Lambang">
+              </center>
+
+            </v-toolbar>
+
+            <v-navigation-drawer
+                            style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black; padding-bottom: 15vh;"
+                            v-model="drawer" app>
+                            <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
+                            <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
+                            <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang">
+                            <hr>
+                            <v-btn text color="white"><a style="color: white;" href="Home.php">Home</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="BookFacillites.html">Booking Fasilitas</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Partner.php">Program Kegiatan</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Product.php">PKK Mart</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="PusatInformasi.php">Pusat Informasi</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="ContactUs.php">Contact Us</a></v-btn><br>
+                            <v-btn text color="#32CD32"><a style="color: #32CD32" href="Login.php">Login</a></v-btn><br>
+
+                        </v-navigation-drawer>
+
+          </div>
         </div>
+        <p style="margin-top: 9vh; color: white;">p</p>
 
-
+        <!-- Isi -->
+        <!-- Isi -->
         <div class="pkkmart">
+        <center>
+          <div class="tittlettgkm1">
+            <p class="pik2">
+              <!-- Edukasi -->
+              Produk
+
+            </p>
+          </div>
+        </center>
+
+        <br>
+
+        
           <v-container>
             <center>
               <div class="pkkmart1">
@@ -359,16 +388,16 @@ function make_slides3($connect)
             </div>
 
           </v-container>
-        </div>
 
 
-        <center>
-          <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-            <button onclick="location='DetailProduct.php'">Lihat Lebih >>></button>
-          </v-btn>
-        </center>
 
-        <div class="pkkmart">
+          <center class="mt-10">
+            <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
+              <button onclick="location='DetailProduct.php'">Kunjungi Produk Makanan</button>
+            </v-btn>
+          </center>
+
+
           <v-container>
             <center>
               <div class="pkkmart1">
@@ -408,77 +437,86 @@ function make_slides3($connect)
 
 
           </v-container>
-        </div>
 
 
 
-        <center>
-          <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-            <button onclick="location='DetailProduct.php'">Lihat Lebih >>></button>
-          </v-btn>
-        </center>
 
-        <div class="pkkmart">
-          <v-container>
-            <center>
-              <div class="pkkmart1">
-                <p class="pkkmart2">Kerajinan</p>
+          <center class="mt-10">
+            <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
+              <button onclick="location='DetailProduct.php'">Kunjungi Produk Minuman</button>
+            </v-btn>
+          </center>
+        
+
+        <v-container>
+          <center>
+            <div class="pkkmart1">
+              <p class="pkkmart2">Kerajinan</p>
+            </div>
+          </center>
+
+
+
+          <div class="container" style="width:50%; height:25%">
+            <br />
+            <div id="dynamic_slide_show3" class="carousel slide" data-ride="carousel">
+
+
+
+
+
+              <div class="carousel-inner">
+                <?php echo make_slides3($connect); ?>
               </div>
-            </center>
+              <a class="left carousel-control" href="#dynamic_slide_show3" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
 
+              <a class="right carousel-control" href="#dynamic_slide_show3" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
 
-
-            <div class="container" style="width:50%; height:25%">
-              <br />
-              <div id="dynamic_slide_show3" class="carousel slide" data-ride="carousel">
-
-
-
-
-
-                <div class="carousel-inner">
-                  <?php echo make_slides3($connect); ?>
-                </div>
-                <a class="left carousel-control" href="#dynamic_slide_show3" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-
-                <a class="right carousel-control" href="#dynamic_slide_show3" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-
-
-
-              </div>
 
 
             </div>
 
-          </v-container>
-        </div>
-        <center>
+
+          </div>
+
+
+
+        </v-container>
+
+        <!-- <center>
           <v-btn small class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
-            <button onclick="location='DetailProduct.php'">Lihat Lebih >>></button>
+            <button onclick="location='DetailProductLH.php'">Lihat Lebih >>></button>
+          </v-btn>
+         </center> -->
+
+        <center class="mt-10">
+          <v-btn x-large class="mb-2" style="font-size:20px" depressed color="#f0ad4e" dark>
+            <button onclick="location='DetailProduct.php'">Kunjungi Produk Kerajinan</button>
           </v-btn>
         </center>
-
-
+        </div>
+        <br>
         <!-- Footer -->
-        <footer id="footerBar">
+        <footer id="footerBar" style="margin-top:1vh">
           <div id="txtCopy">
-            &#169 2016 - RPTRA Kebon Pala
+            &#169 2022 - RPTRA Kebon Pala
           </div>
           <div id="sosmedImg">
-            <p class="a10"><strong>Contact Person</strong> <br> Anwar <br> 0821-1157-0918</p>
+            <p class="a10"></p>
           </div>
         </footer>
 
 
-      </v-main>
-    </v-app>
   </div>
+  </v-main>
+  </v-app>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
@@ -486,12 +524,13 @@ function make_slides3($connect)
     new Vue({
       el: '#app',
       vuetify: new Vuetify(),
-      data(){
-        return{
-          drawer:''
+      data() {
+        return {
+          drawer: ''
         }
       }
     })
   </script>
 </body>
+
 </html>

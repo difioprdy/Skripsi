@@ -9,7 +9,10 @@ if(isset($_POST['nama_product'])){
 
     $query = mysqli_query($conn, "UPDATE tbl_productlh SET deskripsi_product = '$deskripsi_product', nama_product = '$nama_product', price = '$price', kategori = '$kategori' WHERE id = $id") or die(mysqli_error()) ;
 if($query){
-    header("Location: ProductLH_ADMIN.php?success=1");
+   // header("Location: ProductLH_ADMIN.php?success=1");
+	echo "<script language='javascript' type='text/javascript'>alert('Anda Berhasil Update Product');  
+        </script>";
+   echo "<meta http-equiv='refresh' content='1; URL=ProductLH_ADMIN.php?success=1'>";
 }
 else{
     header("Location: updateProduct_LH.php?success=0");
@@ -24,7 +27,7 @@ else{
 
 <?php
 	require_once 'config.php';
-	if(ISSET($_POST['edit'])){
+	if(ISSET($_POST['save'])){
 		$id = $_POST['id'];
 		$image_name = $_FILES['photo']['name'];
 		$image_temp = $_FILES['photo']['tmp_name'];
@@ -41,8 +44,10 @@ else{
 			if(unlink($previous)){
 				if(move_uploaded_file($image_temp, $path)){
 					mysqli_query($conn, "UPDATE `tbl_productlh` set `nama_foto_hidden` = '$nama_foto_hidden', `photo` = '$path' WHERE `id` = '$id'") or die(mysqli_error());
-					echo "<script>alert('User account updated!')</script>";
-					header("Location: ProductLH_ADMIN.php?success=1");
+					echo "<script language='javascript' type='text/javascript'>alert('Anda Berhasil Update Product');  
+        </script>";
+   echo "<meta http-equiv='refresh' content='1; URL=ProductLH_ADMIN.php?success=1'>";
+					// header("Location: ProductLH_ADMIN.php?success=1");
 				}
 			}		
 		}else{

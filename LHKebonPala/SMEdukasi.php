@@ -52,32 +52,30 @@ else{
   
   
       <div class="hidden-md-and-up">
-      <v-toolbar flat dense>
-        <v-app-bar-nav-icon id="carousels" @click="drawer = !drawer"></v-app-bar-nav-icon>
-  
-        <center>
-            <img src="assets/logo1.jpeg" width="5%" alt="Lambang">
-            <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
-            <img src="assets/logo3.jpeg" width="5%vh" alt="Lambang">
-        </center>
-  
-      </v-toolbar>
-  
-    <v-navigation-drawer id="carousels" v-model="drawer" app>
-        <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
-        <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
-        <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang"> <hr>
-            <v-btn text color="#00AFF2"><a href="Home.html">Home</a></v-btn><br>
-            <v-btn text color="#00AFF2"><a href="#">Booking Fasilitas</a></v-btn><br>
-            <v-btn text color="#00AFF2"><a href="Partner.html">Program Kegiatan</a></v-btn><br>
-            <v-btn text color="#00AFF2"><a href="Product.html">PKK Mart</a></v-btn><br>    
-            <v-btn text color="#00AFF2"><a href="#">Struktur Organisasi</a></v-btn><br>
-            <v-btn text color="#00AFF2"><a href="ContactUs.html">Contact Us</a></v-btn><br>
-            <v-btn text color="#32CD32"><a href="Login.html">Login</a></v-btn><br>
-          
-    </v-navigation-drawer>
-        
-      </div>
+            <v-toolbar flat dense>
+              <v-app-bar-nav-icon id="carousels" @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+              <center>
+                <img src="assets/LH/logo2.jpeg" width="15%vh" alt="Lambang">
+              </center>
+
+            </v-toolbar>
+
+            <v-navigation-drawer
+              style="background-image:linear-gradient(rgba(22, 53, 32, 0.5),#20845d); background-color: black; padding-bottom: 15vh;"
+              v-model="drawer" app>
+              <img src="assets/LH/logo2.jpeg" width="40%vh" alt="Lambang">
+              <hr>
+              <v-btn text color="white"><a style="color: white;" href="LH.php">Home</a></v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="ProductLH.php">Product</a></v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="Edukasi.php">Edukasi</a></v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="ContactUslh.php">Contact Us</a></v-btn><br>
+              <v-btn text color="white"><a style="color: white;" href="StrukturOrganisasiLH.php">Struktur Organisasi LH</a></v-btn><br>
+              <v-btn text color="#32CD32"><a style="color: #32CD32;" href="Login.php">Login</a></v-btn><br>
+
+            </v-navigation-drawer>
+
+          </div>
 </div>
 <p style="margin-top: 20vh; color: white;">p</p>
 
@@ -102,7 +100,7 @@ else{
         <img src=<?php echo $fetch['photo']?> width="50%" style="border-radius: 20px;" alt="">
     </center>
 
-    <center><div class="boxed">
+    <center style="margin-bottom:5vh"><div class="boxed">
         <div class="isibox">
             <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum
             minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id
@@ -124,7 +122,8 @@ else{
 
 
   <center>
-    <strong style="font-size: 50px;">Video Youtube</strong>
+  
+  <strong style="font-size: 40px;">Video</strong><br> <br> <br>
 
     <?php 
 
@@ -144,7 +143,8 @@ echo "
 
 </center>
 
-
+<br>
+<br>  
 
 
 <?php
@@ -154,13 +154,13 @@ echo "
 
 <!-- Footer -->
 <footer id="footerBar">
-    <div id="txtCopy">
-        &#169 2016 - RPTRA Kebon Pala
-    </div>
-    <div id="sosmedImg">
-        <p class="a10"><strong>Contact Person</strong> <br> Anwar <br> 0821-1157-0918</p>
-    </div>
-</footer>
+          <div id="txtCopy">
+            &#169 2022 - Lingkungan Hidup Kebon Pala
+          </div>
+          <div id="sosmedImg">
+            <p class="a10"></p>
+          </div>
+        </footer>
 
 
 

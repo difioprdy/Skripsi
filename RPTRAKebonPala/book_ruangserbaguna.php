@@ -181,7 +181,7 @@ function timeslots($duration, $cleanup, $start, $end){
 
         /* Footer */
         #footerBar {
-            margin-top: 50vh;
+            margin-top: 55vh;
             background-color: black;
             background-image: linear-gradient(#211063, rgba(0, 0, 0, 0.5));
             display: flex;
@@ -341,10 +341,10 @@ function timeslots($duration, $cleanup, $start, $end){
     <!-- Footer -->
     <footer id="footerBar">
         <div id="txtCopy">
-            &#169 2016 - RPTRA Kebon Pala
+            &#169 2022 - RPTRA Kebon Pala
         </div>
         <div id="sosmedImg">
-            <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+            <p class="a10">
         </div>
     </footer>
 </body>

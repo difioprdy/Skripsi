@@ -232,7 +232,7 @@
 				?>
 				<tr>
 					<td><?php echo $row['content']?></td>			
-					<td><button type="button" id="btnupdate"><a href="<?= 'updateDeskripsi_tentangkami.php?id=' .$row['id'] ?>">Update</a></button></td>
+					<td><button type="button" id="btnupdate"><a style="color:white" href="<?= 'updateDeskripsi_tentangkami.php?id=' .$row['id'] ?>">Update</a></button></td>
 				</tr>
 				<?php
 					}

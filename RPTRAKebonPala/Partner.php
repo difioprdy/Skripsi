@@ -62,96 +62,31 @@
   
       </v-toolbar>
   
-    <v-navigation-drawer id="carousels" v-model="drawer" app>
-        <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
-        <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
-        <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang"> <hr>
-            <v-btn text color="#00AFF2"><a href="Home.html">Home</a></v-btn><br>
-            <v-btn text color="#00AFF2"><a href="#">Booking Fasilitas</a></v-btn><br>
-            <v-btn text color="#00AFF2"><a href="Partner.html">Program Kegiatan</a></v-btn><br>
-            <v-btn text color="#00AFF2"><a href="Product.html">PKK Mart</a></v-btn><br>    
-            <v-btn text color="#00AFF2"><a href="#">Struktur Organisasi</a></v-btn><br>
-            <v-btn text color="#00AFF2"><a href="ContactUs.html"></a>Contact Us</v-btn><br>
-            <v-btn text color="#32CD32"><a href="Login.html">Login</a></v-btn><br>
-          
-    </v-navigation-drawer>
+      <v-navigation-drawer
+                            style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black; padding-bottom: 15vh;"
+                            v-model="drawer" app>
+                            <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
+                            <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
+                            <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang">
+                            <hr>
+                            <v-btn text color="white"><a style="color: white;" href="Home.php">Home</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="BookFacillites.html">Booking Fasilitas</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Partner.php">Program Kegiatan</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Product.php">PKK Mart</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="PusatInformasi.php">Pusat Informasi</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="ContactUs.php">Contact Us</a></v-btn><br>
+                            <v-btn text color="#32CD32"><a style="color: #32CD32" href="Login.php">Login</a></v-btn><br>
+
+                        </v-navigation-drawer>
         
       </div>
 </div>
 
 <!-- BKB PAUD -->
 <p style="margin-top: 10vh; color: white;">p</p>
-        <center><div class="bkbpaud mt-10">
-            <p class="bkbpaud1">BKB PAUD</p>
-        </div></center>
-    
-        <div class="container">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-        
-                <div class="carousel-inner">
-        
-                    <div class="item active">
-                      <center><img src="assets/Event/event3.jpg" alt="Los Angeles" height="550" width="900"></center>
-                      <div class="carousel-caption">
-                        <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
-                      </div>
-                    </div>
-        
-                    <div class="item">
-                      <center><img src="assets/Event/event2.jpg" alt="Chicago" height="550" width="900"></center>
-                      <div class="carousel-caption">
-                        <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
-                      </div>
-                    </div>
-        
-                    <div class="item">
-                      <center><img src="assets/Event/event3.jpg" alt="New York" height="550" width="900"></center>
-                      <div class="carousel-caption">
-                        <h3 style="color:yellow">Kegiatan Mengaji</h3>
-                      </div>
-                    </div>
-        
-                  </div>
-        
-                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-              </div>
-            </center>
-      </div>
-    
-      <center><div class="boxed">
-            <div class="isibox">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum
-                minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id
-                quia.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem,
-                maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos
-                recusandae exercitationem!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit
-                magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio,
-                cumque aliquid enim.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem
-                perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
-            </div>
-      </div></center>
 
-<!-- PIK -->
-<div class="pik">
-    <p style="color:#ffe1ed ;">p</p>
-    <center><div class="pik1">
+<center><div class="pik1">
         <p class="pik2">PIK</p>
     </div></center>
     
@@ -167,25 +102,12 @@
             <div class="carousel-inner">
     
                 <div class="item active">
-                  <center><img src="assets/Event/event3.jpg" alt="Los Angeles" height="550" width="900"></center>
+                  <center><img src="assets/Event/PIK.jpg" alt="Los Angeles" height="550" width="900"></center>
                   <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+                    <h3 style="color:yellow">Sosialisasi Berita</h3>
                   </div>
                 </div>
     
-                <div class="item">
-                  <center><img src="assets/Event/event2.jpg" alt="Chicago" height="550" width="900"></center>
-                  <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
-                  </div>
-                </div>
-    
-                <div class="item">
-                  <center><img src="assets/Event/event3.jpg" alt="New York" height="550" width="900"></center>
-                  <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Mengaji</h3>
-                  </div>
-                </div>
     
               </div>
     
@@ -216,6 +138,63 @@
             perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
         </div>
     </div></center>
+
+
+<!-- PIK -->
+<div class="pik">
+    <p style="color:#ffe1ed ;">p</p>
+    <center><div class="bkbpaud mt-10">
+            <p class="bkbpaud1">BKB PAUD</p>
+        </div></center>
+    
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+        
+                <div class="carousel-inner">
+        
+                    <div class="item active">
+                      <center><img src="assets/Event/BKB PAUD.jpeg" alt="Los Angeles" height="550" width="900"></center>
+                      <div class="carousel-caption">
+                        <h3 style="color:yellow">Outing</h3>
+                      </div>
+                    </div>
+        
+                  </div>
+        
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            </center>
+      
+    
+      <center><div class="boxed">
+            <div class="isibox">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, pariatur? Ipsum commodi fugiat odio, cum
+                minus modi nostrum? Impedit distinctio ducimus, assumenda blanditiis similique beatae soluta harum quod id
+                quia.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere tempore fuga laudantium pariatur. Quidem,
+                maiores veritatis. Rem dolorum quasi, ducimus dolorem earum assumenda. Veritatis, fuga obcaecati nostrum eos
+                recusandae exercitationem!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos necessitatibus maiores nulla, odit
+                magnam laborum ipsa perferendis! Similique, voluptate nulla incidunt illo quod dignissimos in maiores optio,
+                cumque aliquid enim.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos soluta ex rem molestiae ea saepe dolorem
+                perferendis nobis, qui eveniet tempore, unde inventore nam delectus cupiditate provident quia itaque atque.
+            </div>
+      </div></center>
     <p style="color:#ffe1ed ;">p</p>
 </div>
 
@@ -237,23 +216,9 @@
         <div class="carousel-inner">
 
             <div class="item active">
-              <center><img src="assets/Event/event3.jpg" alt="Los Angeles" height="550" width="900"></center>
+              <center><img src="assets/Event/UP2K.jpg" alt="Los Angeles" height="550" width="900"></center>
               <div class="carousel-caption">
-                <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
-              </div>
-            </div>
-
-            <div class="item">
-              <center><img src="assets/Event/event2.jpg" alt="Chicago" height="550" width="900"></center>
-              <div class="carousel-caption">
-                <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
-              </div>
-            </div>
-
-            <div class="item">
-              <center><img src="assets/Event/event3.jpg" alt="New York" height="550" width="900"></center>
-              <div class="carousel-caption">
-                <h3 style="color:yellow">Kegiatan Mengaji</h3>
+                <h3 style="color:yellow">Jual Beli Produk</h3>
               </div>
             </div>
 
@@ -310,21 +275,7 @@
                 <div class="item active">
                   <center><img src="assets/Event/event3.jpg" alt="Los Angeles" height="550" width="900"></center>
                   <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
-                  </div>
-                </div>
-    
-                <div class="item">
-                  <center><img src="assets/Event/event2.jpg" alt="Chicago" height="550" width="900"></center>
-                  <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
-                  </div>
-                </div>
-    
-                <div class="item">
-                  <center><img src="assets/Event/event3.jpg" alt="New York" height="550" width="900"></center>
-                  <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Mengaji</h3>
+                    <h3 style="color:yellow">Pengajian</h3>
                   </div>
                 </div>
     
@@ -377,23 +328,9 @@
         <div class="carousel-inner">
 
             <div class="item active">
-              <center><img src="assets/Event/event3.jpg" alt="Los Angeles" height="550" width="900"></center>
+              <center><img src="assets/Event/POSYANDU.jpeg" alt="Los Angeles" height="550" width="900"></center>
               <div class="carousel-caption">
-                <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
-              </div>
-            </div>
-
-            <div class="item">
-              <center><img src="assets/Event/event2.jpg" alt="Chicago" height="550" width="900"></center>
-              <div class="carousel-caption">
-                <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
-              </div>
-            </div>
-
-            <div class="item">
-              <center><img src="assets/Event/event3.jpg" alt="New York" height="550" width="900"></center>
-              <div class="carousel-caption">
-                <h3 style="color:yellow">Kegiatan Mengaji</h3>
+                <h3 style="color:yellow">Blusukan Kesehatan Anak</h3>
               </div>
             </div>
 
@@ -448,25 +385,12 @@
             <div class="carousel-inner">
     
                 <div class="item active">
-                  <center><img src="assets/Event/event3.jpg" alt="Los Angeles" height="550" width="900"></center>
+                  <center><img src="assets/Event/SIM PKK.jpg" alt="Los Angeles" height="550" width="900"></center>
                   <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Bermain Bola</h3>
+                    <h3 style="color:yellow">Orientasi</h3>
                   </div>
                 </div>
-    
-                <div class="item">
-                  <center><img src="assets/Event/event2.jpg" alt="Chicago" height="550" width="900"></center>
-                  <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Menanam Pohon</h3>
-                  </div>
-                </div>
-    
-                <div class="item">
-                  <center><img src="assets/Event/event3.jpg" alt="New York" height="550" width="900"></center>
-                  <div class="carousel-caption">
-                    <h3 style="color:yellow">Kegiatan Mengaji</h3>
-                  </div>
-                </div>
+
     
               </div>
     
@@ -501,12 +425,12 @@
 </div>
 
 <!-- Footer -->
-<footer id="footerBar" style="margin-top: 50vh">
+<footer id="footerBar" style="margin-top: 10vh">
   <div id="txtCopy">
     &#169 2016 - RPTRA Kebon Pala
   </div>
   <div id="sosmedImg">
-    <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+    <p class="a10">
   </div>
 </footer>
 

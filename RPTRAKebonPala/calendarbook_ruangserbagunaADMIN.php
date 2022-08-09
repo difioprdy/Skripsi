@@ -348,14 +348,10 @@ function build_calendar($month, $year) {
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="Home.html">Home</a>
-                        <div class="dropDownMenu">
-                            <a href="Product.html">Product</a>
-                            <a href="BookFacillites.html">Booking Fasilitas</a>
-                            <a href="ContactUs.html">Contact Us</a>
-                        </div>
+                    <li><a href="Homepageadmin.html">Home Admin</a>
+                        
                     </li>
-                    <li><a style="color:red" href="Login.html">Logout</a></li>
+                    <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div> 
     </header>
@@ -380,10 +376,10 @@ function build_calendar($month, $year) {
         <!-- Footer -->
 <footer id="footerBar">
     <div id="txtCopy">
-        &#169 2016 - RPTRA Kebon Pala
+        &#169 2022 - RPTRA Kebon Pala
     </div>
     <div id="sosmedImg">
-        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+        <p class="a10">
     </div>
 </footer>
 </body>

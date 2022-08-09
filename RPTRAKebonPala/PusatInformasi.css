@@ -10,6 +10,27 @@
     font-style: normal;
 }
 
+/* Landing Page */
+.boxed{
+    background: #b7daeb;
+    border-radius: 40px;
+    width: 100%;
+    height: 90px;
+  }
+  .isibox{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .isibox2{
+    margin-top: 5vh;
+    text-align: justify;
+  }
+  .gmbrlp{
+    width: 100%;
+    border-radius: 15px;
+  }
+
 /* navbar */
 .navbar{
     background-image: linear-gradient(rgba(0,0,0,0.5),#211063);

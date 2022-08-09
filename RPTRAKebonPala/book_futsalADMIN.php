@@ -153,7 +153,7 @@ function timeslots($duration, $cleanup, $start, $end){
 }	
 /* Footer */
 #footerBar{
-    margin-top: 47vh;
+    margin-top: 55vh;
     background-color:black;
     background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
     display: flex;
@@ -205,20 +205,13 @@ function timeslots($duration, $cleanup, $start, $end){
             </div>
             <div id="navBtn">
             <ul>
-                                            <li><a href="Home.php">Home</a></li>
-                                            <li><a href="#">Menu</a>
-                                                <div class="dropDownMenu">
-                                                    <a href="BookFacillites.html">Booking Fasilitas</a>
-                                                    <a href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a>
-                                                    <a href="Partner.php">Program Kegiatan</a>
-                                                    <a href="ContactUs.php">Contact Us</a>
-                                                </div>
-                                            </li>
-                                            <li><a href="PKKmart_control.php">PKK Mart</a></li>
-                                            <li><a style="color:#32CD32" href="Login.php">Login</a></li>
+                                            <li><a href="Homepageadmin.html">Home Admin</a></li>
+                                            <li><a style="color:red" href="Login.php">Logout</a></li>
                                         </ul>
             </div> 
     </header>
+
+    <br> <br>
     <div class="container">
         <h3 class="text-center">Booking untuk tanggal: <?php echo date('d/m/Y', strtotime($date)); ?></h3>
         <hr>
@@ -315,10 +308,10 @@ function timeslots($duration, $cleanup, $start, $end){
 <!-- Footer -->
 <footer id="footerBar">
     <div id="txtCopy">
-        &#169 2016 - RPTRA Kebon Pala
+        &#169 2022 - RPTRA Kebon Pala
     </div>
     <div id="sosmedImg">
-        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+        <p class="a10">
     </div>
 </footer>
 </body>

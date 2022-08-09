@@ -133,7 +133,7 @@
 					<td><?php echo $fetch['kategori']?></td>
 					<td><?php echo $fetch['price']?></td>		
 					
-					<td><button type="button" id="btnupdate"><a href="<?= 'updateProduct_LH.php?id=' .$fetch['id'] ?>">Update</a></button>
+					<td><button type="button" id="btnupdate"><a style="color:white" href="<?= 'updateProduct_LH.php?id=' .$fetch['id'] ?>">Update</a></button>
 					<button class="btn btn-danger" type="button" id="btndelete" data-toggle="modal"
                                 data-target="#<?php echo $fetch['id']?>">Delete</button>
 				
@@ -157,7 +157,7 @@
                                            <form action="deleteProductLH.php" method="post">
                                                <button class="btn btn-default" data-dismiss="modal">Tidak</button>
                                                <input type="hidden" name="id" value="<?php echo $fetch['id']?>">
-                                               <button value="DELETE" name="deleteProduct" class="btn btn-danger" type="submit">Ya</button>
+                                               <button value="DELETE" name="deleteID" class="btn btn-danger" type="submit">Ya</button>
                                            </form>
                                        </div>
                                    </div>
@@ -201,9 +201,10 @@
 							</div>
 
 							<div class="form-group">
-								<label>Deskripsi Product</label>
-								<textarea class="form-control" name="deskripsi_product" required="required"></textarea>
-							</div>
+							<label>Deskripsi Product</label>
+            <!-- <textarea class="form-control" name="judul" required="required" id="savejudul"></textarea> -->
+            <textarea class="ckeditor" class="form-control" name="deskripsi_product">
+            </textarea>
 
 							<div class="form-group">
 								<label>Kategori Product</label>

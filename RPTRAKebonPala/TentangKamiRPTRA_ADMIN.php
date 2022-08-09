@@ -92,10 +92,43 @@
     display: block;
     padding: 10px;
 }	
+
+#footerBar{
+    margin-top: 140vh;
+    background-color:black;
+    background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
+    display: flex;
+    justify-content: space-between;
+}
+
+#txtCopy{
+    margin-left: 50px;
+    display: flex;
+    color: white;
+    float: left;
+    padding: 30px;
+    font-family: Monserat;
+}
+
+#sosmedImg{
+    display: flex;
+    width: 30%;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+.a10{
+    color: white;
+    margin-left: 200px;
+    font-family: Monserat;
+}
 </style>
 
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
+		<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />	
         <script src="ckeditor/ckeditor.js"></script>
 	</head>
 <body>
@@ -109,7 +142,7 @@
             </div>
             <div id="navBtn">
                 <ul>
-				<li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
+				<li><a href="HomepageADMIN.html">Home &nbsp;Admin</a>
                     </li>
                     <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
@@ -119,7 +152,7 @@
 	<div class="col-md-6 well">
 		<h3 class="text-primary">Edit Tentang Kami Homepage RPTRA Kebon Pala Berseri</h3>
 		<hr style="border-top:1px dotted #ccc;"/>
-		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto dan Judul</button>
+		<button class="btn btn-success" type="button" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Post Foto Tentang Kami</button>
 		<br /><br />
 		<h3 class="text-primary">Ganti Foto dan Nama Foto</h3>
 		<table class="table table-bordered">
@@ -234,7 +267,7 @@
 				?>
 				<tr>
 					<td><?php echo $row['content']?></td>			
-					<td><button type="button" id="btnupdate"><a href="<?= 'updateDeskripsi_tentangkami.php?id=' .$row['id'] ?>">Update</a></td></button>
+					<td><button type="button" id="btnupdate"><a style="color:white" href="<?= 'updateDeskripsi_tentangkami.php?id=' .$row['id'] ?>">Update</a></td></button>
 				</tr>
 				<?php
 					}
@@ -281,6 +314,8 @@
 		</div>
 	</div>
 </div>
+
+
  
 <script src="js1/jquery-3.2.1.min.js"></script>	
 <script src="js1/bootstrap.js"></script>	
@@ -311,3 +346,4 @@ if(isset ($_POST['editor'])){
 }
 
 ?>
+

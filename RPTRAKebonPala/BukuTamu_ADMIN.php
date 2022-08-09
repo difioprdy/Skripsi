@@ -79,7 +79,7 @@ require 'config.php';
 }	
 /* Footer */
 #footerBar{
-    margin-top: 5vh;
+    margin-top: 10vh;
     background-color:black;
     background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
     display: flex;
@@ -138,7 +138,7 @@ require 'config.php';
             </div>
             <div id="navBtn">
                 <ul>
-                <li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
+                <li><a href="HomepageADMIN.html">Home &nbsp;Admin</a>
                     </li>
                     <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
@@ -146,6 +146,7 @@ require 'config.php';
     </header>
     <nav class="navbar navbar-default">
     </nav>
+    <center>
     <div class="container">
         <div style="font-family:'Monserat'">
         <h3 class="text-primary">Data Buku Tamu dan Isi Buku Tamu</h3>
@@ -194,7 +195,7 @@ require 'config.php';
             </div>
 
             <br style="clear:both;" />
-            <center>
+            
             <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-save"></span>
                 Save</button></center>
         </form>
@@ -256,10 +257,10 @@ require 'config.php';
 <!-- Footer -->
 <footer id="footerBar">
     <div id="txtCopy">
-        &#169 2016 - RPTRA Kebon Pala
+        &#169 2022 - RPTRA Kebon Pala
     </div>
     <div id="sosmedImg">
-        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+        <p class="a10">
     </div>
 </footer>
 </body>

@@ -199,6 +199,38 @@ function build_calendar($month, $year) {
     display: block;
     padding: 10px;
 }	
+
+#footerBar{
+  margin-top: 10px;
+  background-color:black;
+  background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
+  display: flex;
+  justify-content: space-between;
+}
+
+#txtCopy{
+  margin-left: 50px;
+  display: flex;
+  color: white;
+  float: left;
+  padding: 30px;
+  font-family: Monserat;
+}
+
+#sosmedImg{
+  display: flex;
+  width: 30%;
+  float: right;
+  padding: 20px;
+  margin-top: 10px;
+  
+}
+.a10{
+  color: white;
+  margin-left: 200px;
+  font-family: Monserat;
+}
+
 </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -309,7 +341,7 @@ function build_calendar($month, $year) {
 <body>
     
     <!-- NavBar     -->
-    <!-- <header id="headerBar">
+    <header id="headerBar">
         <div id="navBar">
             <div>
                 <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
@@ -329,7 +361,7 @@ function build_calendar($month, $year) {
                     <li><a style="color:red" href="Login.html">Login</a></li>
                 </ul>
             </div> 
-    </header> -->
+    </header>
     <h1><strong><center>Booking Ruang Serba Guna</center></strong></h1> <hr>
     <div class="container">
         <div class="row">
@@ -348,6 +380,17 @@ function build_calendar($month, $year) {
             </div>
         </div>
     </div>
+
+
+    <footer id="footerBar">
+    <div id="txtCopy">
+        &#169 2022 - RPTRA Kebon Pala
+    </div>
+    <div id="sosmedImg">
+        <p class="a10">
+    </div>
+</footer>   
+
 </body>
 
 </html>

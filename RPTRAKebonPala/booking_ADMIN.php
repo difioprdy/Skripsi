@@ -175,27 +175,32 @@ require 'config.php';
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
+                    <li><a href="HomepageADMIN.html">Home &nbsp;Admin</a>
                     </li>
                     <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div>
     </header>
 
+    
     <center>
         <!-- <div class="col-md-3"></div> -->
         <div class="container">
-            <h3 class="text-primary"
-                style=" text-align: center; color:#727272; margin-bottom: 80px; font-family: Monserat;">Atur Booking
+            <strong><h3 class="text-primary"
+                style=" text-align: center; color:black; margin-bottom: 80px; font-family: Monserat;">Atur Booking
                 Tempat
-                RPTRA Kebon Pala</h3>
+                RPTRA Kebon Pala</h3> </strong>
+
+                <h3 align="center">Lapangan Futsal</h3>
+
             <div id="boxBestSeller">
                 <div id="box">
                     <div id="shirt">
-                        <img src="assets/fasilitas.jpg" height="350" width="370" style="border-radius:15px">
+                        <img src="assets/fasilitas2.jpg" height="350" width="370" style="border-radius:15px">
                     </div>
+                    <br>
                     <div id="text">
-                        <span id="textBox">Lapangan Futsal</span><br>
+                        
                     </div>
                     <div id="btnBuy1">
                         <form action="calendarbook_futsalADMIN.php" method="post">
@@ -229,12 +234,15 @@ require 'config.php';
                     </form>
 
                     <!-- . -->
+
+                    <h3 align="center">Ruang Serba Guna</h3>
                     <div id="box">
                         <div id="shirt">
-                            <img src="assets/fasilitas.jpg" height="350" width="370" style="border-radius:15px">
+                            <img src="assets/fasilitas1.png" height="350" width="370" style="border-radius:15px">
                         </div>
+                        <br>
                         <div id="text">
-                            <span id="textBox">Ruang Serba Guna</span><br>
+                            
                         </div>
                         <div id="btnBuy1">
                             <form action="calendarbook_ruangserbagunaADMIN.php" method="post">
@@ -301,7 +309,7 @@ require 'config.php';
                                     <td>'.$row["telfon"].'</td>  
                                     <td>'.$row["date"].'</td>  
                                     <td>'.$row["timeslot"].'</td>  
-                                    <td><button type="button" id="btndelete" data-toggle="modal"
+                                    <td><button style="color:white" type="button" id="btndelete" data-toggle="modal"
                                 data-target="#'.$row['id'].'">Delete</button></td>
                                </tr>  
 
@@ -367,7 +375,7 @@ require 'config.php';
                                     <td>'.$row["telfon"].'</td>  
                                     <td>'.$row["date"].'</td>  
                                     <td>'.$row["timeslot"].'</td>  
-                                    <td><button type="button" id="btndelete" data-toggle="modal"
+                                    <td><button style="color:white" type="button" id="btndelete" data-toggle="modal"
                                 data-target="#'.$row['id'].'">Delete</button></td>
                                </tr>  
 
@@ -429,14 +437,14 @@ require 'config.php';
 
 
 
-    <footer id="footerBar">
-        <div id="txtCopy">
-            &#169 2016 - RPTRA Kebon Pala
-        </div>
-        <div id="sosmedImg">
-            <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
-        </div>
-    </footer>
+<footer id="footerBar">
+  <div id="txtCopy">
+    &#169 2022 - RPTRA Kebon Pala
+  </div>
+  <div id="sosmedImg">
+    <p class="a10">
+  </div>
+</footer>
 
 </body>
 

@@ -63,22 +63,22 @@
             </v-toolbar>
 
             <v-navigation-drawer
-              style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black;"
-              v-model="drawer" app>
-              <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
-              <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
-              <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang">
-              <hr>
-              <v-btn text color="white"><a href="Home.html"></a>Home</v-btn><br>
-              <v-btn text color="white"><a href="#"></a>Booking Fasilitas</v-btn><br>
-              <v-btn text color="white"><a href="Partner.html"></a>Program Kegiatan</v-btn><br>
-              <v-btn text color="white"><a href="Product.html"></a>PKK Mart</v-btn><br>
-              <v-btn text color="white"><a href="#"></a>Struktur Organisasi</v-btn><br>
-              <v-btn text color="white"><a href="PusatInformasi.html"></a>Pusat Informasi</v-btn><br>
-              <v-btn text color="white"><a href="ContactUs.html"></a>Contact Us</v-btn><br>
-              <v-btn text color="#32CD32"><a href="Login.html"></a>Login</v-btn><br>
+                            style="background-image: linear-gradient(rgba(0,0,0,0.5),#211063); background-color: black; padding-bottom: 15vh;"
+                            v-model="drawer" app>
+                            <img src="assets/logo1.jpeg" width="10%" alt="Lambang">
+                            <img src="assets/Logo2.png" width="20%vh" alt="Lambang">
+                            <img src="assets/logo3.jpeg" width="10%vh" alt="Lambang">
+                            <hr>
+                            <v-btn text color="white"><a style="color: white;" href="Home.php">Home</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="BookFacillites.html">Booking Fasilitas</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Partner.php">Program Kegiatan</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="Product.php">PKK Mart</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="StrukturOrganisasiRPTRA.php">Struktur Organisasi</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="PusatInformasi.php">Pusat Informasi</a></v-btn><br>
+                            <v-btn text color="white"><a style="color: white;" href="ContactUs.php">Contact Us</a></v-btn><br>
+                            <v-btn text color="#32CD32"><a style="color: #32CD32" href="Login.php">Login</a></v-btn><br>
 
-            </v-navigation-drawer>
+                        </v-navigation-drawer>
 
           </div>
         </div>
@@ -87,15 +87,16 @@
         <!-- Isi -->
         <section class="konten">
           <div class="container">
-            <h1>Produk</h1>
+            <h1>Makanan</h1>
+            <br>
 
             <div class="row">
 
-              <?php require 'config.php'; $ambil = $conn->query("SELECT * FROM tbl_product"); ?>
+              <?php require 'config.php'; $ambil = $conn->query("SELECT * FROM tbl_product WHERE kategori = 'Makanan' "); ?>
               <?php while($fetch = $ambil->fetch_assoc()){ ?>
               <div class="col-md-3">
                 <div class="thumbnail">
-                  <img src="<?php echo $fetch['photo']?>" alt="" height="200px" width="200px">
+                  <img style="height:40vh; width:40vh" src="<?php echo $fetch['photo']?>" alt="" height="200px" width="200px">
                   <div class="caption">
                     <h3><?php echo $fetch['nama_product']?></h3>
                     <h5>Rp. <?php echo $fetch['price']?></h5>
@@ -110,26 +111,24 @@
                       <div class="modal-content">
                         <form method="POST" enctype="multipart/form-data" action="">
                           <div class="modal-header">
-                            <h3 class="modal-title"><?php echo $fetch["nama_product"]; ?></h3>
+                          <center>    <h3 class="modal-title"><strong><?php echo $fetch["nama_product"]; ?></strong></h3></center>
                           </div>
                           <div class="modal-body">
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
                               <div class="form-group">
-                                <img src="<?php echo $fetch['photo']?>" height="250" width="280" />
+                              <center>  <img src="<?php echo $fetch['photo']?>"  height="300" width="300"/></center>
                               </div>
                               <div class="form-group">
                                 <br>
-                                <p><?php echo $fetch["deskripsi_product"]; ?></p>
+                                <p><strong><?php echo $fetch["deskripsi_product"]; ?></strong></p>
                               </div>
                             </div>
                           </div>
                           <br style="clear:both;" />
                           <div class="modal-footer">
-                            <button class="btn btn-danger" data-dismiss="modal"><span
-                                class="glyphicon glyphicon-remove"></span> Close</button>
-                            <button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span>
-                              Buy</button>
+                            <button class="btn btn-danger" data-dismiss="modal"> Close</button>
+                            <button class="btn btn-warning" name="edit"><a style="color:white"  href="https://wa.me/6281293959332/?text=Halo, saya ingin membeli <?php echo $fetch['nama_product']?>">Hubungi Penjual</a>
                           </div>
                         </form>
                       </div>
@@ -149,12 +148,12 @@
         </section>
 
         <!-- Footer -->
-        <footer id="footerBar" style="margin-top: 50vh">
+        <footer id="footerBar" style="margin-top: 30vh">
           <div id="txtCopy">
-            &#169 2016 - RPTRA Kebon Pala
+            &#169 2022 - RPTRA Kebon Pala
           </div>
           <div id="sosmedImg">
-            <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+            <p class="a10">
           </div>
         </footer>
 

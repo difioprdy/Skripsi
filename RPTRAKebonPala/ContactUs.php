@@ -95,8 +95,7 @@
         &#169 2016 - RPTRA Kebon Pala
     </div>
     <div id="sosmedImg">
-        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
-    </div>
+        <p class="a10">
 </footer>
 
 

@@ -1,166 +1,247 @@
-<?php
-    // session_start();
-    // if (!isset($_SESSION['SESSION_EMAIL'])) {
-    //     header("Location: login.php");
-    //     die();
-    // }
+<?php 
 
-    // include 'config.php';
+  session_start();
 
-    // $query = mysqli_query($conn, "SELECT * FROM userslh WHERE email='{$_SESSION['SESSION_EMAIL']}'");
+  require 'config.php';
+  require 'functions.php';
 
-    // if (mysqli_num_rows($query) > 0) {
-    //     $row = mysqli_fetch_assoc($query);
+  if(isset($_SESSION['username'], $_SESSION['password'])) {
 
-    //     echo "Welcome " . $row['name'] . " <a href='logout.php'>Logout</a>";
-    // }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<style>
-*{
-    margin: 0;
-    padding: 0;
-}
-@font-face{
-    font-family: 'Monserat';
-    src: url(Font/montserrat/Montserrat-Light.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
 
-#headerBar{
-    background-image:linear-gradient(rgba(22, 53, 32, 0.5),#20845d);
-    height: 18vh ;
-    background-size: cover;
-    background-position: center;
-    background-color: black;
-    margin-bottom:5vh;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Monserat';
+    }
 
-#navBar{
-    max-width: 1200px;
-    margin: auto;
-}
+    @font-face {
+      font-family: 'Monserat';
+      src: url(Font/montserrat/Montserrat-Light.ttf);
+      font-weight: normal;
+      font-style: normal;
+    }
 
-#LogoImg{
-    width: 180px;
-    margin-top: 30px;
-    height: auto;
-    alt: "LogoImage";
-    float: left;
-}
 
-#navBtn ul{
-    margin-top: 50px;
-    float: right;
-    list-style-type: none;
-}
-#navBtn ul li{
-    display: inline-block; 
-}
-#navBtn ul li a{
-    text-decoration: none;
-    color: #ffffff;
-    transition: 0.5s ease;
-    padding: 5px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-#navBtn ul li a:hover{
-    background-color: #ffffff;
-    color: black;
-}
-#navBtn ul li:hover .dropDownMenu{
-    display: block;
-}
-#navBtn ul li:hover a{
-    color: black;
-}
+    #footerBar {
+      margin-top: 30vh;
+      background-color: black;
+      background-image: linear-gradient(#20845d, rgba(22, 53, 32, 0.5));
+      display: flex;
+      justify-content: space-between;
+    }
 
-.dropDownMenu{
-    display: none;
-    position: absolute;
-    background-color: white;
-}
-.dropDownMenu a{
-    display: block;
-    padding: 10px;
-}
-	</style>
-    <meta charset="UTF-8">
+    #txtCopy {
+      margin-left: 50px;
+      display: flex;
+      color: white;
+      float: left;
+      padding: 30px;
+      font-family: 'Monserat';
+    }
 
-    <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
-    <title>Admin LH Kebon Pala</title>
+    #sosmedImg {
+      font-family: 'Monserat';
+      display: flex;
+      width: 30%;
+      float: right;
+      padding: 20px;
+      margin-top: 10px;
+
+    }
+
+    .a10 {
+      color: white;
+      margin-left: 200px;
+    }
+
+    /* navbar */
+    .navbar {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), #211063);
+      background-color: black;
+    }
+
+    #navBtn ul {
+      margin-top: 50px;
+      float: right;
+      list-style-type: none;
+    }
+
+    #navBtn ul li {
+      display: inline-block;
+    }
+
+    #navBtn ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      transition: 0.5s ease;
+      padding: 5px 20px;
+    }
+
+    #navBtn ul li a:hover {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    #navBtn ul li:hover .dropDownMenu {
+      display: block;
+    }
+
+    #navBtn ul li:hover a {
+      color: black;
+    }
+
+    .dropDownMenu {
+      display: none;
+      position: absolute;
+      background-color: white;
+    }
+
+    .dropDownMenu a {
+      display: block;
+      padding: 10px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="HomePageAdmin.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+
+
+
 </head>
+
 <body>
-    <!-- NavBar     -->
-    <header id="headerBar">
-        <div id="navBar">
-            <div>
-                <img id="LogoImg" src="assets/LH/logo2.jpeg" alt="LogoImage">
-            </div>
-            <div id="navBtn">
-                <ul>
-                    <li><a style="font-family: Monserat;" href="LH.html">Home</a>
-                        <div class="dropDownMenu">
-                            <a style="font-family: Monserat;" href="Productlh.html">Product</a>
-                            <a style="font-family: Monserat;" href="ContactUs.html">Contact Us</a>
-                        </div>
-                    </li>
-                    <li><a  style="font-family: Monserat;" href="Edukasi.html">Edukasi</a></li>
-                    <li><a style="color:red; font-family: Monserat;" href="Login.html">Logout</a></li>
-                </ul>
-            </div> 
-    </header>
+  <div id="app">
+    <v-app>
+      <v-main>
 
-<div align="center">
-            <span style="font-size:40px; font-family:'Monserat'">Admin Website Lingkungan Hidup Kebon Pala</span>
+        <!-- Navbar -->
+        <div>
+          <div class="hidden-md-and-down">
+            <v-app-bar
+              style="background-image:linear-gradient(rgba(22, 53, 32, 0.5),#20845d); background-color: black; padding-bottom: 15vh;"
+              fixed flat>
+              <img style="margin-left: 20vh; margin-top: 5vh;" src="assets/LH/logo2.jpeg" width="10%" alt="Lambang">
+
+              <v-row>
+                <v-col class="d-flex justify-end">
+                  <div id="navBtn">
+                    <ul>
+                      <li><a style="color:red" href="logout.php">Logout</a></li>
+                    </ul>
+                  </div>
+                </v-col>
+              </v-row>
+
+            </v-app-bar>
+          </div>
+
+
+          <div class="hidden-md-and-up">
+            <v-toolbar flat dense>
+              <v-app-bar-nav-icon id="carousels" @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+              <center>
+                <img src="assets/LH/logo2.jpeg" width="15%vh" alt="Lambang">
+              </center>
+
+            </v-toolbar>
+
+            <v-navigation-drawer
+              style="background-image:linear-gradient(rgba(22, 53, 32, 0.5),#20845d); background-color: black; padding-bottom: 15vh;"
+              v-model="drawer" app>
+              <img src="assets/LH/logo2.jpeg" width="40%vh" alt="Lambang">
+              <hr>
+              <v-btn text color="#32CD32"><a style="color: red;" href="Login.php">Logout</a></v-btn><br>
+
+            </v-navigation-drawer>
+
+          </div>
         </div>
+        <p style="margin-top: 20vh; color: white;">p</p>
 
-        <hr />
+        <!-- Isi -->
+        <center>
+          <h1>Admin Website LH Kebon Pala</h1>
+        </center>
+        <hr>
+        <center>
+          <h1>Pilih Page yang ingin diedit</h1>
+        </center>
+        <center>
+          <v-container class="mt-10">
+            <v-row>
+              <v-col>
+                <a href="Edukasi_ADMIN.php"><img style="border-radius: 20px; width:20%"
+                    src="assets/HomepageAdmin/Icon LH-03.png" alt=""></a>
+                <a href="ProductLH_ADMIN.php"><img style="border-radius: 20px; width:20%"
+                    src="assets/HomepageAdmin/Icon LH-04.png" alt=""></a>
+                <a href="TentangKamiLH_ADMIN.php"><img style="border-radius: 20px; width:20%"
+                    src="assets/HomepageAdmin/Icon LH-05.png" alt=""></a>
+                <a href="headlineHomepageADMIN.php"><img style="border-radius: 20px; width:20%"
+                    src="assets/HomepageAdmin/Icon LH-06 copy.png" alt=""></a>
+                <a href="EditPinADMIN.php"><img style="border-radius: 20px; width:20%; margin-top: 5px;"
+                    src="assets/HomepageAdmin/Icon LH-07.png" alt=""></a>
+                <a href="strukorg.php"><img style="border-radius: 20px; width:20%; margin-top: 5px;"
+                    src="assets/HomepageAdmin/Icon LH-08.png" alt=""></a>
+              </v-col>
+            </v-row>
+          </v-container>
+        </center>
 
-<div align="center">
-            <span style="font-size:40px; font-family:'Monserat'">Pilih Page yang ingin diedit</span>
-        </div>
+        <!-- Footer -->
+        <footer id="footerBar" style="margin-top: 20vh">
+          <div id="txtCopy">
+            &#169 2022 - Lingkungan Hidup Kebon Pala
+          </div>
+          <div id="sosmedImg">
+            <p class="a10"></p>
+          </div>
+        </footer>
 
-<div class="center" style="margin-top:5vh">
-            <div align="center">
-                <div flex-parent jc-center>
-                    <button onclick="location.href = 'Edukasi_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
-                        <span class="fa fa-users fa-2x"></span><br />
-                        Edukasi LH
-                    </button>
 
-                    <button onclick="location.href = 'ProductLH_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
-                        <span class="fa fa-truck-pickup fa-2x"></span><br />
-                        Product LH
-                    </button>
 
-                    <button onclick="location.href = 'TentangKamiLH_ADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
-                        <span class="fa fa-book fa-2x"></span><br />
-                        "Tentang Kami" <br> Homepage
-                    </button>
+      </v-main>
+    </v-app>
+  </div>
 
-                    <button onclick="location.href = 'headlineHomepageADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
-                        <span class="fa fa-user-circle fa-2x"></span><br />
-                        "Headline" <br> Homepage
-                    </button>
-
-                    <button onclick="location.href = 'EditPinADMIN.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
-                        <span class="fa fa-user-circle fa-2x"></span><br />
-                        PIN Registrasi
-                    </button>
-
-                    <button onclick="location.href = 'strukorg.php';" class="btn btn-primary btn-sq-lg" style="'margin-right:20px'; background-color:#50C878">
-                        <span class="fa fa-user-circle fa-2x"></span><br />
-                        Struktur Organisasi <br> LH
-                    </button>
-
-                </div>
-            </div>
-        </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+        return {
+          drawer: ''
+        }
+      }
+    })
+  </script>
 </body>
+
 </html>
+
+<?php
+
+
+  } else {
+    header("location:index.php");
+    exit;
+  }
+
+  unset($_SESSION['prompt']);
+  mysqli_close($conn);
+
+?>

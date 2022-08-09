@@ -14,10 +14,10 @@ else{
 <html>
 <head>
     <style>
-        <style>
         *{
     margin: 0;
     padding: 0;
+    font-family: 'Monserat';
 }
 @font-face{
     font-family: 'Monserat';
@@ -26,28 +26,43 @@ else{
     font-style: normal;
 }
 
-#headerBar{
-    background-image:linear-gradient(rgba(22, 53, 32, 0.5),#20845d);
-    height: 18vh ;
-    background-size: cover;
-    background-position: center;
-    background-color: black;
-    margin-bottom:5vh;
+
+#footerBar{
+    margin-top: 30vh;
+    background-color:black;
+    background-image: linear-gradient(#20845d,rgba(22, 53, 32, 0.5));
+    display: flex;
+    justify-content: space-between;
 }
 
-#navBar{
-    max-width: 1200px;
-    margin: auto;
-}
-
-#LogoImg{
-    width: 180px;
-    margin-top: 30px;
-    height: auto;
-    alt: "LogoImage";
+#txtCopy{
+    margin-left: 50px;
+    display: flex;
+    color: white;
     float: left;
+    padding: 30px;
+    font-family: 'Monserat';
 }
 
+#sosmedImg{
+    font-family: 'Monserat';
+    display: flex;
+    width: 30%;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+.a10{
+    color: white;
+    margin-left: 200px;
+}
+
+/* navbar */
+.navbar{
+    background-image: linear-gradient(rgba(0,0,0,0.5),#211063);
+    background-color: black;
+}
 #navBtn ul{
     margin-top: 50px;
     float: right;
@@ -61,7 +76,6 @@ else{
     color: #ffffff;
     transition: 0.5s ease;
     padding: 5px 20px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 #navBtn ul li a:hover{
     background-color: #ffffff;
@@ -83,37 +97,71 @@ else{
     display: block;
     padding: 10px;
 }
-        #tst{
-            border: none;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none;
-            margin: 4px 2px;
-            cursor: pointer;
-            background-color: #32CD32;
-            border-radius: 5px;
-            transition-duration: 0.5s;
-        }
     </style>
-    <title>Update Deskrispsi</title>
-    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />	
+  <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
-    <!-- NavBar     -->
-    <header id="headerBar">
-        <div id="navBar">
-            <div>
-                <img id="LogoImg" src="assets/LH/logo2.jpeg" alt="LogoImage">
-            </div>
-            <div id="navBtn">
-                <ul>
-                    <li><a style="font-family: Monserat;" href="LH.html">Home</a>
-                    <li><a style="color:red; font-family: Monserat;" href="Login.html">Logout</a></li>
-                </ul>
-            </div> 
-    </header>
+  <div id="app">
+    <v-app>
+      <v-main>
+        
+<!-- Navbar -->
+<div>
+    <div class="hidden-md-and-down">
+        <v-app-bar style="background-image:linear-gradient(rgba(22, 53, 32, 0.5),#20845d); background-color: black; padding-bottom: 15vh;" fixed flat>
+            <img style="margin-left: 20vh; margin-top: 5vh;" src="assets/LH/logo2.jpeg" width="10%" alt="Lambang">
+         
+          <v-row>
+            <v-col class="d-flex justify-end">
+                <div id="navBtn">
+                    <ul>
+                        <li><a href="Homepageadmin.html">Home</a></li>
+                        <li><a style="color:red" href="Login.php">Logout</a></li>
+                    </ul>
+                </div> 
+            </v-col>
+          </v-row>
+  
+        </v-app-bar>
+      </div>
+  
+  
+      <div class="hidden-md-and-up">
+      <v-toolbar flat dense>
+        <v-app-bar-nav-icon id="carousels" @click="drawer = !drawer"></v-app-bar-nav-icon>
+  
+        <center>
+          <img src="assets/LH/logo2.jpeg" width="15%vh" alt="Lambang">
+      </center>
+
+    </v-toolbar>
+
+    <v-navigation-drawer
+              style="background-image:linear-gradient(rgba(22, 53, 32, 0.5),#20845d); background-color: black; padding-bottom: 15vh;"
+              v-model="drawer" app>
+              <img src="assets/LH/logo2.jpeg" width="40%vh" alt="Lambang">
+              <hr>
+              <v-btn text color="white"><a style="color: white;" href="Homepageadmin.php">Home</a></v-btn>
+              <br>
+              <v-btn text color="#32CD32"><a style="color: red;" href="Login.php">Logout</a></v-btn><br>
+
+            </v-navigation-drawer>
+        
+      </div>
+</div>
+<p style="margin-top: 20vh; color: white;">p</p>
+
+<div class="container">
+                    <!-- baru -->
+                    <center>
+
     <h3 style="font-family:'Monserat'" class="text-primary">Edit Deskripsi Headline</h3>
-		<hr style="border-top:1px dotted #ccc;" />
+		<br>
     <form action="update_post_deskripsi.php" method="post">
         <textarea class="ckeditor" name="editor">
             <?php $query = mysqli_query($conn, "SELECT * FROM headline_deskripsi_homepage_lh WHERE id= '$id'");
@@ -122,8 +170,39 @@ else{
             <?= $row['content']; ?>
         </textarea>
         <input type="hidden" name="id" value="<?= $id ?>">
-        <button type="submit" id="tst">Update</button>
+        <br>
+        <button class="btn btn-warning" type="submit" id="tst">Update</button>
     </form>
+
+    </center>
+                </div>  
+
+                <footer id="footerBar" style="margin-top: 30vh">
+          <div id="txtCopy">
+            &#169 2022 - Lingkungan Hidup Kebon Pala
+          </div>
+          <div id="sosmedImg">
+            <p class="a10"></p>
+          </div>
+        </footer>
+
+
+    <script src="js1/jquery-3.2.1.min.js"></script>	
+<script src="js1/bootstrap.js"></script>	
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    vuetify: new Vuetify(),
+    data(){
+      return{
+        drawer:''
+      }
+    }
+  })
+</script>
+
 </body>
 
 

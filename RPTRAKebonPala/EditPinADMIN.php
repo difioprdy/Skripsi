@@ -141,12 +141,14 @@
             </div>
             <div id="navBtn">
                 <ul>
-                    <li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
+                    <li><a href="HomepageADMIN.html">Home &nbsp;Admin</a>
                     </li>
                     <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div>
     </header>
+
+    <center>
     <form method="post" action="updatepin.php">
         <label>PIN</label>
 
@@ -159,28 +161,30 @@
 
 
 
+
         <div class="form-group" name="PIN">
             <input type="number" name="PIN" value="<?php echo $fetch['PIN'] ?>">
         </div>
 
         <br><br>
         <input type="hidden" name="ID_PIN" value="<?php echo $fetch['ID_PIN'] ?>">
-        <input type="submit" name="update" value="Update">
+        <input style="color:white" type="submit" id="tst" name="update" value="Update">
 
         <?php
 					}
 				?>
 
     </form>
+        </center>
     <!-- Footer -->
     <footer id="footerBar">
-        <div id="txtCopy">
-            &#169 2016 - RPTRA Kebon Pala
-        </div>
-        <div id="sosmedImg">
-            <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
-        </div>
-    </footer>
+  <div id="txtCopy">
+    &#169 2022 - RPTRA Kebon Pala
+  </div>
+  <div id="sosmedImg">
+    <p class="a10">
+  </div>
+</footer>
 </body>
 
 </html>

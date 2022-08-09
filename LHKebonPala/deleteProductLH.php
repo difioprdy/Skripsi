@@ -1,7 +1,7 @@
 <?php
     require_once 'config.php';
 
-    if(isset($_POST['deleteProduct'])){
+    if(isset($_POST['deleteID'])){
 
     
     $id = $_POST['id'];
@@ -9,10 +9,9 @@
     $hasil = mysqli_query($conn,$query);
 
     if($hasil){
-       echo" <script>
-        alert('Selamat datang di tutorial Javascript');
-    </script>";
-        header('Location:ProductLH_ADMIN.php');
+        echo "<script language='javascript' type='text/javascript'>alert('Anda Berhasil Menghapus Data');  
+        </script>";
+   echo "<meta http-equiv='refresh' content='1; URL=ProductLH_ADMIN.php'>";
     }else{
         echo "gagal menghapus data";
     }

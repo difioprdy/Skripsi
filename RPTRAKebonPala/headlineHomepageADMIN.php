@@ -94,7 +94,7 @@
 }	
 /* Footer */
 #footerBar{
-    margin-top: 140vh;
+    margin-top: 80vh;
     background-color:black;
     background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
     display: flex;
@@ -140,7 +140,7 @@
             </div>
             <div id="navBtn">
                 <ul>
-				<li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
+				<li><a href="HomepageADMIN.html">Home &nbsp;Admin</a>
                     <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div> 
@@ -244,7 +244,7 @@
 				?>
 				<tr>
 					<td><?php echo $row['content']?></td>
-					<td><button type="button" id="btnupdate"><a href="<?= 'updateDeskripsi.php?id=' .$row['id'] ?>">Update</a></button></td>
+					<td><button type="button" id="btnupdate"><a style="color:white" href="<?= 'updateDeskripsi.php?id=' .$row['id'] ?>">Update</a></button></td>
 				</tr>
 				<?php
 					}
@@ -324,10 +324,10 @@ if(isset ($_POST['editor'])){
 ?>
 <!-- Footer -->
 <footer id="footerBar">
-    <div id="txtCopy">
-        &#169 2016 - RPTRA Kebon Pala
-    </div>
-    <div id="sosmedImg">
-        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
-    </div>
+  <div id="txtCopy">
+    &#169 2022 - RPTRA Kebon Pala
+  </div>
+  <div id="sosmedImg">
+    <p class="a10">
+  </div>
 </footer>

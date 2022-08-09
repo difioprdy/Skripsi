@@ -86,13 +86,13 @@
 
 <!-- Footer -->
 <footer id="footerBar">
-    <div id="txtCopy">
-        &#169 2016 - Lingkungan Hidup
-    </div>
-    <div id="sosmedImg">
-        <p class="a10"><strong>Contact Person</strong> <br> Anwar <br> 0821-1157-0918</p>
-    </div>
-</footer>
+          <div id="txtCopy">
+            &#169 2022 - Lingkungan Hidup Kebon Pala
+          </div>
+          <div id="sosmedImg">
+            <p class="a10"></p>
+          </div>
+        </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 

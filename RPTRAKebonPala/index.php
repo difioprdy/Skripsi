@@ -1,162 +1,273 @@
+
+
 <?php 
-session_start();
-$connect = mysqli_connect("localhost", "root", "", "rptra_lh");
 
-if(isset($_POST["add_to_cart"]))
-{
-	if(isset($_SESSION["shopping_cart"]))
-	{
-		$item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
-		if(!in_array($_GET["id"], $item_array_id))
-		{
-			$count = count($_SESSION["shopping_cart"]);
-			$item_array = array(
-				'item_id'			=>	$_GET["id"],
-				'item_name'			=>	$_POST["hidden_name"],
-				'item_price'		=>	$_POST["hidden_price"],
-				'item_quantity'		=>	$_POST["quantity"]
-			);
-			$_SESSION["shopping_cart"][$count] = $item_array;
-		}
-		else
-		{
-			echo '<script>alert("Item Already Added")</script>';
-		}
-	}
-	else
-	{
-		$item_array = array(
-			'item_id'			=>	$_GET["id"],
-			'item_name'			=>	$_POST["hidden_name"],
-			'item_price'		=>	$_POST["hidden_price"],
-			'item_quantity'		=>	$_POST["quantity"]
-		);
-		$_SESSION["shopping_cart"][0] = $item_array;
-	}
-}
+  session_start();
 
-if(isset($_GET["action"]))
-{
-	if($_GET["action"] == "delete")
-	{
-		foreach($_SESSION["shopping_cart"] as $keys => $values)
-		{
-			if($values["item_id"] == $_GET["id"])
-			{
-				unset($_SESSION["shopping_cart"][$keys]);
-				echo '<script>alert("Item Removed")</script>';
-				echo '<script>window.location="index.php"</script>';
-			}
-		}
-	}
-}
+  require 'config.php';
+  require 'functions.php';
+
+  if(isset($_POST['login'])) {
+
+    $uname = clean($_POST['username']);
+    $pword = clean($_POST['password']);
+
+    $query = "SELECT * FROM usersadminrptra WHERE username = '$uname' AND password = '$pword'";
+
+    $result = mysqli_query($conn, $query);
+
+    if(mysqli_num_rows($result) > 0) {
+
+      $row = mysqli_fetch_assoc($result);
+
+      $_SESSION['userid'] = $row['id'];
+      $_SESSION['username'] = $row['username'];
+      $_SESSION['password'] = $row['password'];
+
+      header("location:HomePageAdmin.php");
+      exit;
+
+    } else {
+
+      $_SESSION['errprompt'] = "User ID atau Password Salah.";
+
+    }
+
+  }
+
+  if(!isset($_SESSION['username'], $_SESSION['password'])) {
 
 ?>
+
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Webslesson Demo | Simple PHP Mysql Shopping Cart</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	</head>
-	<body>
-		<br />
-		<div class="container">
-			<br />
-			<br />
-			<br />
-			<h3 align="center">Tutorial - <a href="http://www.webslesson.info/2016/08/simple-php-mysql-shopping-cart.html" title="Simple PHP Mysql Shopping Cart">Simple PHP Mysql Shopping Cart</a></h3><br />
-			<br /><br />
-			<?php
-				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
-				$result = mysqli_query($connect, $query);
-				if(mysqli_num_rows($result) > 0)
-				{
-					while($row = mysqli_fetch_array($result))
-					{
-				?>
-			<div class="col-md-4">
-				<form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
-						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
+<html lang="en">
 
-						<h4 class="text-info"><?php echo $row["name"]; ?></h4>
+<head>
+  <style>
+    #btnupdate {
+      border: none;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+      background-color: #f0ad4e;
+      border-radius: 5px;
+      transition-duration: 0.5s;
+    }
 
-						<h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-						<input type="text" name="quantity" value="1" class="form-control" />
+    @font-face {
+      font-family: 'Monserat';
+      src: url(Font/montserrat/Montserrat-Light.ttf);
+      font-weight: normal;
+      font-style: normal;
+    }
 
-						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+    #headerBar {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), #211063);
+      height: 18vh;
+      background-size: cover;
+      background-position: center;
+      background-color: black;
+      margin-bottom: 5vh;
+    }
 
-						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+    #navBar {
+      max-width: 1200px;
+      margin: auto;
+    }
 
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+    #LogoImg {
+      width: 200px;
+      margin-top: 30px;
+      height: auto;
+      alt: "LogoImage";
+      float: left;
+    }
 
-					</div>
-				</form>
-			</div>
-			<?php
-					}
-				}
-			?>
-			<div style="clear:both"></div>
-			<br />
-			<h3>Order Details</h3>
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<tr>
-						<th width="40%">Item Name</th>
-						<th width="10%">Quantity</th>
-						<th width="20%">Price</th>
-						<th width="15%">Total</th>
-						<th width="5%">Action</th>
-					</tr>
-					<?php
-					if(!empty($_SESSION["shopping_cart"]))
-					{
-						$total = 0;
-						foreach($_SESSION["shopping_cart"] as $keys => $values)
-						{
-					?>
-					<tr>
-						<td><?php echo $values["item_name"]; ?></td>
-						<td><?php echo $values["item_quantity"]; ?></td>
-						<td>$ <?php echo $values["item_price"]; ?></td>
-						<td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
-						<td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
-					</tr>
-					<?php
-							$total = $total + ($values["item_quantity"] * $values["item_price"]);
-						}
-					?>
-					<tr>
-						<td colspan="3" align="right">Total</td>
-						<td align="right">$ <?php echo number_format($total, 2); ?></td>
-						<td></td>
-					</tr>
-					<?php
-					}
-					?>
-						
-				</table>
-			</div>
-		</div>
-	</div>
-	<br />
-	</body>
+    #navBtn ul {
+      margin-top: 50px;
+      float: right;
+      list-style-type: none;
+    }
+
+    #navBtn ul li {
+      display: inline-block;
+    }
+
+    #navBtn ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      transition: 0.5s ease;
+      padding: 5px 20px;
+      font-family: Monserat;
+    }
+
+    #navBtn ul li a:hover {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    #navBtn ul li:hover .dropDownMenu {
+      display: block;
+    }
+
+    #navBtn ul li:hover a {
+      color: black;
+    }
+
+    .dropDownMenu {
+      display: none;
+      position: absolute;
+      background-color: white;
+    }
+
+    .dropDownMenu a {
+      display: block;
+      padding: 10px;
+    }
+
+    /* Footer */
+    #footerBar {
+      margin-top: 35vh;
+      background-color: black;
+      background-image: linear-gradient(#211063, rgba(0, 0, 0, 0.5));
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #txtCopy {
+      margin-left: 50px;
+      display: flex;
+      color: white;
+      float: left;
+      padding: 30px;
+      font-family: Monserat;
+    }
+
+    #sosmedImg {
+      display: flex;
+      width: 30%;
+      float: right;
+      padding: 20px;
+      margin-top: 10px;
+
+    }
+
+    .a10 {
+      color: white;
+      margin-left: 200px;
+      font-family: Monserat;
+    }
+  </style>
+
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
+  <link href="main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+  <!-- NavBar     -->
+  <header id="headerBar">
+    <div id="navBar">
+      <div>
+        <img style="width: 5%;" id="LogoImg" src="assets/logo1.jpeg" alt="">
+        <img id="LogoImg" src="assets/Logo2.png" alt="LogoImage">
+        <img style="width: 5%;" id="LogoImg" src="assets/logo3.jpeg" alt="">
+      </div>
+      <div id="navBtn">
+        <ul>
+        <li><a style="color:white" href="Home.php">Home</a></li>
+          <li><a style="color:#32CD32" href="registerADMIN.php">Register</a></li>
+        </ul>
+      </div>
+  </header>
+
+
+
+
+  <section class="center-text">
+    <strong class="title">Login</strong><br>
+
+    <div class="login-form box-center">
+      <?php 
+
+        if(isset($_SESSION['prompt'])) {
+          showPrompt();
+        }
+
+        if(isset($_SESSION['errprompt'])) {
+          showError();
+        }
+
+      ?>
+      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+
+        <div class="form-group">
+          <label for="username" class="sr-only">User ID</label>
+          <input type="text" class="form-control" name="username" placeholder="User ID" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password" required autofocus>
+        </div>
+
+        <div class="social-icons">
+          <p>Lupa Password/User ID? <a href="forgotpass.php">Click Me</a>.</p>
+        </div>
+        <input class="btn btn-primary" type="submit" name="login" value="Log In">
+
+      </form>
+
+
+    </div>
+
+    <div class="social-icons">
+      <p>Belum Punya Akun? <a href="registerADMIN.php">Register</a>.</p>
+    </div>
+
+  </section>
+
+
+
+  <footer id="footerBar">
+    <div id="txtCopy">
+      &#169 2022 - RPTRA Kebon Pala
+    </div>
+    <div id="sosmedImg">
+      <p class="a10">
+    </div>
+  </footer>
+
+
+
+</body>
+
+<script src="assets/js/jquery-3.1.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
 </html>
 
 <?php
-//If you have use Older PHP Version, Please Uncomment this function for removing error 
 
-/*function array_column($array, $column_name)
-{
-	$output = array();
-	foreach($array as $keys => $values)
-	{
-		$output[] = $values[$column_name];
-	}
-	return $output;
-}*/
+  } else {
+    header("location:profile.php");
+    exit;
+  }
+
+  unset($_SESSION['prompt']);
+  unset($_SESSION['errprompt']);
+
+  mysqli_close($conn);
+
 ?>

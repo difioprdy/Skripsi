@@ -340,7 +340,7 @@ function build_calendar($month, $year) {
 </head>
 
 <body>
-    <!-- NavBar    
+        
     <header id="headerBar">
         <div id="navBar">
             <div>
@@ -360,7 +360,7 @@ function build_calendar($month, $year) {
                     <li><a style="color:red" href="Login.html">Logout</a></li>
                 </ul>
             </div> 
-    </header> -->
+    </header>
     <h1><strong><center>Booking Futsal</center></strong></h1> <hr>
     <div class="container">
         <div class="row">
@@ -384,10 +384,10 @@ function build_calendar($month, $year) {
 
     <footer id="footerBar">
     <div id="txtCopy">
-        &#169 2016 - RPTRA Kebon Pala
+        &#169 2022 - RPTRA Kebon Pala
     </div>
     <div id="sosmedImg">
-        <p class="a10"><strong>Contact Person</strong> <br> Fanny <br> 0812-9306-0002</p>
+        <p class="a10">
     </div>
 </footer>
 </body>

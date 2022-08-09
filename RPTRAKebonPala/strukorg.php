@@ -69,6 +69,37 @@
     display: block;
     padding: 10px;
 }	
+/* Footer */
+#footerBar{
+    margin-top: 70vh;
+    background-color:black;
+    background-image: linear-gradient(#211063,rgba(0,0,0,0.5));
+    display: flex;
+    justify-content: space-between;
+}
+
+#txtCopy{
+    margin-left: 50px;
+    display: flex;
+    color: white;
+    float: left;
+    padding: 30px;
+    font-family: Monserat;
+}
+
+#sosmedImg{
+    display: flex;
+    width: 30%;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+.a10{
+    color: white;
+    margin-left: 200px;
+    font-family: Monserat;
+}
 		</style>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="css1/bootstrap.css" />
@@ -84,14 +115,14 @@
             </div>
             <div id="navBtn">
                 <ul>
-				<li><a href="HomepageADMIN.php">Home &nbsp;Admin</a>
+				<li><a href="HomepageADMIN.html">Home &nbsp;Admin</a>
                     </li>
                     <li><a style="color:red" href="Login.php">Logout</a></li>
                 </ul>
             </div> 
     </header>
 	</nav>
-
+<br>
 	<br>
 	<br>	
 	<div class="col-md-3"></div>
@@ -193,3 +224,12 @@
 <script src="js1/bootstrap.js"></script>	
 </body>	
 </html>
+
+<footer id="footerBar">
+  <div id="txtCopy">
+    &#169 2022 - RPTRA Kebon Pala
+  </div>
+  <div id="sosmedImg">
+    <p class="a10">
+  </div>
+</footer>

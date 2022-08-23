@@ -280,6 +280,7 @@ function make_slides2($connect)
                 hasil kebun Lingkungan Hidup itu sendiri. -->
 
                 <?php echo $fetch['content']?>
+                <img src="images/923a2151ce624bd50199a6d77d418802.gif" height="500" width="600"></img>
 
               </p>
             </v-col>

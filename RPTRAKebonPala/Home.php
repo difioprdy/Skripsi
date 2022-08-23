@@ -307,7 +307,6 @@ function make_slides2($connect)
                             <v-btn text color="white"><a style="color: white;" href="PusatInformasi.php">Pusat Informasi</a></v-btn><br>
                             <v-btn text color="white"><a style="color: white;" href="ContactUs.php">Contact Us</a></v-btn><br>
                             <v-btn text color="#32CD32"><a style="color: #32CD32" href="Login.php">Login</a></v-btn><br>
-
                         </v-navigation-drawer>
 
                     </div>
@@ -349,6 +348,8 @@ function make_slides2($connect)
                 quis ad facilis dolorum nihil voluptatum, nulla, in, ex cumque iste fuga odit enim iure! 
                 Distinctio nulla quo qui! -->
                                 <?php echo $fetch['content']?>
+
+                                <img src="images/01b7f66b058519d628319c49fd811e3d.gif" height="350" width="400"></img>
                             </p>
                         </v-col>
 
